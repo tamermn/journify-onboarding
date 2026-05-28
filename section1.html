@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1 — Welcome & preboarding overview | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 10px;border-radius:7px;background:#EEEDFE;color:#3C3489;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:600;margin-bottom:0.4rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.75rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.welcome-box{background:#EEEDFE;border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:2rem}
+.welcome-label{font-size:11px;font-weight:600;color:#7F77DD;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.6rem}
+.welcome-title{font-size:20px;font-weight:600;color:#26215C;margin-bottom:0.6rem;line-height:1.35}
+.welcome-body{font-size:14px;color:#534AB7;line-height:1.65}
+.section-block{margin-bottom:2rem}
+.block-label{font-size:13px;font-weight:500;color:#888;display:flex;align-items:center;gap:8px;margin-bottom:1rem}
+.block-label::after{content:'';flex:1;height:1px;background:#e8e8e4}
+.todo-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;overflow:hidden;margin-bottom:0.875rem}
+.todo-row{display:flex;align-items:flex-start;gap:12px;padding:0.85rem 1rem;border-bottom:1px solid #f0f0ec}
+.todo-row:last-child{border-bottom:none}
+.todo-row input[type=checkbox]{margin-top:3px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.todo-row label{cursor:pointer;flex:1}
+.todo-label{font-size:14px;line-height:1.4;margin-bottom:3px;color:#1a1a1a;font-weight:500}
+.todo-note{font-size:12px;color:#888;line-height:1.4}
+.loom-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:2px 8px;border-radius:20px;background:#FAEEDA;color:#633806;margin-left:8px;font-weight:normal}
+.placeholder-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:2px 8px;border-radius:20px;background:#F1EFE8;color:#5F5E5A;margin-top:6px}
+.one-liner{background:#E1F5EE;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.5rem}
+.one-liner-label{font-size:11px;font-weight:600;color:#0F6E56;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem}
+.one-liner-text{font-size:14px;color:#085041;line-height:1.6;font-style:italic}
+.company-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.125rem 1.25rem;margin-bottom:0.875rem}
+.company-card.accent-purple{border-left:3px solid #534AB7;border-radius:0 10px 10px 0}
+.company-card.accent-teal{border-left:3px solid #0F6E56;border-radius:0 10px 10px 0}
+.card-icon-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:0.65rem}
+.card-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:19px}
+.card-icon.purple{background:#EEEDFE;color:#534AB7}
+.card-icon.teal{background:#E1F5EE;color:#0F6E56}
+.card-title{font-size:15px;font-weight:600;margin-bottom:3px}
+.card-sub{font-size:12px;color:#888}
+.card-body{font-size:13px;color:#555;line-height:1.6}
+.product-layers{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:1rem}
+.layer-card{background:#f8f8f7;border-radius:8px;padding:0.85rem;text-align:center}
+.layer-num{font-size:10px;font-weight:600;margin-bottom:4px}
+.layer-name{font-size:13px;font-weight:600;margin-bottom:4px}
+.layer-desc{font-size:11px;color:#888;line-height:1.4}
+.layer-card.l1 .layer-num,.layer-card.l1 .layer-name{color:#185FA5}
+.layer-card.l2 .layer-num,.layer-card.l2 .layer-name{color:#0F6E56}
+.layer-card.l3 .layer-num,.layer-card.l3 .layer-name{color:#854F0B}
+.layer-card.l4 .layer-num,.layer-card.l4 .layer-name{color:#888780}
+.founders-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:1rem}
+.founder-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:0.875rem 1rem}
+.founder-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;margin-bottom:0.6rem}
+.founder-avatar.ceo{background:#EEEDFE;color:#3C3489}
+.founder-avatar.cto{background:#E6F1FB;color:#0C447C}
+.founder-avatar.cro{background:#E1F5EE;color:#085041}
+.founder-name{font-size:14px;font-weight:600;margin-bottom:2px}
+.founder-role{font-size:12px;color:#888;margin-bottom:4px}
+.founder-prev{font-size:11px;color:#aaa}
+.culture-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:1rem}
+.culture-pill{background:#f8f8f7;border-radius:8px;padding:0.75rem;display:flex;align-items:flex-start;gap:9px}
+.culture-pill i{font-size:17px;flex-shrink:0;margin-top:1px;color:#534AB7}
+.culture-text{font-size:13px;color:#555;line-height:1.45}
+.roadmap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:1.25rem}
+.roadmap-item{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:0.75rem;text-align:center}
+.roadmap-item.current{border-color:#7F77DD;background:#EEEDFE;border-width:2px}
+.roadmap-phase{font-size:10px;font-weight:500;margin-bottom:3px;color:#888}
+.roadmap-item.current .roadmap-phase{color:#534AB7}
+.roadmap-name{font-size:12px;font-weight:600;margin-bottom:3px}
+.roadmap-item.current .roadmap-name{color:#3C3489}
+.roadmap-timing{font-size:10px;color:#888}
+.roadmap-item.current .roadmap-timing{color:#534AB7}
+.milestone-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:1.5rem}
+.milestone{background:#f8f8f7;border-radius:8px;padding:0.6rem 0.75rem;text-align:center}
+.milestone-day{font-size:13px;font-weight:600;color:#534AB7;margin-bottom:2px}
+.milestone-label{font-size:11px;color:#888}
+.buddy-box{background:#f8f8f7;border-radius:10px;padding:1rem 1.125rem;margin-bottom:1.5rem;display:flex;gap:12px}
+.buddy-icon{width:40px;height:40px;background:#EEEDFE;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;color:#534AB7;flex-shrink:0}
+.buddy-title{font-size:14px;font-weight:600;margin-bottom:4px}
+.buddy-body{font-size:13px;color:#555;line-height:1.6}
+.buddy-placeholder{display:flex;align-items:center;gap:7px;margin-top:0.6rem;padding:0.5rem 0.75rem;background:#fff;border:1px dashed #d4d4d0;border-radius:8px;font-size:13px;color:#888}
+.warning-box{background:#FAEEDA;border-radius:10px;padding:0.875rem 1rem;margin-bottom:1.5rem;display:flex;gap:10px;align-items:flex-start}
+.warning-box i{font-size:17px;color:#854F0B;flex-shrink:0;margin-top:1px}
+.warning-text{font-size:13px;color:#633806;line-height:1.55}
+.checklist-wrap{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.25rem}
+.cl-title{font-size:16px;font-weight:600;margin-bottom:0.3rem;display:flex;align-items:center;gap:8px}
+.cl-sub{font-size:13px;color:#888;margin-bottom:1rem}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:0.55rem 0;border-bottom:1px solid #f0f0ec}
+.check-item:last-child{border-bottom:none}
+.check-item label{font-size:14px;line-height:1.5;cursor:pointer;color:#1a1a1a}
+.check-item input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#888;margin:1rem 0 5px}
+.prog-bg{height:5px;background:#f0f0ec;border-radius:4px;overflow:hidden}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.done-note{font-size:13px;color:#085041;background:#E1F5EE;padding:0.65rem 0.9rem;border-radius:8px;margin-top:0.85rem;display:none;align-items:center;gap:7px}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.next-btn:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 0 — Preboarding &nbsp;/&nbsp; <span>Section 1: Welcome & preboarding overview</span></div>
+  <div class="nav-actions">
+    <a href="section2.html" class="nav-btn">Section 2 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+
+<div class="phase-tag"><i class="ti ti-device-laptop"></i> Phase 0 · Preboarding</div>
+<div class="section-title">Section 1 — Welcome & preboarding overview</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-clock"></i> 45–60 min</span>
+  <span class="meta-pill"><i class="ti ti-flag"></i> Start here — before anything else</span>
+</div>
+
+<div class="welcome-box">
+  <div class="welcome-label">Welcome to Journify</div>
+  <div class="welcome-title">We're glad you're joining. We want Day 1 to feel easy.</div>
+  <div class="welcome-body">This section is intentionally lightweight. Read through it at your own pace — nothing is graded and nothing is urgent. By the end you'll understand what Journify builds, who built it, and what the next few weeks look like for you.</div>
+</div>
+
+<div class="section-block">
+  <div class="block-label">Watch first — from the founders</div>
+  <div class="todo-card">
+    <div class="todo-row">
+      <input type="checkbox" id="w1" onchange="updateProg()">
+      <label for="w1">
+        <div class="todo-label">Why we built Journify — from Taoufik <span class="loom-badge"><i class="ti ti-player-play" style="font-size:10px"></i> Loom</span></div>
+        <div class="todo-note">Taoufik (CEO) walks through the founding story, the problem that wouldn't leave us alone, and why this is the right moment to build it</div>
+        <div class="placeholder-badge"><i class="ti ti-clock" style="font-size:11px"></i> Link to be added by your manager before Day 1</div>
+      </label>
+    </div>
+    <div class="todo-row">
+      <input type="checkbox" id="w2" onchange="updateProg()">
+      <label for="w2">
+        <div class="todo-label">What the first sale feels like — from Omar <span class="loom-badge"><i class="ti ti-player-play" style="font-size:10px"></i> Loom</span></div>
+        <div class="todo-note">Omar (CRO) shares what it looks and feels like to sell Journify — the customer conversation, the problem framing, and what winning looks like</div>
+        <div class="placeholder-badge"><i class="ti ti-clock" style="font-size:11px"></i> Link to be added by your manager before Day 1</div>
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="section-block">
+  <div class="block-label">What Journify is</div>
+  <div class="one-liner">
+    <div class="one-liner-label">In one sentence</div>
+    <div class="one-liner-text">"Journify manages and improves the conversion signals sent to ad platforms so AI-driven optimization reflects real business outcomes."</div>
+  </div>
+  <div class="company-card accent-purple">
+    <div class="card-icon-row">
+      <div class="card-icon purple"><i class="ti ti-speakerphone"></i></div>
+      <div><div class="card-title">The problem we solve</div><div class="card-sub">Why Journify exists</div></div>
+    </div>
+    <div class="card-body">Ad platforms have become AI-driven learning systems — they optimize on the signals brands send them. When those signals are incomplete or unreliable due to iOS restrictions, cookie deprecation, or missing server-side tracking, ad algorithms make bad decisions. Budgets get wasted. ROAS becomes volatile. Teams lose trust in their data. This is a data problem, not a media problem — and it's the problem Journify fixes.</div>
+  </div>
+  <div class="block-label" style="margin-top:1.25rem">The product — three layers</div>
+  <div class="product-layers">
+    <div class="layer-card l1"><div class="layer-num">Layer A</div><div class="layer-name">Connections</div><div class="layer-desc">Infrastructure — server-side delivery and Conversion API connections to ad platforms</div></div>
+    <div class="layer-card l2"><div class="layer-num">Layer B</div><div class="layer-name">Data health</div><div class="layer-desc">Reliability — validates, aligns, and monitors signal quality continuously</div></div>
+    <div class="layer-card l3"><div class="layer-num">Layer C</div><div class="layer-name">Signals</div><div class="layer-desc">Visibility — cross-platform performance dashboard connected to Meta, TikTok, Google, Snap</div></div>
+    <div class="layer-card l4"><div class="layer-num">Coming soon</div><div class="layer-name">Attribution</div><div class="layer-desc">Connecting spend to real business outcomes — built on clean signal infrastructure</div></div>
+  </div>
+  <div class="company-card accent-teal">
+    <div class="card-icon-row">
+      <div class="card-icon teal"><i class="ti ti-world"></i></div>
+      <div><div class="card-title">Where we operate</div><div class="card-sub">Markets and customers</div></div>
+    </div>
+    <div class="card-body">Journify operates across the GCC and internationally, with primary markets in UAE and Saudi Arabia. Our customers are performance marketing leaders, growth teams, and agencies managing meaningful ad spend who need reliable signal infrastructure they can trust and control.</div>
+  </div>
+</div>
+
+<div class="section-block">
+  <div class="block-label">The founders</div>
+  <div class="founders-grid">
+    <div class="founder-card"><div class="founder-avatar ceo">TE</div><div class="founder-name">Taoufik El Jamali</div><div class="founder-role">CEO & Co-founder</div><div class="founder-prev">Formerly InVision, Shopkick, Smartsheet</div></div>
+    <div class="founder-card"><div class="founder-avatar cto">AC</div><div class="founder-name">Amine Chouki</div><div class="founder-role">CTO & Co-founder</div><div class="founder-prev">Formerly InVision, Docker, Wingocard</div></div>
+    <div class="founder-card"><div class="founder-avatar cro">OA</div><div class="founder-name">Omar Al Shoubaki</div><div class="founder-role">CRO & Co-founder</div><div class="founder-prev">Formerly Intelligent Step, EmailCity</div></div>
+  </div>
+</div>
+
+<div class="section-block">
+  <div class="block-label">How we work</div>
+  <div class="culture-row">
+    <div class="culture-pill"><i class="ti ti-hammer"></i><div class="culture-text">We build seriously and move together</div></div>
+    <div class="culture-pill"><i class="ti ti-messages"></i><div class="culture-text">We debate openly — no rigid job descriptions</div></div>
+    <div class="culture-pill"><i class="ti ti-hand-stop"></i><div class="culture-text">No "that's not my job" — whoever sees it handles it</div></div>
+    <div class="culture-pill"><i class="ti ti-rocket"></i><div class="culture-text">Ambitious about what we build, careful about how</div></div>
+  </div>
+</div>
+
+<div class="section-block">
+  <div class="block-label">Your onboarding roadmap — Phase 0 to pipeline ownership</div>
+  <div class="roadmap-grid">
+    <div class="roadmap-item current"><div class="roadmap-phase">Phase 0</div><div class="roadmap-name">Preboarding</div><div class="roadmap-timing">Before Day 1</div></div>
+    <div class="roadmap-item"><div class="roadmap-phase">Phase 1</div><div class="roadmap-name">Company & ops</div><div class="roadmap-timing">Week 1</div></div>
+    <div class="roadmap-item"><div class="roadmap-phase">Phase 2</div><div class="roadmap-name">Digital marketing</div><div class="roadmap-timing">Week 2</div></div>
+    <div class="roadmap-item"><div class="roadmap-phase">Phase 3</div><div class="roadmap-name">Customer & product</div><div class="roadmap-timing">Week 3</div></div>
+    <div class="roadmap-item"><div class="roadmap-phase">Phase 4</div><div class="roadmap-name">Sales process</div><div class="roadmap-timing">Week 4</div></div>
+    <div class="roadmap-item"><div class="roadmap-phase">Phase 5–6</div><div class="roadmap-name">Execution & go-live</div><div class="roadmap-timing">Weeks 5–8</div></div>
+  </div>
+  <div class="milestone-row">
+    <div class="milestone"><div class="milestone-day">Day 7</div><div class="milestone-label">Operationally ready</div></div>
+    <div class="milestone"><div class="milestone-day">Day 14</div><div class="milestone-label">Industry ready</div></div>
+    <div class="milestone"><div class="milestone-day">Day 21</div><div class="milestone-label">Product ready</div></div>
+    <div class="milestone"><div class="milestone-day">Day 30</div><div class="milestone-label">Discovery ready</div></div>
+    <div class="milestone"><div class="milestone-day">Day 45</div><div class="milestone-label">Demo ready</div></div>
+    <div class="milestone"><div class="milestone-day">Day 60</div><div class="milestone-label">Own pipeline</div></div>
+  </div>
+</div>
+
+<div class="section-block">
+  <div class="block-label">Your buddy</div>
+  <div class="buddy-box">
+    <div class="buddy-icon"><i class="ti ti-user-heart"></i></div>
+    <div>
+      <div class="buddy-title">Your buddy is not your manager and not your trainer</div>
+      <div class="buddy-body">They're someone at Journify who has agreed to be the person you can ask anything — the small stuff, the cultural stuff, the things you don't want to bring into a team meeting. Use them freely. That's exactly what they're here for. Try to meet for a quick 30 minutes before Day 1 if possible — no agenda, just hello.</div>
+      <div class="buddy-placeholder"><i class="ti ti-user" style="font-size:14px"></i> Your buddy: <strong>To be confirmed by your manager before Day 1</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="section-block">
+  <div class="block-label">Important — tool access</div>
+  <div class="warning-box">
+    <i class="ti ti-alert-triangle"></i>
+    <div class="warning-text">The Google Workspace invite expires after 48 hours. Accept it as soon as it arrives. If you miss it, message your buddy or manager and they will get a new one sent immediately.</div>
+  </div>
+</div>
+
+<div class="checklist-wrap">
+  <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 1 — completion checklist</div>
+  <div class="cl-sub">You're ready to move to Section 2 when all five items are checked.</div>
+  <div class="check-item"><input type="checkbox" id="cl1" onchange="syncCl('w1','cl1')"><label for="cl1">Watched Taoufik's Loom on why we built Journify</label></div>
+  <div class="check-item"><input type="checkbox" id="cl2" onchange="syncCl('w2','cl2')"><label for="cl2">Watched Omar's Loom on what the first sale feels like</label></div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="updateProg()"><label for="cl3">I understand what Journify does and the problem it solves</label></div>
+  <div class="check-item"><input type="checkbox" id="cl4" onchange="updateProg()"><label for="cl4">I've met my buddy or have a meeting scheduled before Day 1</label></div>
+  <div class="check-item"><input type="checkbox" id="cl5" onchange="updateProg()"><label for="cl5">Google Workspace invite has been accepted</label></div>
+  <div class="prog-top"><span id="prog-label">0 of 5 complete</span><span id="prog-pct">0%</span></div>
+  <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
+  <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 2.</div>
+</div>
+
+<div class="nav-bottom">
+  <span class="nav-hint">Phase 0 · Section 1 of 4</span>
+  <a href="section2.html" class="next-btn">Next: Section 2 <i class="ti ti-arrow-right"></i></a>
+</div>
+
+</div>
+<script>
+function updateProg(){
+  const done=[...document.querySelectorAll('#cl1,#cl2,#cl3,#cl4,#cl5')].filter(el=>el.checked).length;
+  const pct=Math.round(done/5*100);
+  document.getElementById('prog').style.width=pct+'%';
+  document.getElementById('prog-label').textContent=done+' of 5 complete';
+  document.getElementById('prog-pct').textContent=pct+'%';
+  document.getElementById('done-note').style.display=done===5?'flex':'none';
+  ['w1','w2'].forEach((id,i)=>{
+    const cl=document.getElementById('cl'+(i+1));
+    const t=document.getElementById(id);
+    if(cl&&t)cl.checked=t.checked;
+  });
+}
+function syncCl(todoId,clId){
+  const t=document.getElementById(todoId);const cl=document.getElementById(clId);
+  if(t&&cl)t.checked=cl.checked;updateProg();
+}
+</script>
+</body>
+</html>
