@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 4 — Pre-Day 1 readiness checklist | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 10px;border-radius:7px;background:#EEEDFE;color:#3C3489;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:600;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.master-progress{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.125rem 1.25rem;margin-bottom:1.75rem}
+.mp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem}
+.mp-title{font-size:15px;font-weight:500;display:flex;align-items:center;gap:8px}
+.mp-pct{font-size:26px;font-weight:600;color:#534AB7}
+.mp-bar-bg{height:6px;background:#f0f0ec;border-radius:4px;overflow:hidden;margin-bottom:0.5rem}
+.mp-bar{height:6px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.mp-sub{font-size:12px;color:#888}
+.mp-cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:0.85rem}
+.cat-stat{background:#f8f8f7;border-radius:8px;padding:0.6rem 0.75rem;text-align:center}
+.cat-stat-num{font-size:16px;font-weight:600;margin-bottom:2px}
+.cat-stat-label{font-size:11px;color:#888}
+.cat-block{margin-bottom:1.5rem}
+.cat-header{display:flex;align-items:center;gap:10px;margin-bottom:0.75rem}
+.cat-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px}
+.cat-icon.purple{background:#EEEDFE;color:#534AB7}
+.cat-icon.blue{background:#E6F1FB;color:#185FA5}
+.cat-icon.teal{background:#E1F5EE;color:#0F6E56}
+.cat-icon.amber{background:#FAEEDA;color:#854F0B}
+.cat-icon.coral{background:#FAECE7;color:#993C1D}
+.cat-icon.gray{background:#F1EFE8;color:#5F5E5A}
+.cat-name{font-size:15px;font-weight:600}
+.cat-right{display:flex;align-items:center;gap:8px;margin-left:auto}
+.cat-prog-bg{height:3px;background:#f0f0ec;border-radius:4px;overflow:hidden;width:70px}
+.cat-prog{height:3px;border-radius:4px;transition:width 0.3s;width:0%}
+.cat-prog.purple{background:#534AB7}.cat-prog.blue{background:#185FA5}.cat-prog.teal{background:#0F6E56}
+.cat-prog.amber{background:#854F0B}.cat-prog.coral{background:#993C1D}.cat-prog.gray{background:#5F5E5A}
+.cat-count{font-size:12px;color:#888;white-space:nowrap}
+.check-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;overflow:hidden;margin-bottom:0.5rem}
+.check-row{display:flex;align-items:flex-start;gap:12px;padding:0.75rem 1rem;border-bottom:1px solid #f0f0ec;transition:background 0.15s}
+.check-row:last-child{border-bottom:none}
+.check-row.done-row{background:#fafff9}
+.check-row input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.check-row label{cursor:pointer;flex:1}
+.check-label{font-size:14px;line-height:1.4;margin-bottom:2px;color:#1a1a1a;transition:color 0.15s}
+.check-note{font-size:12px;color:#888;line-height:1.4}
+.done-row .check-label{color:#aaa;text-decoration:line-through}
+.phase-complete{background:#E1F5EE;border:1px solid #5DCAA5;border-radius:10px;padding:1.25rem;margin-top:1.5rem;display:none}
+.pc-title{font-size:16px;font-weight:600;color:#085041;margin-bottom:0.5rem;display:flex;align-items:center;gap:8px}
+.pc-body{font-size:13px;color:#0F6E56;line-height:1.6;margin-bottom:1rem}
+.pc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.pc-card{background:#fff;border:1px solid #9FE1CB;border-radius:8px;padding:0.65rem 0.75rem;text-align:center}
+.pc-card-label{font-size:11px;color:#0F6E56;margin-bottom:2px}
+.pc-card-val{font-size:14px;font-weight:600;color:#085041}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.phase1-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;opacity:0.4;pointer-events:none;text-decoration:none}
+.phase1-btn.ready{opacity:1;pointer-events:auto}
+.phase1-btn.ready:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888;text-align:center}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 0 — Preboarding &nbsp;/&nbsp; <span>Section 4: Pre-Day 1 readiness checklist</span></div>
+  <div class="nav-actions">
+    <a href="section3.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Section 3</a>
+  </div>
+</div>
+<div class="phase-tag"><i class="ti ti-device-laptop"></i> Phase 0 · Preboarding — final section</div>
+<div class="section-title">Section 4 — Pre-Day 1 readiness checklist</div>
+<div class="section-sub">Your final gate before Day 1. Work through every category so you arrive operationally ready, with nothing to chase down on your first morning. Your manager is your single point of contact for anything blocked or unresolved.</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-list-check"></i> 24 items across 6 categories</span>
+  <span class="meta-pill"><i class="ti ti-calendar-event"></i> Complete by end of day before Day 1</span>
+</div>
+<div class="master-progress">
+  <div class="mp-top"><div class="mp-title"><i class="ti ti-chart-bar" style="font-size:18px;color:#534AB7"></i> Overall readiness</div><div class="mp-pct" id="master-pct">0%</div></div>
+  <div class="mp-bar-bg"><div class="mp-bar" id="master-bar"></div></div>
+  <div class="mp-sub" id="master-label">0 of 24 items complete</div>
+  <div class="mp-cats">
+    <div class="cat-stat"><div class="cat-stat-num" id="s-accounts" style="color:#534AB7">0/4</div><div class="cat-stat-label">Accounts & access</div></div>
+    <div class="cat-stat"><div class="cat-stat-num" id="s-device" style="color:#185FA5">0/4</div><div class="cat-stat-label">Device setup</div></div>
+    <div class="cat-stat"><div class="cat-stat-num" id="s-tools" style="color:#0F6E56">0/4</div><div class="cat-stat-label">Tool access</div></div>
+    <div class="cat-stat"><div class="cat-stat-num" id="s-calendar" style="color:#854F0B">0/4</div><div class="cat-stat-label">Calendar</div></div>
+    <div class="cat-stat"><div class="cat-stat-num" id="s-resources" style="color:#993C1D">0/4</div><div class="cat-stat-label">Intro resources</div></div>
+    <div class="cat-stat"><div class="cat-stat-num" id="s-workspace" style="color:#5F5E5A">0/4</div><div class="cat-stat-label">Workspace</div></div>
+  </div>
+</div>
+<div class="cat-block">
+  <div class="cat-header"><div class="cat-icon purple"><i class="ti ti-key"></i></div><div><div class="cat-name">Accounts & access</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog purple" id="pb-accounts"></div></div><span class="cat-count" id="ct-accounts">0 / 4</span></div></div>
+  <div class="check-card">
+    <div class="check-row"><input type="checkbox" id="a1" onchange="update()"><label for="a1"><div class="check-label">Company email is set up and accessible</div><div class="check-note">Log into your @journify address and send a test email to confirm it's working</div></label></div>
+    <div class="check-row"><input type="checkbox" id="a2" onchange="update()"><label for="a2"><div class="check-label">Google Workspace account is active</div><div class="check-note">Confirm access to Gmail, Calendar, Drive, and Meet under your company account</div></label></div>
+    <div class="check-row"><input type="checkbox" id="a3" onchange="update()"><label for="a3"><div class="check-label">Slack account is created and you've joined the workspace</div><div class="check-note">Set your display name, photo, and notification preferences before Day 1</div></label></div>
+    <div class="check-row"><input type="checkbox" id="a4" onchange="update()"><label for="a4"><div class="check-label">Notion account is connected to the Journify workspace</div><div class="check-note">Confirm you can access the onboarding space — flag to your manager if access is missing</div></label></div>
+  </div>
+</div>
+<div class="cat-block">
+  <div class="cat-header"><div class="cat-icon blue"><i class="ti ti-device-laptop"></i></div><div><div class="cat-name">Device setup</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog blue" id="pb-device"></div></div><span class="cat-count" id="ct-device">0 / 4</span></div></div>
+  <div class="check-card">
+    <div class="check-row"><input type="checkbox" id="d1" onchange="update()"><label for="d1"><div class="check-label">MacBook is set up and connected to company systems</div><div class="check-note">Run any pending macOS updates — confirm with your manager if IT setup is managed centrally</div></label></div>
+    <div class="check-row"><input type="checkbox" id="d2" onchange="update()"><label for="d2"><div class="check-label">Browser is set up with core bookmarks</div><div class="check-note">Bookmark Notion, Attio, Google Workspace, and Slack at minimum</div></label></div>
+    <div class="check-row"><input type="checkbox" id="d3" onchange="update()"><label for="d3"><div class="check-label">Zoom is installed and audio/video are tested</div><div class="check-note">Join a test meeting to confirm mic, camera, and speaker are working</div></label></div>
+    <div class="check-row"><input type="checkbox" id="d4" onchange="update()"><label for="d4"><div class="check-label">You're comfortable with basic macOS navigation</div><div class="check-note">Finder, Spotlight, shortcuts — covered in Section 2 if you need a refresh</div></label></div>
+  </div>
+</div>
+<div class="cat-block">
+  <div class="cat-header"><div class="cat-icon teal"><i class="ti ti-apps"></i></div><div><div class="cat-name">Tool access confirmation</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog teal" id="pb-tools"></div></div><span class="cat-count" id="ct-tools">0 / 4</span></div></div>
+  <div class="check-card">
+    <div class="check-row"><input type="checkbox" id="to1" onchange="update()"><label for="to1"><div class="check-label">You can access Attio and see the main CRM workspace</div><div class="check-note">Confirm login is working — deep training starts in Phase 4</div></label></div>
+    <div class="check-row"><input type="checkbox" id="to2" onchange="update()"><label for="to2"><div class="check-label">You understand Grain's role in the sales and coaching workflow</div><div class="check-note">Access may be provisioned during onboarding — review the product tour in Section 2</div></label></div>
+    <div class="check-row"><input type="checkbox" id="to3" onchange="update()"><label for="to3"><div class="check-label">You understand Qwilr's role in the commercial process</div><div class="check-note">Access may be provisioned during onboarding — review the getting started guide in Section 2</div></label></div>
+    <div class="check-row"><input type="checkbox" id="to4" onchange="update()"><label for="to4"><div class="check-label">All confirmed tool logins are saved securely</div><div class="check-note">Use a password manager — flag any access issues to your manager before Day 1</div></label></div>
+  </div>
+</div>
+<div class="cat-block">
+  <div class="cat-header"><div class="cat-icon amber"><i class="ti ti-calendar"></i></div><div><div class="cat-name">Calendar readiness</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog amber" id="pb-calendar"></div></div><span class="cat-count" id="ct-calendar">0 / 4</span></div></div>
+  <div class="check-card">
+    <div class="check-row"><input type="checkbox" id="ca1" onchange="update()"><label for="ca1"><div class="check-label">Google Calendar is set up and your timezone is correct</div><div class="check-note">Check settings → general → timezone before any meetings are scheduled</div></label></div>
+    <div class="check-row"><input type="checkbox" id="ca2" onchange="update()"><label for="ca2"><div class="check-label">Week 1 onboarding sessions are confirmed in your calendar</div><div class="check-note">If invites haven't arrived, reach out to your manager before Day 1</div></label></div>
+    <div class="check-row"><input type="checkbox" id="ca3" onchange="update()"><label for="ca3"><div class="check-label">You have visibility of your manager's calendar</div><div class="check-note">Confirm this with your manager directly — sharing needs to be set up on their end</div></label></div>
+    <div class="check-row"><input type="checkbox" id="ca4" onchange="update()"><label for="ca4"><div class="check-label">You know where and when your Day 1 sessions take place</div><div class="check-note">Confirm location or remote links with your manager — don't leave this unresolved the night before</div></label></div>
+  </div>
+</div>
+<div class="cat-block">
+  <div class="cat-header"><div class="cat-icon coral"><i class="ti ti-books"></i></div><div><div class="cat-name">Intro resources reviewed</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog coral" id="pb-resources"></div></div><span class="cat-count" id="ct-resources">0 / 4</span></div></div>
+  <div class="check-card">
+    <div class="check-row"><input type="checkbox" id="r1" onchange="update()"><label for="r1"><div class="check-label">Section 1 — welcome and onboarding overview is complete</div><div class="check-note">You understand the roadmap, first week expectations, and key contacts</div></label></div>
+    <div class="check-row"><input type="checkbox" id="r2" onchange="update()"><label for="r2"><div class="check-label">Section 2 — tools and operational setup is complete</div><div class="check-note">Core tools are live and you've reviewed the awareness tools</div></label></div>
+    <div class="check-row"><input type="checkbox" id="r3" onchange="update()"><label for="r3"><div class="check-label">Section 3 — digital marketing and AdTech intro is complete</div><div class="check-note">All 6 topics covered — signal loss and attribution in particular</div></label></div>
+    <div class="check-row"><input type="checkbox" id="r4" onchange="update()"><label for="r4"><div class="check-label">You have your manager's contact details and know how to reach them</div><div class="check-note">Your manager is your single point of contact for anything unresolved before Day 1</div></label></div>
+  </div>
+</div>
+<div class="cat-block">
+  <div class="cat-header"><div class="cat-icon gray"><i class="ti ti-building"></i></div><div><div class="cat-name">Workspace readiness</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog gray" id="pb-workspace"></div></div><span class="cat-count" id="ct-workspace">0 / 4</span></div></div>
+  <div class="check-card">
+    <div class="check-row"><input type="checkbox" id="w1" onchange="update()"><label for="w1"><div class="check-label">You know where you're working on Day 1</div><div class="check-note">Confirm office location, or remote meeting links — check with your manager if unsure</div></label></div>
+    <div class="check-row"><input type="checkbox" id="w2" onchange="update()"><label for="w2"><div class="check-label">Your physical or remote workspace is ready for a full working day</div><div class="check-note">Desk, monitor, headset, lighting — whatever you need to be fully productive from the first hour</div></label></div>
+    <div class="check-row"><input type="checkbox" id="w3" onchange="update()"><label for="w3"><div class="check-label">You have a reliable internet connection confirmed</div><div class="check-note">Test speed and stability in advance if working remotely — not on the morning</div></label></div>
+    <div class="check-row"><input type="checkbox" id="w4" onchange="update()"><label for="w4"><div class="check-label">You feel prepared and ready to start</div><div class="check-note">If anything still feels unresolved, reach out to your manager now — that's exactly what they're there for</div></label></div>
+  </div>
+</div>
+<div class="phase-complete" id="phase-complete">
+  <div class="pc-title"><i class="ti ti-circle-check" style="font-size:20px"></i> Phase 0 complete — you're ready for Day 1</div>
+  <div class="pc-body">Everything is in place. Phase 1 begins on Day 1 with company and operations readiness — your manager will guide you through what's next.</div>
+  <div class="pc-grid">
+    <div class="pc-card"><div class="pc-card-label">Sections completed</div><div class="pc-card-val">4 of 4</div></div>
+    <div class="pc-card"><div class="pc-card-label">Items checked off</div><div class="pc-card-val">24 of 24</div></div>
+    <div class="pc-card"><div class="pc-card-label">Next milestone</div><div class="pc-card-val">Day 7 ready</div></div>
+    <div class="pc-card"><div class="pc-card-label">Phase 0 status</div><div class="pc-card-val" style="color:#0F6E56">Complete</div></div>
+  </div>
+</div>
+<div class="nav-bottom">
+  <a href="section3.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Section 3</a>
+  <span class="nav-hint" id="nav-hint">Phase 0 · Section 4 of 4</span>
+  <a href="#" class="phase1-btn" id="phase1-btn">Start Phase 1 <i class="ti ti-arrow-right"></i></a>
+</div>
+</div>
+<script>
+const cats={accounts:{ids:['a1','a2','a3','a4'],bar:'pb-accounts',count:'ct-accounts',stat:'s-accounts'},device:{ids:['d1','d2','d3','d4'],bar:'pb-device',count:'ct-device',stat:'s-device'},tools:{ids:['to1','to2','to3','to4'],bar:'pb-tools',count:'ct-tools',stat:'s-tools'},calendar:{ids:['ca1','ca2','ca3','ca4'],bar:'pb-calendar',count:'ct-calendar',stat:'s-calendar'},resources:{ids:['r1','r2','r3','r4'],bar:'pb-resources',count:'ct-resources',stat:'s-resources'},workspace:{ids:['w1','w2','w3','w4'],bar:'pb-workspace',count:'ct-workspace',stat:'s-workspace'}};
+const total=24;
+function update(){
+  let grand=0;
+  Object.entries(cats).forEach(([cat,cfg])=>{
+    const done=cfg.ids.filter(id=>document.getElementById(id)?.checked).length;
+    grand+=done;
+    document.getElementById(cfg.bar).style.width=Math.round(done/cfg.ids.length*100)+'%';
+    document.getElementById(cfg.count).textContent=done+' / '+cfg.ids.length;
+    document.getElementById(cfg.stat).textContent=done+'/'+cfg.ids.length;
+    cfg.ids.forEach(id=>{const row=document.getElementById(id)?.closest('.check-row');if(row)row.classList.toggle('done-row',document.getElementById(id).checked);});
+  });
+  const pct=Math.round(grand/total*100);
+  document.getElementById('master-bar').style.width=pct+'%';
+  document.getElementById('master-pct').textContent=pct+'%';
+  document.getElementById('master-label').textContent=grand+' of '+total+' items complete';
+  const done=grand===total;
+  document.getElementById('phase-complete').style.display=done?'block':'none';
+  document.getElementById('phase1-btn').classList.toggle('ready',done);
+  document.getElementById('nav-hint').textContent=done?'Phase 0 complete — ready for Phase 1':'Phase 0 · Section 4 of 4';
+}
+</script>
+</body>
+</html>

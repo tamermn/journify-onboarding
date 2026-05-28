@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 3 — Intro to digital marketing & AdTech | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;cursor:pointer;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 10px;border-radius:7px;background:#EEEDFE;color:#3C3489;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:600;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.exp-box{background:#E1F5EE;border-radius:10px;padding:1rem 1.125rem;margin-bottom:1.75rem}
+.exp-title{font-size:13px;font-weight:600;color:#085041;margin-bottom:0.3rem;display:flex;align-items:center;gap:6px}
+.exp-body{font-size:13px;color:#0F6E56;line-height:1.6}
+.concept-map{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.125rem;margin-bottom:2rem}
+.map-label{font-size:14px;font-weight:500;color:#555;margin-bottom:1rem;display:flex;align-items:center;gap:7px}
+.concept-flow{display:flex;align-items:stretch;border:1px solid #e8e8e4;border-radius:10px;overflow:hidden;margin-bottom:0.75rem}
+.cf-node{flex:1;padding:0.85rem 0.5rem;text-align:center;border-right:1px solid #e8e8e4}
+.cf-node:last-child{border-right:none}
+.cf-icon{font-size:19px;margin-bottom:0.35rem;display:block}
+.cf-label{font-size:11px;font-weight:600;margin-bottom:2px;line-height:1.3}
+.cf-sub{font-size:10px;color:#888;line-height:1.35}
+.cf-node.n1{background:#EEEDFE}.cf-node.n1 .cf-icon,.cf-node.n1 .cf-label{color:#3C3489}
+.cf-node.n2{background:#E6F1FB}.cf-node.n2 .cf-icon,.cf-node.n2 .cf-label{color:#0C447C}
+.cf-node.n3{background:#E1F5EE}.cf-node.n3 .cf-icon,.cf-node.n3 .cf-label{color:#085041}
+.cf-node.n4{background:#FAEEDA}.cf-node.n4 .cf-icon,.cf-node.n4 .cf-label{color:#633806}
+.cf-node.n5{background:#FAECE7}.cf-node.n5 .cf-icon,.cf-node.n5 .cf-label{color:#712B13}
+.cf-node.n6{background:#EEEDFE}.cf-node.n6 .cf-icon,.cf-node.n6 .cf-label{color:#3C3489}
+.flow-note{font-size:12px;color:#666;line-height:1.5}
+.flow-note span{color:#534AB7;font-weight:600}
+.divider-label{font-size:13px;font-weight:500;color:#888;display:flex;align-items:center;gap:8px;margin:0.5rem 0 1rem}
+.divider-label::after{content:'';flex:1;height:1px;background:#e8e8e4}
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0.875rem;margin-bottom:2rem}
+.topic-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1rem 1.125rem}
+.topic-card.t-purple{border-left:3px solid #534AB7;border-radius:0 10px 10px 0}
+.topic-card.t-blue{border-left:3px solid #185FA5;border-radius:0 10px 10px 0}
+.topic-card.t-teal{border-left:3px solid #0F6E56;border-radius:0 10px 10px 0}
+.topic-card.t-amber{border-left:3px solid #854F0B;border-radius:0 10px 10px 0}
+.topic-card.t-coral{border-left:3px solid #993C1D;border-radius:0 10px 10px 0}
+.topic-card.t-gray{border-left:3px solid #5F5E5A;border-radius:0 10px 10px 0}
+.topic-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:0.65rem}
+.topic-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.topic-icon.purple{background:#EEEDFE;color:#534AB7}
+.topic-icon.blue{background:#E6F1FB;color:#185FA5}
+.topic-icon.teal{background:#E1F5EE;color:#0F6E56}
+.topic-icon.amber{background:#FAEEDA;color:#854F0B}
+.topic-icon.coral{background:#FAECE7;color:#993C1D}
+.topic-icon.gray{background:#F1EFE8;color:#5F5E5A}
+.topic-num{font-size:11px;font-weight:600;margin-bottom:2px}
+.topic-num.purple{color:#534AB7}.topic-num.blue{color:#185FA5}.topic-num.teal{color:#0F6E56}
+.topic-num.amber{color:#854F0B}.topic-num.coral{color:#993C1D}.topic-num.gray{color:#5F5E5A}
+.topic-name{font-size:14px;font-weight:600}
+.topic-desc{font-size:13px;color:#555;line-height:1.55;margin-bottom:0.75rem}
+.topic-insight{font-size:12px;padding:0.5rem 0.75rem;border-radius:8px;line-height:1.5;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:6px}
+.topic-insight.purple{background:#EEEDFE;color:#3C3489}
+.topic-insight.blue{background:#E6F1FB;color:#0C447C}
+.topic-insight.teal{background:#E1F5EE;color:#085041}
+.topic-insight.amber{background:#FAEEDA;color:#633806}
+.topic-insight.coral{background:#FAECE7;color:#712B13}
+.topic-insight.gray{background:#F1EFE8;color:#444441}
+.resource-row{display:flex;align-items:center;gap:7px;padding:0.55rem 0.75rem;background:#f8f8f7;border-radius:8px;font-size:13px}
+.resource-row a{color:#185FA5;text-decoration:none;font-weight:500}
+.resource-row a:hover{text-decoration:underline}
+.res-time{margin-left:auto;font-size:11px;color:#888;background:#fff;border:1px solid #e4e4e0;padding:2px 7px;border-radius:20px;white-space:nowrap}
+.topic-check{margin-top:0.75rem;padding-top:0.65rem;border-top:1px solid #f0f0ec;display:flex;align-items:center;gap:8px}
+.topic-check label{font-size:13px;color:#666;cursor:pointer}
+.topic-check input[type=checkbox]{width:15px;height:15px;accent-color:#534AB7;cursor:pointer}
+.section-checklist{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.25rem;margin-bottom:1.5rem}
+.cl-title{font-size:16px;font-weight:600;margin-bottom:0.3rem;display:flex;align-items:center;gap:8px}
+.cl-sub{font-size:13px;color:#666;margin-bottom:1rem}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:0.55rem 0;border-bottom:1px solid #f0f0ec}
+.check-item:last-child{border-bottom:none}
+.check-item label{font-size:14px;line-height:1.5;cursor:pointer;color:#1a1a1a}
+.check-item input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#888;margin:1rem 0 5px}
+.prog-bg{height:5px;background:#f0f0ec;border-radius:4px;overflow:hidden}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.done-note{font-size:13px;color:#085041;background:#E1F5EE;padding:0.65rem 0.9rem;border-radius:8px;margin-top:0.85rem;display:none;align-items:center;gap:7px}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:0.5rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none}
+.next-btn:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 0 — Preboarding &nbsp;/&nbsp; <span>Section 3: Intro to digital marketing & AdTech</span></div>
+  <div class="nav-actions">
+    <a href="section2.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Section 2</a>
+    <a href="section4.html" class="nav-btn">Section 4 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+
+<div class="phase-tag"><i class="ti ti-device-laptop"></i> Phase 0 · Preboarding</div>
+<div class="section-title">Section 3 — Intro to digital marketing & AdTech</div>
+<div class="section-sub">Journify operates at the intersection of signal loss and attribution. This section gives you the industry context to understand the problem space, customer pain, and where Journify sits before Week 2 begins.</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-clock"></i> 1.5–2 hours total</span>
+  <span class="meta-pill"><i class="ti ti-calendar"></i> Complete before Day 1</span>
+  <span class="meta-pill"><i class="ti ti-player-play"></i> Video-first</span>
+  <span class="meta-pill"><i class="ti ti-books"></i> 6 topics</span>
+</div>
+
+<div class="exp-box">
+  <div class="exp-title"><i class="ti ti-info-circle"></i> What's expected here</div>
+  <div class="exp-body">Exposure and context, not expertise. The goal is to have heard these concepts before Week 2 begins — so the industry language and customer pain points feel familiar when they come up in meetings, not foreign. Deep dives happen during onboarding.</div>
+</div>
+
+<div class="concept-map">
+  <div class="map-label"><i class="ti ti-sitemap"></i> How these concepts connect — read left to right</div>
+  <div class="concept-flow">
+    <div class="cf-node n1"><i class="ti ti-speakerphone cf-icon"></i><div class="cf-label">Digital advertising</div><div class="cf-sub">The landscape</div></div>
+    <div class="cf-node n2"><i class="ti ti-building-store cf-icon"></i><div class="cf-label">Brand goals</div><div class="cf-sub">Why brands spend</div></div>
+    <div class="cf-node n3"><i class="ti ti-users cf-icon"></i><div class="cf-label">Customer acquisition</div><div class="cf-sub">CAC, LTV, ROAS</div></div>
+    <div class="cf-node n4"><i class="ti ti-code cf-icon"></i><div class="cf-label">Tracking</div><div class="cf-sub">The technical layer</div></div>
+    <div class="cf-node n5"><i class="ti ti-wifi-off cf-icon"></i><div class="cf-label">Signal loss</div><div class="cf-sub">The problem</div></div>
+    <div class="cf-node n6"><i class="ti ti-chart-line cf-icon"></i><div class="cf-label">Attribution</div><div class="cf-sub">Journify's answer</div></div>
+  </div>
+  <div class="flow-note"><span>Signal loss is the problem. Attribution is the direction.</span> This is the narrative arc of every customer conversation you'll have.</div>
+</div>
+
+<div class="divider-label">The 6 topics</div>
+
+<div class="topic-grid">
+  <div class="topic-card t-purple">
+    <div class="topic-top"><div class="topic-icon purple"><i class="ti ti-speakerphone"></i></div><div><div class="topic-num purple">Topic 1</div><div class="topic-name">What is digital advertising?</div></div></div>
+    <div class="topic-desc">How brands pay to reach people online — across search, social, apps, and display. The commercial foundation that everything else in this section builds on.</div>
+    <div class="topic-insight purple"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>Journify's customers are the brands running these campaigns. Understanding their world is the starting point for every commercial conversation.</span></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=bMFxuAZALmI" target="_blank">Digital advertising explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~10 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t1" onchange="updateProg()"><label for="t1">I understand what digital advertising is</label></div>
+  </div>
+
+  <div class="topic-card t-blue">
+    <div class="topic-top"><div class="topic-icon blue"><i class="ti ti-building-store"></i></div><div><div class="topic-num blue">Topic 2</div><div class="topic-name">Why brands advertise online</div></div></div>
+    <div class="topic-desc">The business goals behind digital spend — awareness, consideration, and conversion. Understanding what drives budget decisions is what separates a transactional rep from a consultative one.</div>
+    <div class="topic-insight blue"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>When a prospect talks about "driving conversions" or "improving ROAS," this is the context. Knowing their goals shapes how you frame Journify's value from the first call.</span></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=KqVBNGpZSAU" target="_blank">Marketing funnel explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~10 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t2" onchange="updateProg()"><label for="t2">I understand the business goals behind digital ad spend</label></div>
+  </div>
+
+  <div class="topic-card t-teal">
+    <div class="topic-top"><div class="topic-icon teal"><i class="ti ti-users"></i></div><div><div class="topic-num teal">Topic 3</div><div class="topic-name">Customer acquisition basics</div></div></div>
+    <div class="topic-desc">How businesses measure the efficiency of acquiring new customers — CAC, LTV, and ROAS. These metrics dominate commercial conversations at the level you'll be operating.</div>
+    <div class="topic-insight teal"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>CAC, LTV, and ROAS will come up in almost every discovery call. Being fluent in these from Day 1 signals credibility before you've even pitched the product.</span></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=AoJE4pJBmFE" target="_blank">CAC and LTV explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~12 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t3" onchange="updateProg()"><label for="t3">I understand CAC, LTV, ROAS and acquisition efficiency</label></div>
+  </div>
+
+  <div class="topic-card t-amber">
+    <div class="topic-top"><div class="topic-icon amber"><i class="ti ti-code"></i></div><div><div class="topic-num amber">Topic 4</div><div class="topic-name">Intro to tracking</div></div></div>
+    <div class="topic-desc">The technical layer that measurement depends on — pixels, cookies, events, and tags. Understanding how tracking works conceptually helps you diagnose customer pain and ask sharper discovery questions.</div>
+    <div class="topic-insight amber"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>When customers talk about "broken tracking" or "missing conversion data," this is the technical root cause. You don't need to be an engineer — but knowing the language earns trust early.</span></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=4gqHFNHBxNo" target="_blank">Pixels and tracking explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t4" onchange="updateProg()"><label for="t4">I understand how tracking works and why it underpins all measurement</label></div>
+  </div>
+
+  <div class="topic-card t-coral">
+    <div class="topic-top"><div class="topic-icon coral"><i class="ti ti-wifi-off"></i></div><div><div class="topic-num coral">Topic 5</div><div class="topic-name">Intro to signal loss</div></div></div>
+    <div class="topic-desc">Why tracking data is becoming structurally less reliable — iOS privacy changes, cookie deprecation, ad blockers, and evolving regulation. Signal loss is the industry-wide problem Journify was built to solve.</div>
+    <div class="topic-insight coral"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>This is the "why now" and the "why Journify" in one. Signal loss is the primary customer problem — understanding it deeply is the foundation of every pitch you'll make.</span></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=vInM8m0qNco" target="_blank">iOS 14 & signal loss explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t5" onchange="updateProg()"><label for="t5">I understand signal loss as Journify's primary problem space</label></div>
+  </div>
+
+  <div class="topic-card t-gray">
+    <div class="topic-top"><div class="topic-icon gray"><i class="ti ti-chart-line"></i></div><div><div class="topic-num gray">Topic 6</div><div class="topic-name">Intro to attribution</div></div></div>
+    <div class="topic-desc">How brands connect ad spend to outcomes — which channels, campaigns, and touchpoints actually drove a conversion. Attribution is the visibility signal loss erodes and the capability Journify restores.</div>
+    <div class="topic-insight gray"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>Attribution is Journify's core direction and product answer. Signal loss creates the problem; attribution is what we restore. Understanding this distinction is what makes your pitch credible.</span></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=0H0sb1hX2cs" target="_blank">Marketing attribution explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~12 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t6" onchange="updateProg()"><label for="t6">I understand attribution as the outcome Journify restores</label></div>
+  </div>
+</div>
+
+<div class="section-checklist">
+  <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 3 — completion checklist</div>
+  <div class="cl-sub">Six topics in sequence — each one builds on the last. Topics 5 and 6 are the most critical for Day 1 conversations.</div>
+  <div class="check-item"><input type="checkbox" id="cl1" onchange="syncCl('t1','cl1')"><label for="cl1">Digital advertising — the landscape Journify's customers operate in</label></div>
+  <div class="check-item"><input type="checkbox" id="cl2" onchange="syncCl('t2','cl2')"><label for="cl2">Brand goals — what drives ad spend decisions and how to speak to them</label></div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="syncCl('t3','cl3')"><label for="cl3">Customer acquisition — CAC, LTV, ROAS and why efficiency metrics matter</label></div>
+  <div class="check-item"><input type="checkbox" id="cl4" onchange="syncCl('t4','cl4')"><label for="cl4">Tracking — how it works and why it underpins all measurement</label></div>
+  <div class="check-item"><input type="checkbox" id="cl5" onchange="syncCl('t5','cl5')"><label for="cl5">Signal loss — the primary problem Journify exists to solve</label></div>
+  <div class="check-item"><input type="checkbox" id="cl6" onchange="syncCl('t6','cl6')"><label for="cl6">Attribution — the outcome Journify restores and our core product direction</label></div>
+  <div class="prog-top"><span id="prog-label">0 of 6 complete</span><span id="prog-pct">0%</span></div>
+  <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
+  <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 4.</div>
+</div>
+
+<div class="nav-bottom">
+  <a href="section2.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Section 2</a>
+  <span class="nav-hint">Phase 0 · Section 3 of 4</span>
+  <a href="section4.html" class="next-btn">Next: Section 4 <i class="ti ti-arrow-right"></i></a>
+</div>
+
+</div>
+<script>
+function updateProg(){
+  const ids=['t1','t2','t3','t4','t5','t6'];
+  const done=ids.filter(id=>document.getElementById(id)&&document.getElementById(id).checked).length;
+  const pct=Math.round(done/ids.length*100);
+  document.getElementById('prog').style.width=pct+'%';
+  document.getElementById('prog-label').textContent=done+' of '+ids.length+' complete';
+  document.getElementById('prog-pct').textContent=pct+'%';
+  document.getElementById('done-note').style.display=done===ids.length?'flex':'none';
+  ids.forEach((id,i)=>{const cl=document.getElementById('cl'+(i+1));const tc=document.getElementById(id);if(cl&&tc)cl.checked=tc.checked;});
+}
+function syncCl(tid,clid){
+  const t=document.getElementById(tid);const cl=document.getElementById(clid);
+  if(t&&cl)t.checked=cl.checked;updateProg();
+}
+</script>
+</body>
+</html>

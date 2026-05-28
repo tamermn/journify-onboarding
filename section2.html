@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 2 — Tools & operational setup | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}
+.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;cursor:pointer;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 10px;border-radius:7px;background:#EEEDFE;color:#3C3489;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:600;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.exp-box{background:#EEEDFE;border-radius:10px;padding:1rem 1.125rem;margin-bottom:1.75rem}
+.exp-title{font-size:13px;font-weight:600;color:#3C3489;margin-bottom:0.3rem;display:flex;align-items:center;gap:6px}
+.exp-body{font-size:13px;color:#534AB7;line-height:1.6}
+.tl-section{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.125rem;margin-bottom:1.75rem}
+.tl-label{font-size:14px;font-weight:500;color:#555;margin-bottom:1rem;display:flex;align-items:center;gap:7px}
+.tl-track{position:relative;padding-left:24px}
+.tl-line{position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:#e4e4e0}
+.tl-item{position:relative;margin-bottom:0.875rem;padding-left:1rem}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-17px;top:5px;width:10px;height:10px;border-radius:50%;border:2px solid}
+.tl-dot.blue{border-color:#185FA5;background:#E6F1FB}
+.tl-dot.purple{border-color:#534AB7;background:#EEEDFE}
+.tl-dot.gray{border-color:#888780;background:#F1EFE8}
+.tl-head{font-size:12px;font-weight:600;margin-bottom:2px}
+.tl-head.blue{color:#0C447C}
+.tl-head.purple{color:#3C3489}
+.tl-head.gray{color:#444441}
+.tl-desc{font-size:12px;color:#666;line-height:1.5}
+.map-section{margin-bottom:1.75rem}
+.map-label{font-size:14px;font-weight:500;color:#555;margin-bottom:1rem;display:flex;align-items:center;gap:7px}
+.tool-map{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px;margin-bottom:0.75rem}
+.map-card{border:1px solid #e8e8e4;border-radius:10px;padding:0.85rem 0.75rem;text-align:center;background:#fff}
+.map-card.core-card{border-top:3px solid #378ADD}
+.map-card.aware-card{border-top:3px solid #888780}
+.map-icon{font-size:22px;margin-bottom:0.4rem;display:block}
+.core-card .map-icon{color:#185FA5}
+.aware-card .map-icon{color:#888780}
+.map-name{font-size:11px;font-weight:500;color:#1a1a1a;margin-bottom:2px}
+.map-when{font-size:10px;color:#888}
+.map-legend{display:flex;gap:16px;font-size:12px;color:#888}
+.leg-dot{width:10px;height:3px;border-radius:2px;display:inline-block;margin-right:5px;vertical-align:middle}
+.divider-label{font-size:13px;font-weight:500;color:#888;display:flex;align-items:center;gap:8px;margin:1.5rem 0 1rem}
+.divider-label::after{content:'';flex:1;height:1px;background:#e8e8e4}
+.tier-desc{font-size:13px;color:#666;margin-bottom:1rem}
+.tool-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1rem 1.125rem;margin-bottom:0.875rem}
+.tool-card.core{border-left:3px solid #378ADD;border-radius:0 10px 10px 0}
+.tool-card.aware{border-left:3px solid #888780;border-radius:0 10px 10px 0}
+.tool-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:0.75rem}
+.tool-icon-wrap{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tool-icon-wrap.core{background:#E6F1FB}
+.tool-icon-wrap.aware{background:#F1EFE8}
+.tool-icon-wrap.core i{color:#185FA5;font-size:20px}
+.tool-icon-wrap.aware i{color:#5F5E5A;font-size:20px}
+.tool-meta{flex:1}
+.tool-name{font-size:15px;font-weight:600;margin-bottom:5px}
+.when-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;padding:3px 9px;border-radius:7px}
+.when-badge.core{background:#E6F1FB;color:#0C447C}
+.when-badge.aware{background:#EEEDFE;color:#3C3489}
+.tool-why{font-size:13px;color:#555;line-height:1.55;margin:0.65rem 0 0.7rem}
+.focus-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0.75rem}
+.pill{font-size:11px;padding:3px 8px;border-radius:20px;background:#f4f4f1;color:#666;border:1px solid #e4e4e0}
+.resource-row{display:flex;align-items:center;gap:8px;padding:0.6rem 0.75rem;background:#f8f8f7;border-radius:8px;font-size:13px}
+.resource-row a{color:#185FA5;text-decoration:none;font-weight:500}
+.resource-row a:hover{text-decoration:underline}
+.res-time{margin-left:auto;font-size:11px;color:#888;background:#fff;border:1px solid #e4e4e0;padding:2px 7px;border-radius:20px;white-space:nowrap}
+.tool-check{margin-top:0.75rem;padding-top:0.7rem;border-top:1px solid #f0f0ec;display:flex;align-items:center;gap:8px}
+.tool-check label{font-size:13px;color:#666;cursor:pointer}
+.tool-check input[type=checkbox]{width:15px;height:15px;cursor:pointer;accent-color:#534AB7}
+.section-checklist{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.25rem;margin-top:0.25rem}
+.cl-title{font-size:16px;font-weight:600;margin-bottom:0.3rem;display:flex;align-items:center;gap:8px}
+.cl-sub{font-size:13px;color:#666;margin-bottom:1rem}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0;border-bottom:1px solid #f0f0ec}
+.check-item:last-child{border-bottom:none}
+.check-item label{font-size:14px;line-height:1.5;cursor:pointer;color:#1a1a1a}
+.check-item input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#888;margin:1rem 0 5px}
+.prog-bg{height:5px;background:#f0f0ec;border-radius:4px;overflow:hidden}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.done-note{font-size:13px;color:#085041;background:#E1F5EE;padding:0.65rem 0.9rem;border-radius:8px;margin-top:0.85rem;display:none;align-items:center;gap:7px}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;cursor:pointer;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none}
+.next-btn:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 0 — Preboarding &nbsp;/&nbsp; <span>Section 2: Tools & operational setup</span></div>
+  <div class="nav-actions">
+    <a href="section1.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Section 1</a>
+    <a href="section3.html" class="nav-btn">Section 3 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+
+<div class="phase-tag"><i class="ti ti-device-laptop"></i> Phase 0 · Preboarding</div>
+<div class="section-title">Section 2 — Tools & operational setup</div>
+<div class="section-sub">A quick orientation to the tools that make up Journify's operating environment. You'll know most of these — the goal is simply to confirm everything is set up and understand how each one fits into the workflow here.</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-clock"></i> 2–3 hours total</span>
+  <span class="meta-pill"><i class="ti ti-calendar"></i> Complete before Day 1</span>
+  <span class="meta-pill"><i class="ti ti-tools"></i> 8 tools covered</span>
+</div>
+
+<div class="exp-box">
+  <div class="exp-title"><i class="ti ti-info-circle"></i> What's expected here</div>
+  <div class="exp-body">Setup and orientation, not training. Core tools need to be live and accessible before Day 1. Awareness tools — the more specialised revenue stack — will be covered in depth during onboarding. For now, understand their role and where they fit.</div>
+</div>
+
+<div class="tl-section">
+  <div class="tl-label"><i class="ti ti-timeline"></i> When each tool becomes active for you</div>
+  <div class="tl-track">
+    <div class="tl-line"></div>
+    <div class="tl-item"><div class="tl-dot blue"></div><div class="tl-head blue">Before Day 1 — preboarding</div><div class="tl-desc">macOS, Google Workspace, Slack, Notion, Zoom — set up and accessible before you arrive</div></div>
+    <div class="tl-item"><div class="tl-dot purple"></div><div class="tl-head purple">Week 4 — Phase 4</div><div class="tl-desc">Attio CRM — full pipeline and outreach workflow training</div></div>
+    <div class="tl-item"><div class="tl-dot purple"></div><div class="tl-head purple">Weeks 5–6 — Phase 5</div><div class="tl-desc">Grain — call recording and coaching reviews become part of the daily rhythm</div></div>
+    <div class="tl-item"><div class="tl-dot gray"></div><div class="tl-head gray">Weeks 6–8 — Phase 6</div><div class="tl-desc">Qwilr — proposals and commercial documents once you're running your own deals</div></div>
+  </div>
+</div>
+
+<div class="map-section">
+  <div class="map-label"><i class="ti ti-layout-grid"></i> Full tool landscape</div>
+  <div class="tool-map">
+    <div class="map-card core-card"><i class="ti ti-brand-apple map-icon"></i><div class="map-name">macOS</div><div class="map-when">Day 1</div></div>
+    <div class="map-card core-card"><i class="ti ti-brand-google map-icon"></i><div class="map-name">Google Workspace</div><div class="map-when">Day 1</div></div>
+    <div class="map-card core-card"><i class="ti ti-brand-slack map-icon"></i><div class="map-name">Slack</div><div class="map-when">Day 1</div></div>
+    <div class="map-card core-card"><i class="ti ti-notebook map-icon"></i><div class="map-name">Notion</div><div class="map-when">Day 1</div></div>
+    <div class="map-card core-card"><i class="ti ti-video map-icon"></i><div class="map-name">Zoom</div><div class="map-when">Day 1</div></div>
+    <div class="map-card aware-card"><i class="ti ti-database map-icon"></i><div class="map-name">Attio CRM</div><div class="map-when">Phase 4</div></div>
+    <div class="map-card aware-card"><i class="ti ti-microphone map-icon"></i><div class="map-name">Grain</div><div class="map-when">Phase 5</div></div>
+    <div class="map-card aware-card"><i class="ti ti-file-description map-icon"></i><div class="map-name">Qwilr</div><div class="map-when">Phase 6</div></div>
+  </div>
+  <div class="map-legend">
+    <span><span class="leg-dot" style="background:#378ADD"></span>Core — live before Day 1</span>
+    <span><span class="leg-dot" style="background:#888780"></span>Awareness — trained during onboarding</span>
+  </div>
+</div>
+
+<div class="divider-label">Core tools — set up before Day 1</div>
+<div class="tier-desc">These need to be live and accessible before you arrive. Flag anything that isn't working to your manager before Day 1.</div>
+
+<div class="tool-card core">
+  <div class="tool-top">
+    <div class="tool-icon-wrap core"><i class="ti ti-brand-apple"></i></div>
+    <div class="tool-meta"><div class="tool-name">MacBook Air & macOS</div><span class="when-badge core"><i class="ti ti-circle-dot" style="font-size:10px"></i> Active from Day 1</span></div>
+  </div>
+  <div class="tool-why">Standard hardware across the company. If you've been on Windows recently, a quick refresh on macOS navigation and shortcuts will save time on Day 1 — particularly Finder, Spotlight search, and window management.</div>
+  <div class="focus-pills"><span class="pill">Finder & file management</span><span class="pill">Spotlight & shortcuts</span><span class="pill">Window management</span><span class="pill">Browser setup</span></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/@macmost" target="_blank">MacMost — macOS beginner series</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~30 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c1" onchange="updateProgress()"><label for="c1">MacBook is set up and I'm comfortable with macOS navigation</label></div>
+</div>
+
+<div class="tool-card core">
+  <div class="tool-top">
+    <div class="tool-icon-wrap core"><i class="ti ti-brand-google"></i></div>
+    <div class="tool-meta"><div class="tool-name">Google Workspace</div><span class="when-badge core"><i class="ti ti-circle-dot" style="font-size:10px"></i> Active from Day 1</span></div>
+  </div>
+  <div class="tool-why">The full collaboration layer at Journify — email, calendar, meetings, and shared docs. Internal collaboration runs primarily through Google Meet; Zoom is used for external and customer-facing calls.</div>
+  <div class="focus-pills"><span class="pill">Gmail</span><span class="pill">Google Calendar</span><span class="pill">Google Meet (internal)</span><span class="pill">Shared Drives</span></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://workspace.google.com/training/" target="_blank">Google Workspace Learning Center</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~20 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c2" onchange="updateProgress()"><label for="c2">Google Workspace is active — Gmail, Calendar, Meet, and Drive confirmed</label></div>
+</div>
+
+<div class="tool-card core">
+  <div class="tool-top">
+    <div class="tool-icon-wrap core"><i class="ti ti-brand-slack"></i></div>
+    <div class="tool-meta"><div class="tool-name">Slack</div><span class="when-badge core"><i class="ti ti-circle-dot" style="font-size:10px"></i> Active from Day 1</span></div>
+  </div>
+  <div class="tool-why">Primary async communication across the company. Most decisions, updates, and cross-team coordination happen in channels — keep your notifications configured so you're in the loop without being overwhelmed.</div>
+  <div class="focus-pills"><span class="pill">Channels & threads</span><span class="pill">Notification management</span><span class="pill">Direct messages</span><span class="pill">Async workflow norms</span></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://slack.com/help/articles/360059976673-Slack-video-tutorials" target="_blank">Slack official video tutorials</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~20 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c3" onchange="updateProgress()"><label for="c3">Slack is set up, workspace joined, notifications configured</label></div>
+</div>
+
+<div class="tool-card core">
+  <div class="tool-top">
+    <div class="tool-icon-wrap core"><i class="ti ti-notebook"></i></div>
+    <div class="tool-meta"><div class="tool-name">Notion</div><span class="when-badge core"><i class="ti ti-circle-dot" style="font-size:10px"></i> Active from Day 1</span></div>
+  </div>
+  <div class="tool-why">Journify's central knowledge base — onboarding materials, playbooks, process documentation, and team references all live here. The more fluently you can navigate it, the faster you'll be self-sufficient.</div>
+  <div class="focus-pills"><span class="pill">Workspace navigation</span><span class="pill">Search</span><span class="pill">Pages & databases</span></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=kOf3QSBV29Y" target="_blank">Notion beginner course (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~25 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c4" onchange="updateProgress()"><label for="c4">Notion connected to Journify workspace and onboarding pages found</label></div>
+</div>
+
+<div class="tool-card core">
+  <div class="tool-top">
+    <div class="tool-icon-wrap core"><i class="ti ti-video"></i></div>
+    <div class="tool-meta"><div class="tool-name">Zoom</div><span class="when-badge core"><i class="ti ti-circle-dot" style="font-size:10px"></i> Active from Day 1</span></div>
+  </div>
+  <div class="tool-why">The primary tool for external and customer-facing meetings — demos, discovery calls, and commercial conversations all run on Zoom. Internal collaboration uses Google Meet. Make sure your setup is polished before any customer call.</div>
+  <div class="focus-pills"><span class="pill">Audio & video setup</span><span class="pill">External meeting etiquette</span><span class="pill">Screen sharing</span><span class="pill">Recording basics</span></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://learning.zoom.us/learn" target="_blank">Zoom Learning Center</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c5" onchange="updateProgress()"><label for="c5">Zoom installed, audio/video tested and ready for external calls</label></div>
+</div>
+
+<div class="divider-label" style="margin-top:1.75rem">Awareness tools — understand before Day 1, trained during onboarding</div>
+<div class="tier-desc">Covered in depth during Phases 4–6. Review the product positioning and understand how each fits into the revenue workflow — no setup required yet.</div>
+
+<div class="tool-card aware">
+  <div class="tool-top">
+    <div class="tool-icon-wrap aware"><i class="ti ti-database"></i></div>
+    <div class="tool-meta"><div class="tool-name">Attio CRM</div><span class="when-badge aware"><i class="ti ti-circle-dot" style="font-size:10px"></i> Full training in Phase 4 — Week 4</span></div>
+  </div>
+  <div class="tool-why">Journify's CRM — pipeline management, account tracking, opportunity forecasting, and revenue collaboration. This is where your deals live. Comprehensive training starts in Phase 4; for now, orient yourself to the interface and Attio's positioning in the market.</div>
+  <div class="focus-pills"><span class="pill">Pipeline structure</span><span class="pill">Account & opportunity views</span><span class="pill">Attio vs traditional CRMs</span></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/@attiohq" target="_blank">Attio YouTube — product overview</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c6" onchange="updateProgress()"><label for="c6">I understand Attio's role as Journify's CRM and have reviewed the interface</label></div>
+</div>
+
+<div class="tool-card aware">
+  <div class="tool-top">
+    <div class="tool-icon-wrap aware"><i class="ti ti-microphone"></i></div>
+    <div class="tool-meta"><div class="tool-name">Grain</div><span class="when-badge aware"><i class="ti ti-circle-dot" style="font-size:10px"></i> Active in Phase 5 — Weeks 5–6</span></div>
+  </div>
+  <div class="tool-why">Conversation intelligence — call recordings, AI summaries, and coaching clips shared across the revenue team. You'll use this to review your own calls and study strong examples from the team. Active from Phase 5 onward.</div>
+  <div class="focus-pills"><span class="pill">Call recording & summaries</span><span class="pill">Coaching workflow</span><span class="pill">Team sharing</span></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://grain.com/product-tour" target="_blank">Grain product tour</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~10 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c7" onchange="updateProgress()"><label for="c7">I understand how Grain fits into the sales and coaching workflow</label></div>
+</div>
+
+<div class="tool-card aware">
+  <div class="tool-top">
+    <div class="tool-icon-wrap aware"><i class="ti ti-file-description"></i></div>
+    <div class="tool-meta"><div class="tool-name">Qwilr</div><span class="when-badge aware"><i class="ti ti-circle-dot" style="font-size:10px"></i> Active in Phase 6 — Weeks 6–8</span></div>
+  </div>
+  <div class="tool-why">Proposal and commercial document platform — interactive, trackable, and built for modern sales. You'll build and send proposals through Qwilr once you're running your own deals from Phase 6.</div>
+  <div class="focus-pills"><span class="pill">Proposal format & structure</span><span class="pill">Commercial workflow</span><span class="pill">Engagement tracking</span></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://help.qwilr.com/hc/en-us/categories/360000108648-Getting-Started" target="_blank">Qwilr getting started guide</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~10 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c8" onchange="updateProgress()"><label for="c8">I understand Qwilr's role in the commercial process and the proposal format</label></div>
+</div>
+
+<div class="section-checklist">
+  <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 2 — completion checklist</div>
+  <div class="cl-sub">Core tools confirmed and awareness tools reviewed. You're ready to move on when all 8 are checked.</div>
+  <div class="check-item"><input type="checkbox" id="cl1" onchange="syncCheck('c1','cl1')"><label for="cl1">macOS — set up, comfortable with navigation</label></div>
+  <div class="check-item"><input type="checkbox" id="cl2" onchange="syncCheck('c2','cl2')"><label for="cl2">Google Workspace — Gmail, Calendar, Meet, and Drive confirmed</label></div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="syncCheck('c3','cl3')"><label for="cl3">Slack — workspace joined, notifications configured</label></div>
+  <div class="check-item"><input type="checkbox" id="cl4" onchange="syncCheck('c4','cl4')"><label for="cl4">Notion — connected to workspace, onboarding pages accessible</label></div>
+  <div class="check-item"><input type="checkbox" id="cl5" onchange="syncCheck('c5','cl5')"><label for="cl5">Zoom — installed, tested, ready for external calls</label></div>
+  <div class="check-item"><input type="checkbox" id="cl6" onchange="syncCheck('c6','cl6')"><label for="cl6">Attio CRM — interface reviewed, role in revenue workflow understood</label></div>
+  <div class="check-item"><input type="checkbox" id="cl7" onchange="syncCheck('c7','cl7')"><label for="cl7">Grain — role in sales and coaching workflow understood</label></div>
+  <div class="check-item"><input type="checkbox" id="cl8" onchange="syncCheck('c8','cl8')"><label for="cl8">Qwilr — proposal format and commercial workflow understood</label></div>
+  <div class="prog-top"><span id="prog-label">0 of 8 complete</span><span id="prog-pct">0%</span></div>
+  <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
+  <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 3.</div>
+</div>
+
+<div class="nav-bottom">
+  <a href="section1.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Section 1</a>
+  <span class="nav-hint">Phase 0 · Section 2 of 4</span>
+  <a href="section3.html" class="next-btn">Next: Section 3 <i class="ti ti-arrow-right"></i></a>
+</div>
+
+</div>
+<script>
+function updateProgress(){
+  const ids=['c1','c2','c3','c4','c5','c6','c7','c8'];
+  const done=ids.filter(id=>document.getElementById(id)&&document.getElementById(id).checked).length;
+  const pct=Math.round(done/ids.length*100);
+  document.getElementById('prog').style.width=pct+'%';
+  document.getElementById('prog-label').textContent=done+' of '+ids.length+' complete';
+  document.getElementById('prog-pct').textContent=pct+'%';
+  document.getElementById('done-note').style.display=done===ids.length?'flex':'none';
+  ids.forEach((id,i)=>{const cl=document.getElementById('cl'+(i+1));const tc=document.getElementById(id);if(cl&&tc)cl.checked=tc.checked;});
+}
+function syncCheck(toolId,clId){
+  const t=document.getElementById(toolId);const cl=document.getElementById(clId);
+  if(t&&cl)t.checked=cl.checked;updateProgress();
+}
+</script>
+</body>
+</html>
