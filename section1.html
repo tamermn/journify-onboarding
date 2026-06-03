@@ -25,15 +25,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .section-block{margin-bottom:2rem}
 .block-label{font-size:13px;font-weight:500;color:#888;display:flex;align-items:center;gap:8px;margin-bottom:1rem}
 .block-label::after{content:'';flex:1;height:1px;background:#e8e8e4}
-.todo-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;overflow:hidden;margin-bottom:0.875rem}
-.todo-row{display:flex;align-items:flex-start;gap:12px;padding:0.85rem 1rem;border-bottom:1px solid #f0f0ec}
-.todo-row:last-child{border-bottom:none}
 .todo-row input[type=checkbox]{margin-top:3px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
 .todo-row label{cursor:pointer;flex:1}
-.todo-label{font-size:14px;line-height:1.4;margin-bottom:3px;color:#1a1a1a;font-weight:500}
-.todo-note{font-size:12px;color:#888;line-height:1.4}
-.loom-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:2px 8px;border-radius:20px;background:#FAEEDA;color:#633806;margin-left:8px;font-weight:normal}
-.placeholder-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:2px 8px;border-radius:20px;background:#F1EFE8;color:#5F5E5A;margin-top:6px}
 .one-liner{background:#E1F5EE;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.5rem}
 .one-liner-label{font-size:11px;font-weight:600;color:#0F6E56;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.4rem}
 .one-liner-text{font-size:14px;color:#085041;line-height:1.6;font-style:italic}
@@ -105,10 +98,37 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
 .next-btn:hover{background:#3C3489}
 .nav-hint{font-size:12px;color:#888}
+
+
+.reset-btn:hover{background:#f4f4f1;color:#555}
+
+
+
+.jf-logo-mark svg{width:20px;height:20px;fill:#fff}
+
+
+
+
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+
+
+.jf-logo{display:flex;align-items:center;gap:10px;margin-bottom:1.75rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.jf-logo img{height:32px;width:auto;display:block}
+.jf-logo-text{line-height:1}
+.jf-logo-name{font-size:15px;font-weight:700;color:#1a1a1a;letter-spacing:-0.02em}
+.jf-logo-sub{font-size:11px;color:#888;margin-top:2px}
+
+
+.jf-logo-bar{display:flex;align-items:center;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.jf-logo-img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+
 </style>
 </head>
 <body>
 <div class="page">
+
+<div class="jf-logo-bar"><img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" class="jf-logo-img" /></div>
 
 <div class="nav-bar">
   <div class="nav-crumb">Phase 0 — Preboarding &nbsp;/&nbsp; <span>Section 1: Welcome & preboarding overview</span></div>
@@ -131,27 +151,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="welcome-body">This section is intentionally lightweight. Read through it at your own pace — nothing is graded and nothing is urgent. By the end you'll understand what Journify builds, who built it, and what the next few weeks look like for you.</div>
 </div>
 
-<div class="section-block">
-  <div class="block-label">Watch first — from the founders</div>
-  <div class="todo-card">
-    <div class="todo-row">
-      <input type="checkbox" id="w1" onchange="updateProg()">
-      <label for="w1">
-        <div class="todo-label">Why we built Journify — from Taoufik <span class="loom-badge"><i class="ti ti-player-play" style="font-size:10px"></i> Loom</span></div>
-        <div class="todo-note">Taoufik (CEO) walks through the founding story, the problem that wouldn't leave us alone, and why this is the right moment to build it</div>
-        <div class="placeholder-badge"><i class="ti ti-clock" style="font-size:11px"></i> Link to be added by your manager before Day 1</div>
-      </label>
-    </div>
-    <div class="todo-row">
-      <input type="checkbox" id="w2" onchange="updateProg()">
-      <label for="w2">
-        <div class="todo-label">What the first sale feels like — from Omar <span class="loom-badge"><i class="ti ti-player-play" style="font-size:10px"></i> Loom</span></div>
-        <div class="todo-note">Omar (CRO) shares what it looks and feels like to sell Journify — the customer conversation, the problem framing, and what winning looks like</div>
-        <div class="placeholder-badge"><i class="ti ti-clock" style="font-size:11px"></i> Link to be added by your manager before Day 1</div>
-      </label>
-    </div>
-  </div>
-</div>
+
 
 <div class="section-block">
   <div class="block-label">What Journify is</div>
@@ -243,12 +243,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <div class="checklist-wrap">
   <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 1 — completion checklist</div>
-  <div class="cl-sub">You're ready to move to Section 2 when all five items are checked.</div>
-  <div class="check-item"><input type="checkbox" id="cl1" onchange="syncCl('w1','cl1')"><label for="cl1">Watched Taoufik's Loom on why we built Journify</label></div>
-  <div class="check-item"><input type="checkbox" id="cl2" onchange="syncCl('w2','cl2')"><label for="cl2">Watched Omar's Loom on what the first sale feels like</label></div>
-  <div class="check-item"><input type="checkbox" id="cl3" onchange="updateProg()"><label for="cl3">I understand what Journify does and the problem it solves</label></div>
-  <div class="check-item"><input type="checkbox" id="cl4" onchange="updateProg()"><label for="cl4">I've met my buddy or have a meeting scheduled before Day 1</label></div>
-  <div class="check-item"><input type="checkbox" id="cl5" onchange="updateProg()"><label for="cl5">Google Workspace invite has been accepted</label></div>
+  <div class="cl-sub">You're ready to move to Section 2 when all three items are checked.</div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="cl3">I understand what Journify does and the problem it solves</label></div>
+  <div class="check-item"><input type="checkbox" id="cl4" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="cl4">I've met my buddy or have a meeting scheduled before Day 1</label></div>
+  <div class="check-item"><input type="checkbox" id="cl5" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="cl5">Google Workspace invite has been accepted</label></div>
   <div class="prog-top"><span id="prog-label">0 of 5 complete</span><span id="prog-pct">0%</span></div>
   <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
   <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 2.</div>
@@ -266,7 +264,7 @@ function updateProg(){
   const done=[...document.querySelectorAll('#cl1,#cl2,#cl3,#cl4,#cl5')].filter(el=>el.checked).length;
   const pct=Math.round(done/5*100);
   document.getElementById('prog').style.width=pct+'%';
-  document.getElementById('prog-label').textContent=done+' of 5 complete';
+  document.getElementById('prog-label').textContent=done+' of 3 complete';
   document.getElementById('prog-pct').textContent=pct+'%';
   document.getElementById('done-note').style.display=done===5?'flex':'none';
   ['w1','w2'].forEach((id,i)=>{
@@ -280,5 +278,107 @@ function syncCl(todoId,clId){
   if(t&&cl)t.checked=cl.checked;updateProg();
 }
 </script>
+
+
+
+
+
+
+
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+
+<script>
+// ── Journify onboarding — progress persistence ───────────────────────────────
+const JF_BASE = 'journify_ob_';
+const JF_CANONICAL = ["cl3", "cl4", "cl5"];
+let _jfUser = '';
+
+function jfGetUser() {
+  if (_jfUser) return _jfUser;
+  _jfUser = sessionStorage.getItem('jf_user_key') || '';
+  if (!_jfUser) {
+    const saved = localStorage.getItem('jf_last_user') || '';
+    const name = prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:', saved);
+    _jfUser = (name || 'user').trim().toLowerCase().replace(/[^a-z0-9]/g, '_') || 'user';
+    sessionStorage.setItem('jf_user_key', _jfUser);
+    localStorage.setItem('jf_last_user', name || '');
+  }
+  return _jfUser;
+}
+
+function jfKey(id) { return JF_BASE + jfGetUser() + '_' + id; }
+
+function saveProgress(id, checked) {
+  // Only save canonical IDs — mirrors are derived on load
+  if (JF_CANONICAL.includes(id)) {
+    try { localStorage.setItem(jfKey(id), checked ? '1' : '0'); } catch(e) {}
+  }
+}
+
+function jfLoadAndSync() {
+  jfGetUser();
+  // 1. Restore canonical checkboxes from localStorage
+  JF_CANONICAL.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    try {
+      const val = localStorage.getItem(jfKey(id));
+      el.checked = val === '1';
+    } catch(e) {}
+  });
+  // 2. Run all sync functions to propagate to mirror checkboxes
+  const allBoxes = document.querySelectorAll('input[type=checkbox]');
+  allBoxes.forEach(box => {
+    if (!JF_CANONICAL.includes(box.id)) {
+      // Mirror: find the canonical it mirrors by position
+      // syncCheck functions handle this — we trigger them by firing change
+    }
+  });
+  // 3. Manually sync known mirrors
+  jfSyncMirrors();
+  // 4. Update progress bars after restore
+  setTimeout(() => {
+    if (typeof updateProgress === 'function') updateProgress();
+    if (typeof updateProg === 'function') updateProg();
+    if (typeof update === 'function') update();
+  }, 30);
+}
+
+function jfSyncMirrors() {
+  // section1: no loom mirrors
+  // section2: c1-c8 → cl1-cl8
+  for (let i=1;i<=8;i++) {
+    const src = document.getElementById('c'+i);
+    const mir = document.getElementById('cl'+i);
+    if (src && mir) mir.checked = src.checked;
+  }
+  // section3: t1-t6 → cl1-cl6
+  for (let i=1;i<=6;i++) {
+    const src = document.getElementById('t'+i);
+    const mir = document.getElementById('cl'+i);
+    if (src && mir) mir.checked = src.checked;
+  }
+}
+
+function resetProgress() {
+  if (!confirm('Reset all your progress on this section?')) return;
+  JF_CANONICAL.forEach(id => {
+    try { localStorage.removeItem(jfKey(id)); } catch(e) {}
+    const el = document.getElementById(id);
+    if (el) el.checked = false;
+  });
+  document.querySelectorAll('input[type=checkbox]').forEach(box => {
+    box.checked = false;
+    const row = box.closest('.check-row,.todo-row,.check-item');
+    if (row) row.classList.remove('done-row');
+  });
+  if (typeof updateProgress === 'function') updateProgress();
+  if (typeof updateProg === 'function') updateProg();
+  if (typeof update === 'function') update();
+}
+
+window.addEventListener('DOMContentLoaded', jfLoadAndSync);
+</script>
+
 </body>
 </html>

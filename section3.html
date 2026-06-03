@@ -92,10 +92,37 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none}
 .next-btn:hover{background:#3C3489}
 .nav-hint{font-size:12px;color:#888}
+
+
+.reset-btn:hover{background:#f4f4f1;color:#555}
+
+
+
+.jf-logo-mark svg{width:20px;height:20px;fill:#fff}
+
+
+
+
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+
+
+.jf-logo{display:flex;align-items:center;gap:10px;margin-bottom:1.75rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.jf-logo img{height:32px;width:auto;display:block}
+.jf-logo-text{line-height:1}
+.jf-logo-name{font-size:15px;font-weight:700;color:#1a1a1a;letter-spacing:-0.02em}
+.jf-logo-sub{font-size:11px;color:#888;margin-top:2px}
+
+
+.jf-logo-bar{display:flex;align-items:center;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.jf-logo-img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+
 </style>
 </head>
 <body>
 <div class="page">
+
+<div class="jf-logo-bar"><img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" class="jf-logo-img" /></div>
 
 <div class="nav-bar">
   <div class="nav-crumb">Phase 0 — Preboarding &nbsp;/&nbsp; <span>Section 3: Intro to digital marketing & AdTech</span></div>
@@ -141,60 +168,61 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
     <div class="topic-top"><div class="topic-icon purple"><i class="ti ti-speakerphone"></i></div><div><div class="topic-num purple">Topic 1</div><div class="topic-name">What is digital advertising?</div></div></div>
     <div class="topic-desc">How brands pay to reach people online — across search, social, apps, and display. The commercial foundation that everything else in this section builds on.</div>
     <div class="topic-insight purple"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>Journify's customers are the brands running these campaigns. Understanding their world is the starting point for every commercial conversation.</span></div>
-    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=bMFxuAZALmI" target="_blank">Digital advertising explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~10 min</span></div>
-    <div class="topic-check"><input type="checkbox" id="t1" onchange="updateProg()"><label for="t1">I understand what digital advertising is</label></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=NB3YO598ZOI" target="_blank">The digital advertising ecosystem, explained (2024)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~12 min</span></div>
+    <div class="resource-row" style="margin-top:6px"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=ZgTteMhT0Fo" target="_blank">What is digital advertising? A beginner's explanation</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~8 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t1" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t1">I understand what digital advertising is</label></div>
   </div>
 
   <div class="topic-card t-blue">
     <div class="topic-top"><div class="topic-icon blue"><i class="ti ti-building-store"></i></div><div><div class="topic-num blue">Topic 2</div><div class="topic-name">Why brands advertise online</div></div></div>
     <div class="topic-desc">The business goals behind digital spend — awareness, consideration, and conversion. Understanding what drives budget decisions is what separates a transactional rep from a consultative one.</div>
     <div class="topic-insight blue"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>When a prospect talks about "driving conversions" or "improving ROAS," this is the context. Knowing their goals shapes how you frame Journify's value from the first call.</span></div>
-    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=KqVBNGpZSAU" target="_blank">Marketing funnel explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~10 min</span></div>
-    <div class="topic-check"><input type="checkbox" id="t2" onchange="updateProg()"><label for="t2">I understand the business goals behind digital ad spend</label></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=Xx75loJvFhg" target="_blank">What is a marketing funnel? Explained</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~10 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t2" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t2">I understand the business goals behind digital ad spend</label></div>
   </div>
 
   <div class="topic-card t-teal">
     <div class="topic-top"><div class="topic-icon teal"><i class="ti ti-users"></i></div><div><div class="topic-num teal">Topic 3</div><div class="topic-name">Customer acquisition basics</div></div></div>
     <div class="topic-desc">How businesses measure the efficiency of acquiring new customers — CAC, LTV, and ROAS. These metrics dominate commercial conversations at the level you'll be operating.</div>
     <div class="topic-insight teal"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>CAC, LTV, and ROAS will come up in almost every discovery call. Being fluent in these from Day 1 signals credibility before you've even pitched the product.</span></div>
-    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=AoJE4pJBmFE" target="_blank">CAC and LTV explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~12 min</span></div>
-    <div class="topic-check"><input type="checkbox" id="t3" onchange="updateProg()"><label for="t3">I understand CAC, LTV, ROAS and acquisition efficiency</label></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=U6YRPjuQIE4" target="_blank">How to calculate LTV and CAC</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~12 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t3" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t3">I understand CAC, LTV, ROAS and acquisition efficiency</label></div>
   </div>
 
   <div class="topic-card t-amber">
     <div class="topic-top"><div class="topic-icon amber"><i class="ti ti-code"></i></div><div><div class="topic-num amber">Topic 4</div><div class="topic-name">Intro to tracking</div></div></div>
     <div class="topic-desc">The technical layer that measurement depends on — pixels, cookies, events, and tags. Understanding how tracking works conceptually helps you diagnose customer pain and ask sharper discovery questions.</div>
     <div class="topic-insight amber"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>When customers talk about "broken tracking" or "missing conversion data," this is the technical root cause. You don't need to be an engineer — but knowing the language earns trust early.</span></div>
-    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=4gqHFNHBxNo" target="_blank">Pixels and tracking explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
-    <div class="topic-check"><input type="checkbox" id="t4" onchange="updateProg()"><label for="t4">I understand how tracking works and why it underpins all measurement</label></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=LmK2R2ZD76k" target="_blank">From cookies to pixels: website tracking explained (2024)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~14 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t4" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t4">I understand how tracking works and why it underpins all measurement</label></div>
   </div>
 
   <div class="topic-card t-coral">
     <div class="topic-top"><div class="topic-icon coral"><i class="ti ti-wifi-off"></i></div><div><div class="topic-num coral">Topic 5</div><div class="topic-name">Intro to signal loss</div></div></div>
     <div class="topic-desc">Why tracking data is becoming structurally less reliable — iOS privacy changes, cookie deprecation, ad blockers, and evolving regulation. Signal loss is the industry-wide problem Journify was built to solve.</div>
     <div class="topic-insight coral"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>This is the "why now" and the "why Journify" in one. Signal loss is the primary customer problem — understanding it deeply is the foundation of every pitch you'll make.</span></div>
-    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=vInM8m0qNco" target="_blank">iOS 14 & signal loss explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
-    <div class="topic-check"><input type="checkbox" id="t5" onchange="updateProg()"><label for="t5">I understand signal loss as Journify's primary problem space</label></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=6NnYLtqpO40" target="_blank">What is signal loss?</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t5" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t5">I understand signal loss as Journify's primary problem space</label></div>
   </div>
 
   <div class="topic-card t-gray">
     <div class="topic-top"><div class="topic-icon gray"><i class="ti ti-chart-line"></i></div><div><div class="topic-num gray">Topic 6</div><div class="topic-name">Intro to attribution</div></div></div>
     <div class="topic-desc">How brands connect ad spend to outcomes — which channels, campaigns, and touchpoints actually drove a conversion. Attribution is the visibility signal loss erodes and the capability Journify restores.</div>
     <div class="topic-insight gray"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>Attribution is Journify's core direction and product answer. Signal loss creates the problem; attribution is what we restore. Understanding this distinction is what makes your pitch credible.</span></div>
-    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=0H0sb1hX2cs" target="_blank">Marketing attribution explained (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~12 min</span></div>
-    <div class="topic-check"><input type="checkbox" id="t6" onchange="updateProg()"><label for="t6">I understand attribution as the outcome Journify restores</label></div>
+    <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=R8m1IjTwUo8" target="_blank">Measurement vs. attribution in digital marketing</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~12 min</span></div>
+    <div class="topic-check"><input type="checkbox" id="t6" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t6">I understand attribution as the outcome Journify restores</label></div>
   </div>
 </div>
 
 <div class="section-checklist">
   <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 3 — completion checklist</div>
   <div class="cl-sub">Six topics in sequence — each one builds on the last. Topics 5 and 6 are the most critical for Day 1 conversations.</div>
-  <div class="check-item"><input type="checkbox" id="cl1" onchange="syncCl('t1','cl1')"><label for="cl1">Digital advertising — the landscape Journify's customers operate in</label></div>
-  <div class="check-item"><input type="checkbox" id="cl2" onchange="syncCl('t2','cl2')"><label for="cl2">Brand goals — what drives ad spend decisions and how to speak to them</label></div>
-  <div class="check-item"><input type="checkbox" id="cl3" onchange="syncCl('t3','cl3')"><label for="cl3">Customer acquisition — CAC, LTV, ROAS and why efficiency metrics matter</label></div>
-  <div class="check-item"><input type="checkbox" id="cl4" onchange="syncCl('t4','cl4')"><label for="cl4">Tracking — how it works and why it underpins all measurement</label></div>
-  <div class="check-item"><input type="checkbox" id="cl5" onchange="syncCl('t5','cl5')"><label for="cl5">Signal loss — the primary problem Journify exists to solve</label></div>
-  <div class="check-item"><input type="checkbox" id="cl6" onchange="syncCl('t6','cl6')"><label for="cl6">Attribution — the outcome Journify restores and our core product direction</label></div>
+  <div class="check-item"><input type="checkbox" id="cl1" onchange="saveProgress(this.id,this.checked);syncCl('t1','cl1')"><label for="cl1">Digital advertising — the landscape Journify's customers operate in</label></div>
+  <div class="check-item"><input type="checkbox" id="cl2" onchange="saveProgress(this.id,this.checked);syncCl('t2','cl2')"><label for="cl2">Brand goals — what drives ad spend decisions and how to speak to them</label></div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="saveProgress(this.id,this.checked);syncCl('t3','cl3')"><label for="cl3">Customer acquisition — CAC, LTV, ROAS and why efficiency metrics matter</label></div>
+  <div class="check-item"><input type="checkbox" id="cl4" onchange="saveProgress(this.id,this.checked);syncCl('t4','cl4')"><label for="cl4">Tracking — how it works and why it underpins all measurement</label></div>
+  <div class="check-item"><input type="checkbox" id="cl5" onchange="saveProgress(this.id,this.checked);syncCl('t5','cl5')"><label for="cl5">Signal loss — the primary problem Journify exists to solve</label></div>
+  <div class="check-item"><input type="checkbox" id="cl6" onchange="saveProgress(this.id,this.checked);syncCl('t6','cl6')"><label for="cl6">Attribution — the outcome Journify restores and our core product direction</label></div>
   <div class="prog-top"><span id="prog-label">0 of 6 complete</span><span id="prog-pct">0%</span></div>
   <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
   <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 4.</div>
@@ -223,5 +251,112 @@ function syncCl(tid,clid){
   if(t&&cl)t.checked=cl.checked;updateProg();
 }
 </script>
+
+
+
+
+
+
+
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+
+<script>
+// ── Journify onboarding — progress persistence ───────────────────────────────
+const JF_BASE = 'journify_ob_';
+const JF_CANONICAL = ["t1", "t2", "t3", "t4", "t5", "t6"];
+let _jfUser = '';
+
+function jfGetUser() {
+  if (_jfUser) return _jfUser;
+  _jfUser = sessionStorage.getItem('jf_user_key') || '';
+  if (!_jfUser) {
+    const saved = localStorage.getItem('jf_last_user') || '';
+    const name = prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:', saved);
+    _jfUser = (name || 'user').trim().toLowerCase().replace(/[^a-z0-9]/g, '_') || 'user';
+    sessionStorage.setItem('jf_user_key', _jfUser);
+    localStorage.setItem('jf_last_user', name || '');
+  }
+  return _jfUser;
+}
+
+function jfKey(id) { return JF_BASE + jfGetUser() + '_' + id; }
+
+function saveProgress(id, checked) {
+  // Only save canonical IDs — mirrors are derived on load
+  if (JF_CANONICAL.includes(id)) {
+    try { localStorage.setItem(jfKey(id), checked ? '1' : '0'); } catch(e) {}
+  }
+}
+
+function jfLoadAndSync() {
+  jfGetUser();
+  // 1. Restore canonical checkboxes from localStorage
+  JF_CANONICAL.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    try {
+      const val = localStorage.getItem(jfKey(id));
+      el.checked = val === '1';
+    } catch(e) {}
+  });
+  // 2. Run all sync functions to propagate to mirror checkboxes
+  const allBoxes = document.querySelectorAll('input[type=checkbox]');
+  allBoxes.forEach(box => {
+    if (!JF_CANONICAL.includes(box.id)) {
+      // Mirror: find the canonical it mirrors by position
+      // syncCheck functions handle this — we trigger them by firing change
+    }
+  });
+  // 3. Manually sync known mirrors
+  jfSyncMirrors();
+  // 4. Update progress bars after restore
+  setTimeout(() => {
+    if (typeof updateProgress === 'function') updateProgress();
+    if (typeof updateProg === 'function') updateProg();
+    if (typeof update === 'function') update();
+  }, 30);
+}
+
+function jfSyncMirrors() {
+  // section1: w1→cl1, w2→cl2
+  ['w1','w2'].forEach((id,i) => {
+    const src = document.getElementById(id);
+    const mir = document.getElementById('cl'+(i+1));
+    if (src && mir) mir.checked = src.checked;
+  });
+  // section2: c1-c8 → cl1-cl8
+  for (let i=1;i<=8;i++) {
+    const src = document.getElementById('c'+i);
+    const mir = document.getElementById('cl'+i);
+    if (src && mir) mir.checked = src.checked;
+  }
+  // section3: t1-t6 → cl1-cl6
+  for (let i=1;i<=6;i++) {
+    const src = document.getElementById('t'+i);
+    const mir = document.getElementById('cl'+i);
+    if (src && mir) mir.checked = src.checked;
+  }
+}
+
+function resetProgress() {
+  if (!confirm('Reset all your progress on this section?')) return;
+  JF_CANONICAL.forEach(id => {
+    try { localStorage.removeItem(jfKey(id)); } catch(e) {}
+    const el = document.getElementById(id);
+    if (el) el.checked = false;
+  });
+  document.querySelectorAll('input[type=checkbox]').forEach(box => {
+    box.checked = false;
+    const row = box.closest('.check-row,.todo-row,.check-item');
+    if (row) row.classList.remove('done-row');
+  });
+  if (typeof updateProgress === 'function') updateProgress();
+  if (typeof updateProg === 'function') updateProg();
+  if (typeof update === 'function') update();
+}
+
+window.addEventListener('DOMContentLoaded', jfLoadAndSync);
+</script>
+
 </body>
 </html>

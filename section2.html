@@ -95,10 +95,37 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none}
 .next-btn:hover{background:#3C3489}
 .nav-hint{font-size:12px;color:#888}
+
+
+.reset-btn:hover{background:#f4f4f1;color:#555}
+
+
+
+.jf-logo-mark svg{width:20px;height:20px;fill:#fff}
+
+
+
+
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+
+
+.jf-logo{display:flex;align-items:center;gap:10px;margin-bottom:1.75rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.jf-logo img{height:32px;width:auto;display:block}
+.jf-logo-text{line-height:1}
+.jf-logo-name{font-size:15px;font-weight:700;color:#1a1a1a;letter-spacing:-0.02em}
+.jf-logo-sub{font-size:11px;color:#888;margin-top:2px}
+
+
+.jf-logo-bar{display:flex;align-items:center;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.jf-logo-img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+
 </style>
 </head>
 <body>
 <div class="page">
+
+<div class="jf-logo-bar"><img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" class="jf-logo-img" /></div>
 
 <div class="nav-bar">
   <div class="nav-crumb">Phase 0 — Preboarding &nbsp;/&nbsp; <span>Section 2: Tools & operational setup</span></div>
@@ -162,8 +189,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
   <div class="tool-why">Standard hardware across the company. If you've been on Windows recently, a quick refresh on macOS navigation and shortcuts will save time on Day 1 — particularly Finder, Spotlight search, and window management.</div>
   <div class="focus-pills"><span class="pill">Finder & file management</span><span class="pill">Spotlight & shortcuts</span><span class="pill">Window management</span><span class="pill">Browser setup</span></div>
-  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/@macmost" target="_blank">MacMost — macOS beginner series</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~30 min</span></div>
-  <div class="tool-check"><input type="checkbox" id="c1" onchange="updateProgress()"><label for="c1">MacBook is set up and I'm comfortable with macOS navigation</label></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=3jeeFc2Vo1U" target="_blank">NEW TO MAC? Mac tutorial for beginners (2024)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~25 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c1" onchange="saveProgress(this.id,this.checked);updateProgress()"><label for="c1">MacBook is set up and I'm comfortable with macOS navigation</label></div>
 </div>
 
 <div class="tool-card core">
@@ -173,8 +200,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
   <div class="tool-why">The full collaboration layer at Journify — email, calendar, meetings, and shared docs. Internal collaboration runs primarily through Google Meet; Zoom is used for external and customer-facing calls.</div>
   <div class="focus-pills"><span class="pill">Gmail</span><span class="pill">Google Calendar</span><span class="pill">Google Meet (internal)</span><span class="pill">Shared Drives</span></div>
-  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://workspace.google.com/training/" target="_blank">Google Workspace Learning Center</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~20 min</span></div>
-  <div class="tool-check"><input type="checkbox" id="c2" onchange="updateProgress()"><label for="c2">Google Workspace is active — Gmail, Calendar, Meet, and Drive confirmed</label></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=jOTQR6Hqjoo" target="_blank">Google Workspace tutorial for beginners — full in-depth guide</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~20 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c2" onchange="saveProgress(this.id,this.checked);updateProgress()"><label for="c2">Google Workspace is active — Gmail, Calendar, Meet, and Drive confirmed</label></div>
 </div>
 
 <div class="tool-card core">
@@ -184,8 +211,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
   <div class="tool-why">Primary async communication across the company. Most decisions, updates, and cross-team coordination happen in channels — keep your notifications configured so you're in the loop without being overwhelmed.</div>
   <div class="focus-pills"><span class="pill">Channels & threads</span><span class="pill">Notification management</span><span class="pill">Direct messages</span><span class="pill">Async workflow norms</span></div>
-  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://slack.com/help/articles/360059976673-Slack-video-tutorials" target="_blank">Slack official video tutorials</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~20 min</span></div>
-  <div class="tool-check"><input type="checkbox" id="c3" onchange="updateProgress()"><label for="c3">Slack is set up, workspace joined, notifications configured</label></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=2CGppw8cHyU" target="_blank">How to use Slack — tutorial for beginners (2025)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c3" onchange="saveProgress(this.id,this.checked);updateProgress()"><label for="c3">Slack is set up, workspace joined, notifications configured</label></div>
 </div>
 
 <div class="tool-card core">
@@ -195,8 +222,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
   <div class="tool-why">Journify's central knowledge base — onboarding materials, playbooks, process documentation, and team references all live here. The more fluently you can navigate it, the faster you'll be self-sufficient.</div>
   <div class="focus-pills"><span class="pill">Workspace navigation</span><span class="pill">Search</span><span class="pill">Pages & databases</span></div>
-  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=kOf3QSBV29Y" target="_blank">Notion beginner course (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~25 min</span></div>
-  <div class="tool-check"><input type="checkbox" id="c4" onchange="updateProgress()"><label for="c4">Notion connected to Journify workspace and onboarding pages found</label></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=PFHsAX9Eu7c" target="_blank">Notion beginner course (YouTube)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~25 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c4" onchange="saveProgress(this.id,this.checked);updateProgress()"><label for="c4">Notion connected to Journify workspace and onboarding pages found</label></div>
 </div>
 
 <div class="tool-card core">
@@ -206,8 +233,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
   <div class="tool-why">The primary tool for external and customer-facing meetings — demos, discovery calls, and commercial conversations all run on Zoom. Internal collaboration uses Google Meet. Make sure your setup is polished before any customer call.</div>
   <div class="focus-pills"><span class="pill">Audio & video setup</span><span class="pill">External meeting etiquette</span><span class="pill">Screen sharing</span><span class="pill">Recording basics</span></div>
-  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://learning.zoom.us/learn" target="_blank">Zoom Learning Center</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
-  <div class="tool-check"><input type="checkbox" id="c5" onchange="updateProgress()"><label for="c5">Zoom installed, audio/video tested and ready for external calls</label></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=RhEIpGIazFQ" target="_blank">Zoom tutorial for beginners — step-by-step guide (2024)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c5" onchange="saveProgress(this.id,this.checked);updateProgress()"><label for="c5">Zoom installed, audio/video tested and ready for external calls</label></div>
 </div>
 
 <div class="divider-label" style="margin-top:1.75rem">Awareness tools — understand before Day 1, trained during onboarding</div>
@@ -220,8 +247,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
   <div class="tool-why">Journify's CRM — pipeline management, account tracking, opportunity forecasting, and revenue collaboration. This is where your deals live. Comprehensive training starts in Phase 4; for now, orient yourself to the interface and Attio's positioning in the market.</div>
   <div class="focus-pills"><span class="pill">Pipeline structure</span><span class="pill">Account & opportunity views</span><span class="pill">Attio vs traditional CRMs</span></div>
-  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/@attiohq" target="_blank">Attio YouTube — product overview</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
-  <div class="tool-check"><input type="checkbox" id="c6" onchange="updateProgress()"><label for="c6">I understand Attio's role as Journify's CRM and have reviewed the interface</label></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=Lmek2fUDDhw" target="_blank">Attio CRM: getting started & beginners tutorial (2026)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~15 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c6" onchange="saveProgress(this.id,this.checked);updateProgress()"><label for="c6">I understand Attio's role as Journify's CRM and have reviewed the interface</label></div>
 </div>
 
 <div class="tool-card aware">
@@ -231,8 +258,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
   <div class="tool-why">Conversation intelligence — call recordings, AI summaries, and coaching clips shared across the revenue team. You'll use this to review your own calls and study strong examples from the team. Active from Phase 5 onward.</div>
   <div class="focus-pills"><span class="pill">Call recording & summaries</span><span class="pill">Coaching workflow</span><span class="pill">Team sharing</span></div>
-  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://grain.com/product-tour" target="_blank">Grain product tour</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~10 min</span></div>
-  <div class="tool-check"><input type="checkbox" id="c7" onchange="updateProgress()"><label for="c7">I understand how Grain fits into the sales and coaching workflow</label></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=5srQP4lSLQs" target="_blank">Getting started with Grain</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~10 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c7" onchange="saveProgress(this.id,this.checked);updateProgress()"><label for="c7">I understand how Grain fits into the sales and coaching workflow</label></div>
 </div>
 
 <div class="tool-card aware">
@@ -242,21 +269,21 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   </div>
   <div class="tool-why">Proposal and commercial document platform — interactive, trackable, and built for modern sales. You'll build and send proposals through Qwilr once you're running your own deals from Phase 6.</div>
   <div class="focus-pills"><span class="pill">Proposal format & structure</span><span class="pill">Commercial workflow</span><span class="pill">Engagement tracking</span></div>
-  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://help.qwilr.com/hc/en-us/categories/360000108648-Getting-Started" target="_blank">Qwilr getting started guide</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~10 min</span></div>
-  <div class="tool-check"><input type="checkbox" id="c8" onchange="updateProgress()"><label for="c8">I understand Qwilr's role in the commercial process and the proposal format</label></div>
+  <div class="resource-row"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://www.youtube.com/watch?v=J96DRKdz7ME" target="_blank">Introduction to Qwilr (2024)</a><span class="res-time"><i class="ti ti-clock" style="font-size:11px"></i> ~5 min</span></div>
+  <div class="tool-check"><input type="checkbox" id="c8" onchange="saveProgress(this.id,this.checked);updateProgress()"><label for="c8">I understand Qwilr's role in the commercial process and the proposal format</label></div>
 </div>
 
 <div class="section-checklist">
   <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 2 — completion checklist</div>
   <div class="cl-sub">Core tools confirmed and awareness tools reviewed. You're ready to move on when all 8 are checked.</div>
-  <div class="check-item"><input type="checkbox" id="cl1" onchange="syncCheck('c1','cl1')"><label for="cl1">macOS — set up, comfortable with navigation</label></div>
-  <div class="check-item"><input type="checkbox" id="cl2" onchange="syncCheck('c2','cl2')"><label for="cl2">Google Workspace — Gmail, Calendar, Meet, and Drive confirmed</label></div>
-  <div class="check-item"><input type="checkbox" id="cl3" onchange="syncCheck('c3','cl3')"><label for="cl3">Slack — workspace joined, notifications configured</label></div>
-  <div class="check-item"><input type="checkbox" id="cl4" onchange="syncCheck('c4','cl4')"><label for="cl4">Notion — connected to workspace, onboarding pages accessible</label></div>
-  <div class="check-item"><input type="checkbox" id="cl5" onchange="syncCheck('c5','cl5')"><label for="cl5">Zoom — installed, tested, ready for external calls</label></div>
-  <div class="check-item"><input type="checkbox" id="cl6" onchange="syncCheck('c6','cl6')"><label for="cl6">Attio CRM — interface reviewed, role in revenue workflow understood</label></div>
-  <div class="check-item"><input type="checkbox" id="cl7" onchange="syncCheck('c7','cl7')"><label for="cl7">Grain — role in sales and coaching workflow understood</label></div>
-  <div class="check-item"><input type="checkbox" id="cl8" onchange="syncCheck('c8','cl8')"><label for="cl8">Qwilr — proposal format and commercial workflow understood</label></div>
+  <div class="check-item"><input type="checkbox" id="cl1" onchange="saveProgress(this.id,this.checked);syncCheck('c1','cl1')"><label for="cl1">macOS — set up, comfortable with navigation</label></div>
+  <div class="check-item"><input type="checkbox" id="cl2" onchange="saveProgress(this.id,this.checked);syncCheck('c2','cl2')"><label for="cl2">Google Workspace — Gmail, Calendar, Meet, and Drive confirmed</label></div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="saveProgress(this.id,this.checked);syncCheck('c3','cl3')"><label for="cl3">Slack — workspace joined, notifications configured</label></div>
+  <div class="check-item"><input type="checkbox" id="cl4" onchange="saveProgress(this.id,this.checked);syncCheck('c4','cl4')"><label for="cl4">Notion — connected to workspace, onboarding pages accessible</label></div>
+  <div class="check-item"><input type="checkbox" id="cl5" onchange="saveProgress(this.id,this.checked);syncCheck('c5','cl5')"><label for="cl5">Zoom — installed, tested, ready for external calls</label></div>
+  <div class="check-item"><input type="checkbox" id="cl6" onchange="saveProgress(this.id,this.checked);syncCheck('c6','cl6')"><label for="cl6">Attio CRM — interface reviewed, role in revenue workflow understood</label></div>
+  <div class="check-item"><input type="checkbox" id="cl7" onchange="saveProgress(this.id,this.checked);syncCheck('c7','cl7')"><label for="cl7">Grain — role in sales and coaching workflow understood</label></div>
+  <div class="check-item"><input type="checkbox" id="cl8" onchange="saveProgress(this.id,this.checked);syncCheck('c8','cl8')"><label for="cl8">Qwilr — proposal format and commercial workflow understood</label></div>
   <div class="prog-top"><span id="prog-label">0 of 8 complete</span><span id="prog-pct">0%</span></div>
   <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
   <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 3.</div>
@@ -285,5 +312,112 @@ function syncCheck(toolId,clId){
   if(t&&cl)t.checked=cl.checked;updateProgress();
 }
 </script>
+
+
+
+
+
+
+
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+
+<script>
+// ── Journify onboarding — progress persistence ───────────────────────────────
+const JF_BASE = 'journify_ob_';
+const JF_CANONICAL = ["c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8"];
+let _jfUser = '';
+
+function jfGetUser() {
+  if (_jfUser) return _jfUser;
+  _jfUser = sessionStorage.getItem('jf_user_key') || '';
+  if (!_jfUser) {
+    const saved = localStorage.getItem('jf_last_user') || '';
+    const name = prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:', saved);
+    _jfUser = (name || 'user').trim().toLowerCase().replace(/[^a-z0-9]/g, '_') || 'user';
+    sessionStorage.setItem('jf_user_key', _jfUser);
+    localStorage.setItem('jf_last_user', name || '');
+  }
+  return _jfUser;
+}
+
+function jfKey(id) { return JF_BASE + jfGetUser() + '_' + id; }
+
+function saveProgress(id, checked) {
+  // Only save canonical IDs — mirrors are derived on load
+  if (JF_CANONICAL.includes(id)) {
+    try { localStorage.setItem(jfKey(id), checked ? '1' : '0'); } catch(e) {}
+  }
+}
+
+function jfLoadAndSync() {
+  jfGetUser();
+  // 1. Restore canonical checkboxes from localStorage
+  JF_CANONICAL.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    try {
+      const val = localStorage.getItem(jfKey(id));
+      el.checked = val === '1';
+    } catch(e) {}
+  });
+  // 2. Run all sync functions to propagate to mirror checkboxes
+  const allBoxes = document.querySelectorAll('input[type=checkbox]');
+  allBoxes.forEach(box => {
+    if (!JF_CANONICAL.includes(box.id)) {
+      // Mirror: find the canonical it mirrors by position
+      // syncCheck functions handle this — we trigger them by firing change
+    }
+  });
+  // 3. Manually sync known mirrors
+  jfSyncMirrors();
+  // 4. Update progress bars after restore
+  setTimeout(() => {
+    if (typeof updateProgress === 'function') updateProgress();
+    if (typeof updateProg === 'function') updateProg();
+    if (typeof update === 'function') update();
+  }, 30);
+}
+
+function jfSyncMirrors() {
+  // section1: w1→cl1, w2→cl2
+  ['w1','w2'].forEach((id,i) => {
+    const src = document.getElementById(id);
+    const mir = document.getElementById('cl'+(i+1));
+    if (src && mir) mir.checked = src.checked;
+  });
+  // section2: c1-c8 → cl1-cl8
+  for (let i=1;i<=8;i++) {
+    const src = document.getElementById('c'+i);
+    const mir = document.getElementById('cl'+i);
+    if (src && mir) mir.checked = src.checked;
+  }
+  // section3: t1-t6 → cl1-cl6
+  for (let i=1;i<=6;i++) {
+    const src = document.getElementById('t'+i);
+    const mir = document.getElementById('cl'+i);
+    if (src && mir) mir.checked = src.checked;
+  }
+}
+
+function resetProgress() {
+  if (!confirm('Reset all your progress on this section?')) return;
+  JF_CANONICAL.forEach(id => {
+    try { localStorage.removeItem(jfKey(id)); } catch(e) {}
+    const el = document.getElementById(id);
+    if (el) el.checked = false;
+  });
+  document.querySelectorAll('input[type=checkbox]').forEach(box => {
+    box.checked = false;
+    const row = box.closest('.check-row,.todo-row,.check-item');
+    if (row) row.classList.remove('done-row');
+  });
+  if (typeof updateProgress === 'function') updateProgress();
+  if (typeof updateProg === 'function') updateProg();
+  if (typeof update === 'function') update();
+}
+
+window.addEventListener('DOMContentLoaded', jfLoadAndSync);
+</script>
+
 </body>
 </html>

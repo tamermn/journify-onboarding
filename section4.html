@@ -69,10 +69,37 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .phase1-btn.ready{opacity:1;pointer-events:auto}
 .phase1-btn.ready:hover{background:#3C3489}
 .nav-hint{font-size:12px;color:#888;text-align:center}
+
+
+.reset-btn:hover{background:#f4f4f1;color:#555}
+
+
+
+.jf-logo-mark svg{width:20px;height:20px;fill:#fff}
+
+
+
+
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+
+
+.jf-logo{display:flex;align-items:center;gap:10px;margin-bottom:1.75rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.jf-logo img{height:32px;width:auto;display:block}
+.jf-logo-text{line-height:1}
+.jf-logo-name{font-size:15px;font-weight:700;color:#1a1a1a;letter-spacing:-0.02em}
+.jf-logo-sub{font-size:11px;color:#888;margin-top:2px}
+
+
+.jf-logo-bar{display:flex;align-items:center;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.jf-logo-img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+
 </style>
 </head>
 <body>
 <div class="page">
+<div class="jf-logo-bar"><img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" class="jf-logo-img" /></div>
+
 <div class="nav-bar">
   <div class="nav-crumb">Phase 0 — Preboarding &nbsp;/&nbsp; <span>Section 4: Pre-Day 1 readiness checklist</span></div>
   <div class="nav-actions">
@@ -103,55 +130,55 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="cat-block">
   <div class="cat-header"><div class="cat-icon purple"><i class="ti ti-key"></i></div><div><div class="cat-name">Accounts & access</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog purple" id="pb-accounts"></div></div><span class="cat-count" id="ct-accounts">0 / 4</span></div></div>
   <div class="check-card">
-    <div class="check-row"><input type="checkbox" id="a1" onchange="update()"><label for="a1"><div class="check-label">Company email is set up and accessible</div><div class="check-note">Log into your @journify address and send a test email to confirm it's working</div></label></div>
-    <div class="check-row"><input type="checkbox" id="a2" onchange="update()"><label for="a2"><div class="check-label">Google Workspace account is active</div><div class="check-note">Confirm access to Gmail, Calendar, Drive, and Meet under your company account</div></label></div>
-    <div class="check-row"><input type="checkbox" id="a3" onchange="update()"><label for="a3"><div class="check-label">Slack account is created and you've joined the workspace</div><div class="check-note">Set your display name, photo, and notification preferences before Day 1</div></label></div>
-    <div class="check-row"><input type="checkbox" id="a4" onchange="update()"><label for="a4"><div class="check-label">Notion account is connected to the Journify workspace</div><div class="check-note">Confirm you can access the onboarding space — flag to your manager if access is missing</div></label></div>
+    <div class="check-row"><input type="checkbox" id="a1" onchange="saveProgress(this.id,this.checked);update()"><label for="a1"><div class="check-label">Company email is set up and accessible</div><div class="check-note">Log into your @journify address and send a test email to confirm it's working</div></label></div>
+    <div class="check-row"><input type="checkbox" id="a2" onchange="saveProgress(this.id,this.checked);update()"><label for="a2"><div class="check-label">Google Workspace account is active</div><div class="check-note">Confirm access to Gmail, Calendar, Drive, and Meet under your company account</div></label></div>
+    <div class="check-row"><input type="checkbox" id="a3" onchange="saveProgress(this.id,this.checked);update()"><label for="a3"><div class="check-label">Slack account is created and you've joined the workspace</div><div class="check-note">Set your display name, photo, and notification preferences before Day 1</div></label></div>
+    <div class="check-row"><input type="checkbox" id="a4" onchange="saveProgress(this.id,this.checked);update()"><label for="a4"><div class="check-label">Notion account is connected to the Journify workspace</div><div class="check-note">Confirm you can access the onboarding space — flag to your manager if access is missing</div></label></div>
   </div>
 </div>
 <div class="cat-block">
   <div class="cat-header"><div class="cat-icon blue"><i class="ti ti-device-laptop"></i></div><div><div class="cat-name">Device setup</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog blue" id="pb-device"></div></div><span class="cat-count" id="ct-device">0 / 4</span></div></div>
   <div class="check-card">
-    <div class="check-row"><input type="checkbox" id="d1" onchange="update()"><label for="d1"><div class="check-label">MacBook is set up and connected to company systems</div><div class="check-note">Run any pending macOS updates — confirm with your manager if IT setup is managed centrally</div></label></div>
-    <div class="check-row"><input type="checkbox" id="d2" onchange="update()"><label for="d2"><div class="check-label">Browser is set up with core bookmarks</div><div class="check-note">Bookmark Notion, Attio, Google Workspace, and Slack at minimum</div></label></div>
-    <div class="check-row"><input type="checkbox" id="d3" onchange="update()"><label for="d3"><div class="check-label">Zoom is installed and audio/video are tested</div><div class="check-note">Join a test meeting to confirm mic, camera, and speaker are working</div></label></div>
-    <div class="check-row"><input type="checkbox" id="d4" onchange="update()"><label for="d4"><div class="check-label">You're comfortable with basic macOS navigation</div><div class="check-note">Finder, Spotlight, shortcuts — covered in Section 2 if you need a refresh</div></label></div>
+    <div class="check-row"><input type="checkbox" id="d1" onchange="saveProgress(this.id,this.checked);update()"><label for="d1"><div class="check-label">MacBook is set up and connected to company systems</div><div class="check-note">Run any pending macOS updates — confirm with your manager if IT setup is managed centrally</div></label></div>
+    <div class="check-row"><input type="checkbox" id="d2" onchange="saveProgress(this.id,this.checked);update()"><label for="d2"><div class="check-label">Browser is set up with core bookmarks</div><div class="check-note">Bookmark Notion, Attio, Google Workspace, and Slack at minimum</div></label></div>
+    <div class="check-row"><input type="checkbox" id="d3" onchange="saveProgress(this.id,this.checked);update()"><label for="d3"><div class="check-label">Zoom is installed and audio/video are tested</div><div class="check-note">Join a test meeting to confirm mic, camera, and speaker are working</div></label></div>
+    <div class="check-row"><input type="checkbox" id="d4" onchange="saveProgress(this.id,this.checked);update()"><label for="d4"><div class="check-label">You're comfortable with basic macOS navigation</div><div class="check-note">Finder, Spotlight, shortcuts — covered in Section 2 if you need a refresh</div></label></div>
   </div>
 </div>
 <div class="cat-block">
   <div class="cat-header"><div class="cat-icon teal"><i class="ti ti-apps"></i></div><div><div class="cat-name">Tool access confirmation</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog teal" id="pb-tools"></div></div><span class="cat-count" id="ct-tools">0 / 4</span></div></div>
   <div class="check-card">
-    <div class="check-row"><input type="checkbox" id="to1" onchange="update()"><label for="to1"><div class="check-label">You can access Attio and see the main CRM workspace</div><div class="check-note">Confirm login is working — deep training starts in Phase 4</div></label></div>
-    <div class="check-row"><input type="checkbox" id="to2" onchange="update()"><label for="to2"><div class="check-label">You understand Grain's role in the sales and coaching workflow</div><div class="check-note">Access may be provisioned during onboarding — review the product tour in Section 2</div></label></div>
-    <div class="check-row"><input type="checkbox" id="to3" onchange="update()"><label for="to3"><div class="check-label">You understand Qwilr's role in the commercial process</div><div class="check-note">Access may be provisioned during onboarding — review the getting started guide in Section 2</div></label></div>
-    <div class="check-row"><input type="checkbox" id="to4" onchange="update()"><label for="to4"><div class="check-label">All confirmed tool logins are saved securely</div><div class="check-note">Use a password manager — flag any access issues to your manager before Day 1</div></label></div>
+    <div class="check-row"><input type="checkbox" id="to1" onchange="saveProgress(this.id,this.checked);update()"><label for="to1"><div class="check-label">You can access Attio and see the main CRM workspace</div><div class="check-note">Confirm login is working — deep training starts in Phase 4</div></label></div>
+    <div class="check-row"><input type="checkbox" id="to2" onchange="saveProgress(this.id,this.checked);update()"><label for="to2"><div class="check-label">You understand Grain's role in the sales and coaching workflow</div><div class="check-note">Access may be provisioned during onboarding — review the product tour in Section 2</div></label></div>
+    <div class="check-row"><input type="checkbox" id="to3" onchange="saveProgress(this.id,this.checked);update()"><label for="to3"><div class="check-label">You understand Qwilr's role in the commercial process</div><div class="check-note">Access may be provisioned during onboarding — review the getting started guide in Section 2</div></label></div>
+    <div class="check-row"><input type="checkbox" id="to4" onchange="saveProgress(this.id,this.checked);update()"><label for="to4"><div class="check-label">All confirmed tool logins are saved securely</div><div class="check-note">Use a password manager — flag any access issues to your manager before Day 1</div></label></div>
   </div>
 </div>
 <div class="cat-block">
   <div class="cat-header"><div class="cat-icon amber"><i class="ti ti-calendar"></i></div><div><div class="cat-name">Calendar readiness</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog amber" id="pb-calendar"></div></div><span class="cat-count" id="ct-calendar">0 / 4</span></div></div>
   <div class="check-card">
-    <div class="check-row"><input type="checkbox" id="ca1" onchange="update()"><label for="ca1"><div class="check-label">Google Calendar is set up and your timezone is correct</div><div class="check-note">Check settings → general → timezone before any meetings are scheduled</div></label></div>
-    <div class="check-row"><input type="checkbox" id="ca2" onchange="update()"><label for="ca2"><div class="check-label">Week 1 onboarding sessions are confirmed in your calendar</div><div class="check-note">If invites haven't arrived, reach out to your manager before Day 1</div></label></div>
-    <div class="check-row"><input type="checkbox" id="ca3" onchange="update()"><label for="ca3"><div class="check-label">You have visibility of your manager's calendar</div><div class="check-note">Confirm this with your manager directly — sharing needs to be set up on their end</div></label></div>
-    <div class="check-row"><input type="checkbox" id="ca4" onchange="update()"><label for="ca4"><div class="check-label">You know where and when your Day 1 sessions take place</div><div class="check-note">Confirm location or remote links with your manager — don't leave this unresolved the night before</div></label></div>
+    <div class="check-row"><input type="checkbox" id="ca1" onchange="saveProgress(this.id,this.checked);update()"><label for="ca1"><div class="check-label">Google Calendar is set up and your timezone is correct</div><div class="check-note">Check settings → general → timezone before any meetings are scheduled</div></label></div>
+    <div class="check-row"><input type="checkbox" id="ca2" onchange="saveProgress(this.id,this.checked);update()"><label for="ca2"><div class="check-label">Week 1 onboarding sessions are confirmed in your calendar</div><div class="check-note">If invites haven't arrived, reach out to your manager before Day 1</div></label></div>
+    <div class="check-row"><input type="checkbox" id="ca3" onchange="saveProgress(this.id,this.checked);update()"><label for="ca3"><div class="check-label">You have visibility of your manager's calendar</div><div class="check-note">Confirm this with your manager directly — sharing needs to be set up on their end</div></label></div>
+    <div class="check-row"><input type="checkbox" id="ca4" onchange="saveProgress(this.id,this.checked);update()"><label for="ca4"><div class="check-label">You know where and when your Day 1 sessions take place</div><div class="check-note">Confirm location or remote links with your manager — don't leave this unresolved the night before</div></label></div>
   </div>
 </div>
 <div class="cat-block">
   <div class="cat-header"><div class="cat-icon coral"><i class="ti ti-books"></i></div><div><div class="cat-name">Intro resources reviewed</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog coral" id="pb-resources"></div></div><span class="cat-count" id="ct-resources">0 / 4</span></div></div>
   <div class="check-card">
-    <div class="check-row"><input type="checkbox" id="r1" onchange="update()"><label for="r1"><div class="check-label">Section 1 — welcome and onboarding overview is complete</div><div class="check-note">You understand the roadmap, first week expectations, and key contacts</div></label></div>
-    <div class="check-row"><input type="checkbox" id="r2" onchange="update()"><label for="r2"><div class="check-label">Section 2 — tools and operational setup is complete</div><div class="check-note">Core tools are live and you've reviewed the awareness tools</div></label></div>
-    <div class="check-row"><input type="checkbox" id="r3" onchange="update()"><label for="r3"><div class="check-label">Section 3 — digital marketing and AdTech intro is complete</div><div class="check-note">All 6 topics covered — signal loss and attribution in particular</div></label></div>
-    <div class="check-row"><input type="checkbox" id="r4" onchange="update()"><label for="r4"><div class="check-label">You have your manager's contact details and know how to reach them</div><div class="check-note">Your manager is your single point of contact for anything unresolved before Day 1</div></label></div>
+    <div class="check-row"><input type="checkbox" id="r1" onchange="saveProgress(this.id,this.checked);update()"><label for="r1"><div class="check-label">Section 1 — welcome and onboarding overview is complete</div><div class="check-note">You understand the roadmap, first week expectations, and key contacts</div></label></div>
+    <div class="check-row"><input type="checkbox" id="r2" onchange="saveProgress(this.id,this.checked);update()"><label for="r2"><div class="check-label">Section 2 — tools and operational setup is complete</div><div class="check-note">Core tools are live and you've reviewed the awareness tools</div></label></div>
+    <div class="check-row"><input type="checkbox" id="r3" onchange="saveProgress(this.id,this.checked);update()"><label for="r3"><div class="check-label">Section 3 — digital marketing and AdTech intro is complete</div><div class="check-note">All 6 topics covered — signal loss and attribution in particular</div></label></div>
+    <div class="check-row"><input type="checkbox" id="r4" onchange="saveProgress(this.id,this.checked);update()"><label for="r4"><div class="check-label">You have your manager's contact details and know how to reach them</div><div class="check-note">Your manager is your single point of contact for anything unresolved before Day 1</div></label></div>
   </div>
 </div>
 <div class="cat-block">
   <div class="cat-header"><div class="cat-icon gray"><i class="ti ti-building"></i></div><div><div class="cat-name">Workspace readiness</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog gray" id="pb-workspace"></div></div><span class="cat-count" id="ct-workspace">0 / 4</span></div></div>
   <div class="check-card">
-    <div class="check-row"><input type="checkbox" id="w1" onchange="update()"><label for="w1"><div class="check-label">You know where you're working on Day 1</div><div class="check-note">Confirm office location, or remote meeting links — check with your manager if unsure</div></label></div>
-    <div class="check-row"><input type="checkbox" id="w2" onchange="update()"><label for="w2"><div class="check-label">Your physical or remote workspace is ready for a full working day</div><div class="check-note">Desk, monitor, headset, lighting — whatever you need to be fully productive from the first hour</div></label></div>
-    <div class="check-row"><input type="checkbox" id="w3" onchange="update()"><label for="w3"><div class="check-label">You have a reliable internet connection confirmed</div><div class="check-note">Test speed and stability in advance if working remotely — not on the morning</div></label></div>
-    <div class="check-row"><input type="checkbox" id="w4" onchange="update()"><label for="w4"><div class="check-label">You feel prepared and ready to start</div><div class="check-note">If anything still feels unresolved, reach out to your manager now — that's exactly what they're there for</div></label></div>
+    <div class="check-row"><input type="checkbox" id="w1" onchange="saveProgress(this.id,this.checked);update()"><label for="w1"><div class="check-label">You know where you're working on Day 1</div><div class="check-note">Confirm office location, or remote meeting links — check with your manager if unsure</div></label></div>
+    <div class="check-row"><input type="checkbox" id="w2" onchange="saveProgress(this.id,this.checked);update()"><label for="w2"><div class="check-label">Your physical or remote workspace is ready for a full working day</div><div class="check-note">Desk, monitor, headset, lighting — whatever you need to be fully productive from the first hour</div></label></div>
+    <div class="check-row"><input type="checkbox" id="w3" onchange="saveProgress(this.id,this.checked);update()"><label for="w3"><div class="check-label">You have a reliable internet connection confirmed</div><div class="check-note">Test speed and stability in advance if working remotely — not on the morning</div></label></div>
+    <div class="check-row"><input type="checkbox" id="w4" onchange="saveProgress(this.id,this.checked);update()"><label for="w4"><div class="check-label">You feel prepared and ready to start</div><div class="check-note">If anything still feels unresolved, reach out to your manager now — that's exactly what they're there for</div></label></div>
   </div>
 </div>
 <div class="phase-complete" id="phase-complete">
@@ -167,7 +194,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div class="nav-bottom">
   <a href="section3.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Section 3</a>
   <span class="nav-hint" id="nav-hint">Phase 0 · Section 4 of 4</span>
-  <a href="#" class="phase1-btn" id="phase1-btn">Start Phase 1 <i class="ti ti-arrow-right"></i></a>
+  <a href="#" class="phase1-btn" id="phase1-btn">Complete Phase 0 <i class="ti ti-arrow-right"></i></a>
 </div>
 </div>
 <script>
@@ -193,5 +220,112 @@ function update(){
   document.getElementById('nav-hint').textContent=done?'Phase 0 complete — ready for Phase 1':'Phase 0 · Section 4 of 4';
 }
 </script>
+
+
+
+
+
+
+
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+
+<script>
+// ── Journify onboarding — progress persistence ───────────────────────────────
+const JF_BASE = 'journify_ob_';
+const JF_CANONICAL = ["a1", "a2", "a3", "a4", "d1", "d2", "d3", "d4", "to1", "to2", "to3", "to4", "ca1", "ca2", "ca3", "ca4", "r1", "r2", "r3", "r4", "w1", "w2", "w3", "w4"];
+let _jfUser = '';
+
+function jfGetUser() {
+  if (_jfUser) return _jfUser;
+  _jfUser = sessionStorage.getItem('jf_user_key') || '';
+  if (!_jfUser) {
+    const saved = localStorage.getItem('jf_last_user') || '';
+    const name = prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:', saved);
+    _jfUser = (name || 'user').trim().toLowerCase().replace(/[^a-z0-9]/g, '_') || 'user';
+    sessionStorage.setItem('jf_user_key', _jfUser);
+    localStorage.setItem('jf_last_user', name || '');
+  }
+  return _jfUser;
+}
+
+function jfKey(id) { return JF_BASE + jfGetUser() + '_' + id; }
+
+function saveProgress(id, checked) {
+  // Only save canonical IDs — mirrors are derived on load
+  if (JF_CANONICAL.includes(id)) {
+    try { localStorage.setItem(jfKey(id), checked ? '1' : '0'); } catch(e) {}
+  }
+}
+
+function jfLoadAndSync() {
+  jfGetUser();
+  // 1. Restore canonical checkboxes from localStorage
+  JF_CANONICAL.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    try {
+      const val = localStorage.getItem(jfKey(id));
+      el.checked = val === '1';
+    } catch(e) {}
+  });
+  // 2. Run all sync functions to propagate to mirror checkboxes
+  const allBoxes = document.querySelectorAll('input[type=checkbox]');
+  allBoxes.forEach(box => {
+    if (!JF_CANONICAL.includes(box.id)) {
+      // Mirror: find the canonical it mirrors by position
+      // syncCheck functions handle this — we trigger them by firing change
+    }
+  });
+  // 3. Manually sync known mirrors
+  jfSyncMirrors();
+  // 4. Update progress bars after restore
+  setTimeout(() => {
+    if (typeof updateProgress === 'function') updateProgress();
+    if (typeof updateProg === 'function') updateProg();
+    if (typeof update === 'function') update();
+  }, 30);
+}
+
+function jfSyncMirrors() {
+  // section1: w1→cl1, w2→cl2
+  ['w1','w2'].forEach((id,i) => {
+    const src = document.getElementById(id);
+    const mir = document.getElementById('cl'+(i+1));
+    if (src && mir) mir.checked = src.checked;
+  });
+  // section2: c1-c8 → cl1-cl8
+  for (let i=1;i<=8;i++) {
+    const src = document.getElementById('c'+i);
+    const mir = document.getElementById('cl'+i);
+    if (src && mir) mir.checked = src.checked;
+  }
+  // section3: t1-t6 → cl1-cl6
+  for (let i=1;i<=6;i++) {
+    const src = document.getElementById('t'+i);
+    const mir = document.getElementById('cl'+i);
+    if (src && mir) mir.checked = src.checked;
+  }
+}
+
+function resetProgress() {
+  if (!confirm('Reset all your progress on this section?')) return;
+  JF_CANONICAL.forEach(id => {
+    try { localStorage.removeItem(jfKey(id)); } catch(e) {}
+    const el = document.getElementById(id);
+    if (el) el.checked = false;
+  });
+  document.querySelectorAll('input[type=checkbox]').forEach(box => {
+    box.checked = false;
+    const row = box.closest('.check-row,.todo-row,.check-item');
+    if (row) row.classList.remove('done-row');
+  });
+  if (typeof updateProgress === 'function') updateProgress();
+  if (typeof updateProg === 'function') updateProg();
+  if (typeof update === 'function') update();
+}
+
+window.addEventListener('DOMContentLoaded', jfLoadAndSync);
+</script>
+
 </body>
 </html>
