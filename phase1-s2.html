@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 1 · Section 2 — Explore Journify | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.logo-bar{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.logo-bar img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+.logo-sub{font-size:12px;color:#888}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 10px;border-radius:7px;background:#E1F5EE;color:#085041;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:700;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.resource-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1rem 1.125rem;margin-bottom:0.875rem}
+.resource-card.r-teal{border-left:3px solid #0F6E56;border-radius:0 10px 10px 0}
+.resource-card.r-purple{border-left:3px solid #534AB7;border-radius:0 10px 10px 0}
+.resource-card.r-amber{border-left:3px solid #854F0B;border-radius:0 10px 10px 0}
+.res-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:0.65rem}
+.res-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:19px}
+.res-icon.teal{background:#E1F5EE;color:#0F6E56}
+.res-icon.purple{background:#EEEDFE;color:#534AB7}
+.res-icon.amber{background:#FAEEDA;color:#854F0B}
+.res-title{font-size:15px;font-weight:600;margin-bottom:2px}
+.res-duration{font-size:11px;color:#888}
+.res-body{font-size:13px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.res-link{display:flex;align-items:center;gap:7px;padding:0.55rem 0.75rem;background:#f8f8f7;border-radius:8px;font-size:13px;margin-bottom:0.75rem}
+.res-link a{color:#185FA5;text-decoration:none;font-weight:500}
+.res-link a:hover{text-decoration:underline}
+.task-row{display:flex;align-items:flex-start;gap:12px;padding:0.65rem 0 0;transition:background 0.15s}
+.task-row.done-row .task-label{color:#aaa;text-decoration:line-through}
+.task-row input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.task-row label{cursor:pointer;flex:1}
+.task-label{font-size:14px;line-height:1.4;color:#1a1a1a}
+.divider-label{font-size:13px;font-weight:600;color:#888;display:flex;align-items:center;gap:8px;margin:1rem 0 0.75rem}
+.divider-label::after{content:'';flex:1;height:1px;background:#e8e8e4}
+.glossary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0.75rem;margin-bottom:1rem}
+.gloss-card{background:#f8f8f7;border:1px solid #e8e8e4;border-radius:10px;padding:0.875rem 1rem}
+.gloss-term{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:3px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.gloss-badge{font-size:10px;font-weight:600;padding:2px 6px;border-radius:20px}
+.gloss-badge.problem{background:#FAECE7;color:#712B13}
+.gloss-badge.product{background:#EEEDFE;color:#3C3489}
+.gloss-badge.metric{background:#E1F5EE;color:#085041}
+.gloss-badge.ecosystem{background:#FAEEDA;color:#633806}
+.gloss-def{font-size:12px;color:#555;line-height:1.5;margin-bottom:0.5rem}
+.gloss-matters{font-size:11px;padding:4px 8px;border-radius:7px;line-height:1.45}
+.gloss-matters.problem{background:#FAECE7;color:#712B13}
+.gloss-matters.product{background:#EEEDFE;color:#3C3489}
+.gloss-matters.metric{background:#E1F5EE;color:#085041}
+.gloss-matters.ecosystem{background:#FAEEDA;color:#633806}
+.three-sentences{background:#E6F1FB;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1rem}
+.ts-label{font-size:11px;font-weight:600;color:#185FA5;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.5rem;display:flex;align-items:center;gap:6px}
+.ts-text{font-size:14px;color:#0C447C;line-height:1.65;font-style:italic}
+.section-checklist{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.25rem;margin-top:1.5rem}
+.cl-title{font-size:16px;font-weight:600;margin-bottom:0.3rem;display:flex;align-items:center;gap:8px}
+.cl-sub{font-size:13px;color:#888;margin-bottom:1rem}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0;border-bottom:1px solid #f0f0ec}
+.check-item:last-child{border-bottom:none}
+.check-item label{font-size:14px;line-height:1.5;cursor:pointer;color:#1a1a1a}
+.check-item input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#888;margin:1rem 0 5px}
+.prog-bg{height:5px;background:#f0f0ec;border-radius:4px;overflow:hidden}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.done-note{font-size:13px;color:#085041;background:#E1F5EE;padding:0.65rem 0.9rem;border-radius:8px;margin-top:0.85rem;display:none;align-items:center;gap:7px}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#EEEDFE;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.next-btn:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888}
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="logo-bar">
+  <img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" />
+  <span class="logo-sub">New joiner onboarding</span>
+</div>
+
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 1 &nbsp;/&nbsp; <span>Section 2: Explore Journify</span></div>
+  <div class="nav-actions">
+    <a href="index.html" class="nav-btn"><i class="ti ti-home"></i> Home</a>
+    <a href="phase1-s1.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Section 1</a>
+    <a href="phase1-s3.html" class="nav-btn">Section 3 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+
+<div class="phase-tag"><i class="ti ti-eye"></i> Phase 1 · Section 2 · Day 3–4</div>
+<div class="section-title">Explore Journify</div>
+<div class="section-sub">No tasks. No deliverables. Just explore. The goal is to start absorbing how Journify thinks, talks, and works before you go deeper in Week 2.</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-clock"></i> Day 3–4</span>
+  <span class="meta-pill"><i class="ti ti-books"></i> 3 resources</span>
+</div>
+
+<div class="resource-card r-teal">
+  <div class="res-top">
+    <div class="res-icon teal"><i class="ti ti-world"></i></div>
+    <div><div class="res-title">Start with journify.io</div><div class="res-duration">~1 hour</div></div>
+  </div>
+  <div class="res-body">Spend an hour on the website. Read the homepage, product page, and case studies. These are real results from real customers in your market. The website is also how the world sees Journify — it matters regardless of your role.</div>
+  <div class="res-link"><i class="ti ti-external-link" style="font-size:14px;color:#888"></i><a href="https://journify.io" target="_blank">journify.io — homepage, product, and case studies</a></div>
+  <div class="task-row"><input type="checkbox" id="t10" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t10"><div class="task-label">Website and case studies explored</div></label></div>
+</div>
+
+<div class="resource-card r-purple">
+  <div class="res-top">
+    <div class="res-icon purple"><i class="ti ti-book"></i></div>
+    <div><div class="res-title">Read: How to speak Journify</div><div class="res-duration">~30 min · Read before your Day 7 check-in</div></div>
+  </div>
+  <div class="res-body">The fastest way to stop feeling lost in conversations. Every term you'll hear in your first weeks — in plain language, with context for why it matters to a customer. Come back to this page whenever a term comes up in a call that you're unsure about.</div>
+
+  <div class="divider-label">The problem</div>
+  <div class="glossary-grid">
+    <div class="gloss-card">
+      <div class="gloss-term">Signal loss <span class="gloss-badge problem">Problem</span></div>
+      <div class="gloss-def">When a purchase happens but the ad platform never finds out. Affecting most brands at 30–40% of purchases — not a rare edge case.</div>
+      <div class="gloss-matters problem">Customer pain: volatile ROAS they can't explain</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">Browser pixel <span class="gloss-badge problem">Problem</span></div>
+      <div class="gloss-def">The old way of tracking conversions. A snippet that fires on purchase or sign-up. iOS 14, ad blockers, and browser restrictions mean it now misses a significant share of events.</div>
+      <div class="gloss-matters problem">Most brands still rely on it — they think they have tracking, they don't have complete tracking</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">iOS ATT <span class="gloss-badge problem">Problem</span></div>
+      <div class="gloss-def">Apple's 2021 change requiring tracking permission. ~70% of users said no. This is the structural event that made Journify necessary.</div>
+      <div class="gloss-matters problem">The "why now" behind the entire market existing</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">Match rate <span class="gloss-badge problem">Problem</span></div>
+      <div class="gloss-def">% of conversions the platform can match to a real user profile. The single most important number in signal quality.</div>
+      <div class="gloss-matters problem">40% match rate = the AI is working from 40% of data</div>
+    </div>
+  </div>
+
+  <div class="divider-label">The product</div>
+  <div class="glossary-grid">
+    <div class="gloss-card">
+      <div class="gloss-term">CAPI <span class="gloss-badge product">Product</span></div>
+      <div class="gloss-def">Conversion API. Sends conversion data server-to-server, bypassing the browser entirely. The fix for signal loss.</div>
+      <div class="gloss-matters product">CAPI is how conversions reach Meta when the pixel can't</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">Server-side tracking <span class="gloss-badge product">Product</span></div>
+      <div class="gloss-def">Any tracking that happens on the server rather than the browser. More reliable, less exposed to privacy restrictions. Journify is built on this infrastructure.</div>
+      <div class="gloss-matters product">Having it isn't the same as having healthy signals — ask about match rate</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">Event validation <span class="gloss-badge product">Product</span></div>
+      <div class="gloss-def">Journify checks every event before sending — correct hashing, no duplicates, correct taxonomy per platform. Most vendors don't do this.</div>
+      <div class="gloss-matters product">Most vendors transmit. Journify validates first.</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">Deduplication <span class="gloss-badge product">Product</span></div>
+      <div class="gloss-def">Removes duplicate conversion events when pixel and CAPI both fire for the same event. Prevents inflated numbers and confused algorithms.</div>
+      <div class="gloss-matters product">Brands with both running undeduped see inflated numbers unknowingly</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">Data health <span class="gloss-badge product">Product</span></div>
+      <div class="gloss-def">Journify's ongoing monitoring layer — match rates, event consistency, anomaly detection, alerts when quality degrades. Continuous, not one-time.</div>
+      <div class="gloss-matters product">An agency set it up once. Journify keeps it working every day.</div>
+    </div>
+  </div>
+
+  <div class="divider-label">Performance metrics</div>
+  <div class="glossary-grid">
+    <div class="gloss-card">
+      <div class="gloss-term">ROAS <span class="gloss-badge metric">Metric</span></div>
+      <div class="gloss-def">Return on Ad Spend. Revenue generated for every dollar spent on ads. If ROAS = 4x, a $1,000 campaign returned $4,000 in revenue.</div>
+      <div class="gloss-matters metric">The primary KPI in almost every conversation — signal loss makes it volatile</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">CAC <span class="gloss-badge metric">Metric</span></div>
+      <div class="gloss-def">Customer Acquisition Cost. Total spend divided by customers acquired. Signal loss inflates reported CAC because missed conversions make spend look less efficient than it is.</div>
+      <div class="gloss-matters metric">Poor signal quality means customers are likely underreporting actual acquisitions</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">LTV <span class="gloss-badge metric">Metric</span></div>
+      <div class="gloss-def">Lifetime Value. Total revenue a customer generates over their relationship with a brand. Pairs with CAC to define how much a brand can afford to spend to acquire a customer.</div>
+      <div class="gloss-matters metric">LTV:CAC ratio is a key health indicator — Journify helps make the CAC side more accurate</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">CPM <span class="gloss-badge metric">Metric</span></div>
+      <div class="gloss-def">Cost Per Mille — cost per 1,000 impressions. The standard bidding unit on Meta, TikTok, Snap, and Google Display.</div>
+      <div class="gloss-matters metric">Rising CPMs with no targeting change often signals degraded data quality</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">CPL <span class="gloss-badge metric">Metric</span></div>
+      <div class="gloss-def">Cost Per Lead. Cost to generate one qualified lead. Common in B2B and lead-gen campaigns — particularly relevant in the GCC market.</div>
+      <div class="gloss-matters metric">Signal loss inflates CPL — missed lead events make campaigns look less effective</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">CPC <span class="gloss-badge metric">Metric</span></div>
+      <div class="gloss-def">Cost Per Click. What a brand pays each time someone clicks their ad. Less central than ROAS in most conversations but useful efficiency context.</div>
+      <div class="gloss-matters metric">Useful surface-level health indicator when customers talk about efficiency without specifics</div>
+    </div>
+  </div>
+
+  <div class="divider-label">AdTech ecosystem</div>
+  <div class="glossary-grid">
+    <div class="gloss-card">
+      <div class="gloss-term">MMP <span class="gloss-badge ecosystem">Ecosystem</span></div>
+      <div class="gloss-def">Mobile Measurement Partner. Tools like AppsFlyer, Adjust, and Branch that track app installs and in-app events. Common in the GCC. MMPs don't replace CAPI for web conversion signals.</div>
+      <div class="gloss-matters ecosystem">Many customers think their MMP covers signal quality — it doesn't replace server-side web tracking</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">CDP <span class="gloss-badge ecosystem">Ecosystem</span></div>
+      <div class="gloss-def">Customer Data Platform. Tools like Segment that unify customer data into one profile. CDPs store data — Journify activates it by sending clean signals to ad platforms.</div>
+      <div class="gloss-matters ecosystem">Customers often confuse CDPs with what Journify does — knowing the difference sharpens positioning</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">First-party data <span class="gloss-badge ecosystem">Ecosystem</span></div>
+      <div class="gloss-def">Data a brand owns directly — purchase history, emails, CRM records. Ad platforms use it for targeting and matching. First-party data is the input; Journify is the infrastructure that delivers it correctly.</div>
+      <div class="gloss-matters ecosystem">Customers mention it as the "solution" — Journify is how they actually activate it</div>
+    </div>
+    <div class="gloss-card">
+      <div class="gloss-term">GTM <span class="gloss-badge ecosystem">Ecosystem</span></div>
+      <div class="gloss-def">Google Tag Manager. How most brands currently manage tracking pixels — a browser-side tag container. Browser-side only, which is exactly why signal quality suffers.</div>
+      <div class="gloss-matters ecosystem">"We use GTM for tracking" is an entry point — GTM alone misses a significant share of conversions</div>
+    </div>
+  </div>
+
+  <div class="three-sentences">
+    <div class="ts-label"><i class="ti ti-quote" style="font-size:13px"></i> The three sentences every Journify person says the same way</div>
+    <div class="ts-text">"Ad platforms allocate budgets based on the conversions they receive. Most brands are sending 30 to 40% fewer than they actually have. We fix that."</div>
+  </div>
+
+  <div class="task-row"><input type="checkbox" id="t11" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t11"><div class="task-label">How to speak Journify read — all terms and metrics understood</div></label></div>
+</div>
+
+<div class="resource-card r-amber">
+  <div class="res-top">
+    <div class="res-icon amber"><i class="ti ti-microphone"></i></div>
+    <div><div class="res-title">Listen: Grain new hire playlist — "Introduction to Journify"</div><div class="res-duration">2–3 calls · ~45–60 min</div></div>
+  </div>
+  <div class="res-body">Real customer call recordings curated specifically for new joiners. You're not expected to understand everything — you're expected to start recognising the language, the problems customers bring, and how the team responds.</div>
+  <div class="res-link"><i class="ti ti-player-play" style="font-size:14px;color:#888"></i><a href="https://grain.com/share/collection/4a86fa32-8450-4573-98f0-b10b4f7e7f27/4K2zDfQTaxnvCo24HkVTneyUEAly3t2aDXdhSbBA" target="_blank">Introduction to Journify — Grain playlist</a></div>
+  <div class="task-row"><input type="checkbox" id="t12" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t12"><div class="task-label">At least 2 calls from the Grain playlist listened to</div></label></div>
+</div>
+
+<div class="section-checklist">
+  <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 2 — completion checklist</div>
+  <div class="cl-sub">You're ready for Section 3 when all three are checked.</div>
+  <div class="check-item"><input type="checkbox" id="cl1" onchange="saveProgress(this.id,this.checked);syncMirror('t10','cl1');updateProg()"><label for="cl1">journify.io — website and case studies explored</label></div>
+  <div class="check-item"><input type="checkbox" id="cl2" onchange="saveProgress(this.id,this.checked);syncMirror('t11','cl2');updateProg()"><label for="cl2">How to speak Journify — all terms and metrics read</label></div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="saveProgress(this.id,this.checked);syncMirror('t12','cl3');updateProg()"><label for="cl3">Grain playlist — at least 2 calls listened to</label></div>
+  <div class="prog-top"><span id="prog-label">0 of 3 complete</span><span id="prog-pct">0%</span></div>
+  <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
+  <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 3.</div>
+</div>
+
+<div class="nav-bottom">
+  <a href="phase1-s1.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Section 1</a>
+  <span class="nav-hint">Phase 1 · Section 2 of 4</span>
+  <a href="phase1-s3.html" class="next-btn">Next: Section 3 <i class="ti ti-arrow-right"></i></a>
+</div>
+</div>
+
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+
+<script>
+const JF_BASE='journify_ob_';
+const JF_CANONICAL=['t10','t11','t12'];
+let _jfUser='';
+function jfGetUser(){
+  if(_jfUser)return _jfUser;
+  _jfUser=sessionStorage.getItem('jf_user_key')||'';
+  if(!_jfUser){
+    const saved=localStorage.getItem('jf_last_user')||'';
+    const name=prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:',saved);
+    _jfUser=(name||'user').trim().toLowerCase().replace(/[^a-z0-9]/g,'_')||'user';
+    sessionStorage.setItem('jf_user_key',_jfUser);
+    localStorage.setItem('jf_last_user',name||'');
+  }
+  return _jfUser;
+}
+function jfKey(id){return JF_BASE+jfGetUser()+'_'+id;}
+function saveProgress(id,checked){
+  if(JF_CANONICAL.includes(id))try{localStorage.setItem(jfKey(id),checked?'1':'0');}catch(e){}
+}
+function syncMirror(canonId,clId){
+  const src=document.getElementById(canonId);
+  const cl=document.getElementById(clId);
+  if(src&&cl)src.checked=cl.checked;
+  saveProgress(canonId,cl&&cl.checked);
+}
+function updateProg(){
+  const cl_ids=['cl1','cl2','cl3'];
+  const done=cl_ids.filter(id=>document.getElementById(id)?.checked).length;
+  const pct=Math.round(done/cl_ids.length*100);
+  document.getElementById('prog').style.width=pct+'%';
+  document.getElementById('prog-label').textContent=done+' of '+cl_ids.length+' complete';
+  document.getElementById('prog-pct').textContent=pct+'%';
+  document.getElementById('done-note').style.display=done===cl_ids.length?'flex':'none';
+}
+function jfSyncMirrors(){
+  const map={cl1:'t10',cl2:'t11',cl3:'t12'};
+  Object.entries(map).forEach(([cl,t])=>{
+    const src=document.getElementById(t);
+    const mir=document.getElementById(cl);
+    if(src&&mir)mir.checked=src.checked;
+  });
+}
+function jfLoadAndSync(){
+  jfGetUser();
+  JF_CANONICAL.forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    try{el.checked=localStorage.getItem(jfKey(id))==='1';}catch(e){}
+  });
+  jfSyncMirrors();
+  setTimeout(updateProg,30);
+}
+function resetProgress(){
+  if(!confirm('Reset all your Section 2 progress?'))return;
+  JF_CANONICAL.forEach(id=>{
+    try{localStorage.removeItem(jfKey(id));}catch(e){}
+    const el=document.getElementById(id);if(el)el.checked=false;
+  });
+  document.querySelectorAll('input[type=checkbox]').forEach(box=>{
+    box.checked=false;
+  });
+  updateProg();
+}
+window.addEventListener('DOMContentLoaded',jfLoadAndSync);
+</script>
+</body>
+</html>

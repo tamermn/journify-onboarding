@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 1 · Section 1 — Setup & access | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.logo-bar{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.logo-bar img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+.logo-sub{font-size:12px;color:#888}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 10px;border-radius:7px;background:#E6F1FB;color:#0C447C;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:700;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.task-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;overflow:hidden;margin-bottom:0.875rem}
+.task-header{padding:0.65rem 1rem;background:#f8f8f7;border-bottom:1px solid #f0f0ec;font-size:12px;font-weight:600;color:#888;display:flex;align-items:center;gap:7px}
+.task-row{display:flex;align-items:flex-start;gap:12px;padding:0.75rem 1rem;border-bottom:1px solid #f0f0ec;transition:background 0.15s}
+.task-row:last-child{border-bottom:none}
+.task-row.done-row{background:#fafff9}
+.task-row.done-row .task-label{color:#aaa;text-decoration:line-through}
+.task-row input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.task-row label{cursor:pointer;flex:1}
+.task-label{font-size:14px;line-height:1.4;margin-bottom:2px;color:#1a1a1a}
+.task-note{font-size:12px;color:#888;line-height:1.4}
+.info-box{background:#f8f8f7;border-radius:10px;padding:0.875rem 1rem;margin-bottom:1rem;display:flex;gap:10px;align-items:flex-start}
+.info-box i{font-size:18px;color:#534AB7;flex-shrink:0;margin-top:1px}
+.info-text{font-size:13px;color:#555;line-height:1.6}
+.section-checklist{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.25rem;margin-top:1.5rem}
+.cl-title{font-size:16px;font-weight:600;margin-bottom:0.3rem;display:flex;align-items:center;gap:8px}
+.cl-sub{font-size:13px;color:#888;margin-bottom:1rem}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0;border-bottom:1px solid #f0f0ec}
+.check-item:last-child{border-bottom:none}
+.check-item label{font-size:14px;line-height:1.5;cursor:pointer;color:#1a1a1a}
+.check-item input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#888;margin:1rem 0 5px}
+.prog-bg{height:5px;background:#f0f0ec;border-radius:4px;overflow:hidden}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.done-note{font-size:13px;color:#085041;background:#E1F5EE;padding:0.65rem 0.9rem;border-radius:8px;margin-top:0.85rem;display:none;align-items:center;gap:7px}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#EEEDFE;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.next-btn:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888}
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="logo-bar">
+  <img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" />
+  <span class="logo-sub">New joiner onboarding</span>
+</div>
+
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 1 &nbsp;/&nbsp; <span>Section 1: Setup & access</span></div>
+  <div class="nav-actions">
+    <a href="index.html" class="nav-btn"><i class="ti ti-home"></i> Home</a>
+    <a href="phase1-index.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Phase 1</a>
+    <a href="phase1-s2.html" class="nav-btn">Section 2 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+
+<div class="phase-tag"><i class="ti ti-tool"></i> Phase 1 · Section 1 · Day 1–2</div>
+<div class="section-title">Setup & access</div>
+<div class="section-sub">Get everything configured properly on Day 1 and 2 so nothing slows you down for the rest of the week. Your buddy is available to help with anything that is unclear.</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-clock"></i> Day 1–2</span>
+  <span class="meta-pill"><i class="ti ti-list-check"></i> 9 tasks</span>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><i class="ti ti-device-laptop"></i> Install on laptop and phone</div>
+  <div class="task-row"><input type="checkbox" id="t1" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t1"><div class="task-label">Slack, Zoom, Notion, Google Workspace, 1Password, Claude installed</div><div class="task-note">Install on both laptop and phone — you'll need them accessible at all times</div></label></div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><i class="ti ti-id"></i> Profile setup</div>
+  <div class="task-row"><input type="checkbox" id="t2" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t2"><div class="task-label">Full name, photo, and phone number set on Slack</div></label></div>
+  <div class="task-row"><input type="checkbox" id="t3" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t3"><div class="task-label">Full name and photo set on Notion</div></label></div>
+  <div class="task-row"><input type="checkbox" id="t4" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t4"><div class="task-label">Photo and email signature set up on Gmail</div><div class="task-note">Keep it professional — name, title, Journify</div></label></div>
+  <div class="task-row"><input type="checkbox" id="t5" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t5"><div class="task-label">Name set on Zoom</div></label></div>
+  <div class="task-row"><input type="checkbox" id="t6" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t6"><div class="task-label">LinkedIn updated to reflect your role at Journify</div><div class="task-note">You represent the company publicly — do this before any customer interaction</div></label></div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><i class="ti ti-shield"></i> Security</div>
+  <div class="task-row"><input type="checkbox" id="t7" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t7"><div class="task-label">1Password set up and used for all passwords</div><div class="task-note">No exceptions — every account goes through 1Password from Day 1</div></label></div>
+  <div class="task-row"><input type="checkbox" id="t8" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t8"><div class="task-label">Two-factor authentication enabled on Gmail, Slack, and Notion</div></label></div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><i class="ti ti-brand-slack"></i> Slack channels</div>
+  <div class="task-row"><input type="checkbox" id="t9" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="t9"><div class="task-label">#general, #marketing, #engineering, #sales, #customer-success joined</div><div class="task-note">Ask your buddy which additional channels are relevant for your role</div></label></div>
+</div>
+
+<div class="info-box">
+  <i class="ti ti-users"></i>
+  <div class="info-text">Feel free to reach out to anyone on the team this week. Say hello in Slack, ask a question, introduce yourself. Everyone here was new once — nobody will think less of you for asking something basic. That is what this week is for.</div>
+</div>
+
+<div class="section-checklist">
+  <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 1 — completion checklist</div>
+  <div class="cl-sub">All 9 tasks above map here. You're ready for Section 2 when everything is checked.</div>
+  <div class="check-item"><input type="checkbox" id="cl1" onchange="saveProgress(this.id,this.checked);syncMirror('t1','cl1');updateProg()"><label for="cl1">All core apps installed on laptop and phone</label></div>
+  <div class="check-item"><input type="checkbox" id="cl2" onchange="saveProgress(this.id,this.checked);syncMirror('t2','cl2');updateProg()"><label for="cl2">Profile setup complete across all tools</label></div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="saveProgress(this.id,this.checked);syncMirror('t6','cl3');updateProg()"><label for="cl3">LinkedIn updated to reflect Journify role</label></div>
+  <div class="check-item"><input type="checkbox" id="cl4" onchange="saveProgress(this.id,this.checked);syncMirror('t7','cl4');updateProg()"><label for="cl4">1Password and 2FA set up on all accounts</label></div>
+  <div class="check-item"><input type="checkbox" id="cl5" onchange="saveProgress(this.id,this.checked);syncMirror('t9','cl5');updateProg()"><label for="cl5">Relevant Slack channels joined</label></div>
+  <div class="prog-top"><span id="prog-label">0 of 5 complete</span><span id="prog-pct">0%</span></div>
+  <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
+  <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 2.</div>
+</div>
+
+<div class="nav-bottom">
+  <a href="phase1-index.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Phase 1</a>
+  <span class="nav-hint">Phase 1 · Section 1 of 4</span>
+  <a href="phase1-s2.html" class="next-btn">Next: Section 2 <i class="ti ti-arrow-right"></i></a>
+</div>
+</div>
+
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+
+<script>
+const JF_BASE='journify_ob_';
+const JF_CANONICAL=['t1','t2','t3','t4','t5','t6','t7','t8','t9'];
+let _jfUser='';
+function jfGetUser(){
+  if(_jfUser)return _jfUser;
+  _jfUser=sessionStorage.getItem('jf_user_key')||'';
+  if(!_jfUser){
+    const saved=localStorage.getItem('jf_last_user')||'';
+    const name=prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:',saved);
+    _jfUser=(name||'user').trim().toLowerCase().replace(/[^a-z0-9]/g,'_')||'user';
+    sessionStorage.setItem('jf_user_key',_jfUser);
+    localStorage.setItem('jf_last_user',name||'');
+  }
+  return _jfUser;
+}
+function jfKey(id){return JF_BASE+jfGetUser()+'_'+id;}
+function saveProgress(id,checked){
+  if(JF_CANONICAL.includes(id))try{localStorage.setItem(jfKey(id),checked?'1':'0');}catch(e){}
+}
+function syncMirror(canonId,clId){
+  const src=document.getElementById(canonId);
+  const cl=document.getElementById(clId);
+  if(src&&cl)src.checked=cl.checked;
+  saveProgress(canonId,cl&&cl.checked);
+}
+function updateProg(){
+  const cl_ids=['cl1','cl2','cl3','cl4','cl5'];
+  const done=cl_ids.filter(id=>document.getElementById(id)?.checked).length;
+  const pct=Math.round(done/cl_ids.length*100);
+  document.getElementById('prog').style.width=pct+'%';
+  document.getElementById('prog-label').textContent=done+' of '+cl_ids.length+' complete';
+  document.getElementById('prog-pct').textContent=pct+'%';
+  document.getElementById('done-note').style.display=done===cl_ids.length?'flex':'none';
+  document.querySelectorAll('.task-row').forEach(row=>{
+    const cb=row.querySelector('input[type=checkbox]');
+    if(cb)row.classList.toggle('done-row',cb.checked);
+  });
+}
+function jfSyncMirrors(){
+  const map={cl1:'t1',cl2:'t2',cl3:'t6',cl4:'t7',cl5:'t9'};
+  Object.entries(map).forEach(([cl,t])=>{
+    const src=document.getElementById(t);
+    const mir=document.getElementById(cl);
+    if(src&&mir)mir.checked=src.checked;
+  });
+}
+function jfLoadAndSync(){
+  jfGetUser();
+  JF_CANONICAL.forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    try{el.checked=localStorage.getItem(jfKey(id))==='1';}catch(e){}
+  });
+  jfSyncMirrors();
+  setTimeout(updateProg,30);
+}
+function resetProgress(){
+  if(!confirm('Reset all your Section 1 progress?'))return;
+  JF_CANONICAL.forEach(id=>{
+    try{localStorage.removeItem(jfKey(id));}catch(e){}
+    const el=document.getElementById(id);if(el)el.checked=false;
+  });
+  document.querySelectorAll('input[type=checkbox]').forEach(box=>{
+    box.checked=false;
+    const row=box.closest('.task-row,.check-item');
+    if(row)row.classList.remove('done-row');
+  });
+  updateProg();
+}
+window.addEventListener('DOMContentLoaded',jfLoadAndSync);
+</script>
+</body>
+</html>
