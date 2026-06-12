@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 2 · Section 5 — Completion gate | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.logo-bar{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.logo-bar img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+.logo-sub{font-size:12px;color:#888}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 10px;border-radius:7px;background:#E1F5EE;color:#085041;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:700;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:1.5rem}
+.master-progress{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.125rem 1.25rem;margin-bottom:1.75rem}
+.mp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem}
+.mp-title{font-size:15px;font-weight:500;display:flex;align-items:center;gap:8px}
+.mp-pct{font-size:26px;font-weight:700;color:#534AB7}
+.mp-bar-bg{height:6px;background:#f0f0ec;border-radius:4px;overflow:hidden;margin-bottom:0.5rem}
+.mp-bar{height:6px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.mp-sub{font-size:12px;color:#888}
+.mp-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:0.85rem}
+.cat-stat{background:#f8f8f7;border-radius:8px;padding:0.6rem 0.75rem;text-align:center}
+.cat-stat-num{font-size:16px;font-weight:700;color:#534AB7;margin-bottom:2px}
+.cat-stat-label{font-size:11px;color:#888}
+.cat-block{margin-bottom:1.5rem}
+.cat-header{display:flex;align-items:center;gap:10px;margin-bottom:0.75rem}
+.cat-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:17px}
+.cat-icon.blue{background:#E6F1FB;color:#185FA5}
+.cat-icon.coral{background:#FAECE7;color:#993C1D}
+.cat-icon.amber{background:#FAEEDA;color:#854F0B}
+.cat-icon.purple{background:#EEEDFE;color:#534AB7}
+.cat-name{font-size:15px;font-weight:600}
+.cat-right{display:flex;align-items:center;gap:8px;margin-left:auto}
+.cat-prog-bg{height:3px;background:#f0f0ec;border-radius:4px;overflow:hidden;width:70px}
+.cat-prog{height:3px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.cat-count{font-size:12px;color:#888;white-space:nowrap}
+.check-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;overflow:hidden;margin-bottom:0.5rem}
+.check-row{display:flex;align-items:flex-start;gap:12px;padding:0.75rem 1rem;border-bottom:1px solid #f0f0ec;transition:background 0.15s}
+.check-row:last-child{border-bottom:none}
+.check-row.done-row{background:#fafff9}
+.check-row.done-row .check-label{color:#aaa;text-decoration:line-through}
+.check-row input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.check-row label{cursor:pointer;flex:1}
+.check-label{font-size:14px;line-height:1.4;margin-bottom:2px;color:#1a1a1a}
+.check-note{font-size:12px;color:#888;line-height:1.4}
+.phase-complete{background:#E1F5EE;border:1px solid #5DCAA5;border-radius:10px;padding:1.25rem;margin-top:1.5rem;display:none}
+.pc-title{font-size:16px;font-weight:600;color:#085041;margin-bottom:0.5rem;display:flex;align-items:center;gap:8px}
+.pc-body{font-size:13px;color:#0F6E56;line-height:1.6;margin-bottom:1rem}
+.pc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.pc-card{background:#fff;border:1px solid #9FE1CB;border-radius:8px;padding:0.65rem 0.75rem;text-align:center}
+.pc-card-label{font-size:11px;color:#0F6E56;margin-bottom:2px}
+.pc-card-val{font-size:14px;font-weight:600;color:#085041}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.next-btn.phase3-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#EEEDFE;border:none;border-radius:8px;font-size:14px;font-weight:600;opacity:0.4;pointer-events:none;text-decoration:none}
+.next-btn.phase3-btn.ready{opacity:1;pointer-events:auto}
+.next-btn.phase3-btn.ready:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888;text-align:center}
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="logo-bar">
+  <img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" />
+  <span class="logo-sub">New joiner onboarding</span>
+</div>
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 2 &nbsp;/&nbsp; <span>Section 5: Completion gate</span></div>
+  <div class="nav-actions">
+    <a href="index.html" class="nav-btn"><i class="ti ti-home"></i> Home</a>
+    <a href="phase2-s4.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Section 4</a>
+  </div>
+</div>
+<div class="phase-tag"><i class="ti ti-circle-check"></i> Phase 2 · Final section</div>
+<div class="section-title">Phase 2 completion gate</div>
+<div class="section-sub">Your final step before moving to Phase 3. Confirm both milestones are cleared — Day 14 industry ready and Day 21 product ready — with all supporting work done.</div>
+
+<div class="master-progress">
+  <div class="mp-top">
+    <div class="mp-title"><i class="ti ti-chart-bar" style="color:#534AB7;font-size:17px"></i> Overall readiness</div>
+    <div class="mp-pct" id="master-pct">0%</div>
+  </div>
+  <div class="mp-bar-bg"><div class="mp-bar" id="master-bar"></div></div>
+  <div class="mp-sub" id="master-label">0 of 7 items complete</div>
+  <div class="mp-cats">
+    <div class="cat-stat"><div class="cat-stat-num" id="s-found">0/1</div><div class="cat-stat-label">Foundations</div></div>
+    <div class="cat-stat"><div class="cat-stat-num" id="s-prob">0/2</div><div class="cat-stat-label">The problem</div></div>
+    <div class="cat-stat"><div class="cat-stat-num" id="s-icp">0/2</div><div class="cat-stat-label">ICP & market</div></div>
+    <div class="cat-stat"><div class="cat-stat-num" id="s-prod">0/2</div><div class="cat-stat-label">The product</div></div>
+  </div>
+</div>
+
+<div class="cat-block">
+  <div class="cat-header"><div class="cat-icon blue"><i class="ti ti-school"></i></div><div><div class="cat-name">Digital marketing foundations</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog" id="pb-found"></div></div><span class="cat-count" id="ct-found">0 / 1</span></div></div>
+  <div class="check-card">
+    <div class="check-row"><input type="checkbox" id="p2cl1" onchange="update()"><label for="p2cl1"><div class="check-label">Google, Meta, Snapchat, and TikTok platform certifications completed</div><div class="check-note">All four core platforms — Snapchat is GCC priority, don't skip it</div></label></div>
+  </div>
+</div>
+
+<div class="cat-block">
+  <div class="cat-header"><div class="cat-icon coral"><i class="ti ti-alert-triangle"></i></div><div><div class="cat-name">The customer problem</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog" id="pb-prob"></div></div><span class="cat-count" id="ct-prob">0 / 2</span></div></div>
+  <div class="check-card">
+    <div class="check-row"><input type="checkbox" id="p2cl2" onchange="update()"><label for="p2cl2"><div class="check-label">Signal loss understood — can explain without notes to a performance marketer</div></label></div>
+    <div class="check-row"><input type="checkbox" id="p2cl3" onchange="update()"><label for="p2cl3"><div class="check-label">Competitive guide strategic frame read and Grain discovery call watched</div></label></div>
+  </div>
+</div>
+
+<div class="cat-block">
+  <div class="cat-header"><div class="cat-icon amber"><i class="ti ti-target"></i></div><div><div class="cat-name">ICP & market · Day 14 manager check-in</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog" id="pb-icp"></div></div><span class="cat-count" id="ct-icp">0 / 2</span></div></div>
+  <div class="check-card">
+    <div class="check-row"><input type="checkbox" id="p2cl4" onchange="update()"><label for="p2cl4"><div class="check-label">ICP documentation read and 2–3 case studies reviewed</div></label></div>
+    <div class="check-row"><input type="checkbox" id="p2cl5" onchange="update()"><label for="p2cl5"><div class="check-label">Day 14 manager check-in completed — manager signed off as industry ready</div><div class="check-note">Signal loss explained verbally, follow-up questions answered, manager certified</div></label></div>
+  </div>
+</div>
+
+<div class="cat-block">
+  <div class="cat-header"><div class="cat-icon purple"><i class="ti ti-cube"></i></div><div><div class="cat-name">The product · Day 21 manager check-in</div></div><div class="cat-right"><div class="cat-prog-bg"><div class="cat-prog" id="pb-prod"></div></div><span class="cat-count" id="ct-prod">0 / 2</span></div></div>
+  <div class="check-card">
+    <div class="check-row"><input type="checkbox" id="p2cl6" onchange="update()"><label for="p2cl6"><div class="check-label">Product Overview and roadmap read — five pillars understood in sequence</div></label></div>
+    <div class="check-row"><input type="checkbox" id="p2cl7" onchange="update()"><label for="p2cl7"><div class="check-label">Day 21 manager check-in completed — manager signed off as product ready</div><div class="check-note">Five pillars walked through in plain language, follow-up questions answered, manager certified</div></label></div>
+  </div>
+</div>
+
+<div class="phase-complete" id="phase-complete">
+  <div class="pc-title"><i class="ti ti-circle-check" style="font-size:20px"></i> Phase 2 complete — ready for Phase 3</div>
+  <div class="pc-body">Industry ready and product ready. Both milestones cleared and signed off. Phase 3 begins your track — sales process, discovery, and the tools you'll use to close deals.</div>
+  <div class="pc-grid">
+    <div class="pc-card"><div class="pc-card-label">Sections completed</div><div class="pc-card-val">5 of 5</div></div>
+    <div class="pc-card"><div class="pc-card-label">Gates cleared</div><div class="pc-card-val">Day 14 + Day 21</div></div>
+    <div class="pc-card"><div class="pc-card-label">Next milestone</div><div class="pc-card-val">Day 30 ready</div></div>
+    <div class="pc-card"><div class="pc-card-label">Phase 2 status</div><div class="pc-card-val" style="color:#0F6E56">Complete</div></div>
+  </div>
+</div>
+
+<div class="nav-bottom">
+  <a href="phase2-s4.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Section 4</a>
+  <span class="nav-hint" id="nav-hint">Phase 2 · Section 5 of 5</span>
+  <a href="phase3-index.html" class="next-btn phase3-btn" id="phase3-btn">Complete Phase 2 <i class="ti ti-arrow-right"></i></a>
+</div>
+</div>
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+<script>
+const JF_BASE='journify_ob_';const PAGE_SCOPE='p2s5';
+const JF_CANONICAL=['p2cl1','p2cl2','p2cl3','p2cl4','p2cl5','p2cl6','p2cl7'];
+const cats={found:{ids:['p2cl1'],bar:'pb-found',count:'ct-found',stat:'s-found'},prob:{ids:['p2cl2','p2cl3'],bar:'pb-prob',count:'ct-prob',stat:'s-prob'},icp:{ids:['p2cl4','p2cl5'],bar:'pb-icp',count:'ct-icp',stat:'s-icp'},prod:{ids:['p2cl6','p2cl7'],bar:'pb-prod',count:'ct-prod',stat:'s-prod'}};
+const total=7;let _jfUser='';
+function jfGetUser(){if(_jfUser)return _jfUser;_jfUser=sessionStorage.getItem('jf_user_key')||'';if(!_jfUser){const saved=localStorage.getItem('jf_last_user')||'';const name=prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:',saved);_jfUser=(name||'user').trim().toLowerCase().replace(/[^a-z0-9]/g,'_')||'user';sessionStorage.setItem('jf_user_key',_jfUser);localStorage.setItem('jf_last_user',name||'');}return _jfUser;}
+function jfKey(id){return JF_BASE+jfGetUser()+'_'+PAGE_SCOPE+'_'+id;}
+function update(){
+  let grand=0;
+  Object.entries(cats).forEach(([cat,cfg])=>{const done=cfg.ids.filter(id=>document.getElementById(id)?.checked).length;grand+=done;document.getElementById(cfg.bar).style.width=Math.round(done/cfg.ids.length*100)+'%';document.getElementById(cfg.count).textContent=done+' / '+cfg.ids.length;document.getElementById(cfg.stat).textContent=done+'/'+cfg.ids.length;cfg.ids.forEach(id=>{const row=document.getElementById(id)?.closest('.check-row');if(row)row.classList.toggle('done-row',document.getElementById(id).checked);});});
+  JF_CANONICAL.forEach(id=>{const el=document.getElementById(id);if(el)try{localStorage.setItem(jfKey(id),el.checked?'1':'0');}catch(e){}});
+  const pct=Math.round(grand/total*100);document.getElementById('master-bar').style.width=pct+'%';document.getElementById('master-pct').textContent=pct+'%';document.getElementById('master-label').textContent=grand+' of '+total+' items complete';
+  const done=grand===total;document.getElementById('phase-complete').style.display=done?'block':'none';const btn=document.getElementById('phase3-btn');btn.classList.toggle('ready',done);document.getElementById('nav-hint').textContent=done?'Phase 2 complete — ready for Phase 3':'Phase 2 · Section 5 of 5';
+}
+function jfSyncMirrors(){}
+function jfLoadAndSync(){jfGetUser();JF_CANONICAL.forEach(id=>{const el=document.getElementById(id);if(!el)return;try{el.checked=localStorage.getItem(jfKey(id))==='1';}catch(e){}});setTimeout(update,30);}
+function saveProgress(id,checked){try{localStorage.setItem(jfKey(id),checked?'1':'0');}catch(e){}}
+function resetProgress(){if(!confirm('Reset all your Phase 2 completion gate progress?'))return;JF_CANONICAL.forEach(id=>{try{localStorage.removeItem(jfKey(id));}catch(e){}const el=document.getElementById(id);if(el)el.checked=false;});document.querySelectorAll('.check-row').forEach(row=>row.classList.remove('done-row'));update();}
+window.addEventListener('DOMContentLoaded',jfLoadAndSync);
+</script>
+</body>
+</html>

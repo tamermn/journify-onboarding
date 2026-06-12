@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 2 · Section 3 — ICP & market | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.logo-bar{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.logo-bar img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+.logo-sub{font-size:12px;color:#888}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 10px;border-radius:7px;background:#FAEEDA;color:#633806;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:700;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.exp-box{background:#FAEEDA;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.75rem;display:flex;gap:12px;align-items:flex-start}
+.exp-box i{font-size:20px;color:#854F0B;flex-shrink:0;margin-top:1px}
+.exp-title{font-size:14px;font-weight:600;color:#633806;margin-bottom:3px}
+.exp-body{font-size:13px;color:#854F0B;line-height:1.55}
+.task-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1rem 1.125rem;margin-bottom:0.875rem}
+.task-card.tc-amber{border-left:3px solid #854F0B;border-radius:0 10px 10px 0}
+.task-card.tc-teal{border-left:3px solid #0F6E56;border-radius:0 10px 10px 0}
+.task-card.tc-coral{border-left:3px solid #993C1D;border-radius:0 10px 10px 0}
+.tc-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:0.65rem}
+.tc-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:19px}
+.tc-icon.amber{background:#FAEEDA;color:#854F0B}
+.tc-icon.teal{background:#E1F5EE;color:#0F6E56}
+.tc-icon.coral{background:#FAECE7;color:#993C1D}
+.tc-title{font-size:15px;font-weight:600;margin-bottom:2px}
+.tc-duration{font-size:11px;color:#888}
+.tc-body{font-size:13px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.icp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-bottom:0.875rem}
+.icp-card{background:#f8f8f7;border:1px solid #e8e8e4;border-radius:8px;padding:0.75rem}
+.icp-label{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.35rem}
+.icp-val{font-size:13px;color:#1a1a1a;line-height:1.5}
+.res-link{display:flex;align-items:center;gap:7px;padding:0.55rem 0.75rem;background:#f8f8f7;border-radius:8px;font-size:13px;margin-bottom:0.5rem}
+.res-link a{color:#185FA5;text-decoration:none;font-weight:500}
+.res-link a:hover{text-decoration:underline}
+.insight-box{background:#FAEEDA;border-radius:8px;padding:0.6rem 0.875rem;font-size:12px;color:#633806;line-height:1.5;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:6px}
+.task-row{display:flex;align-items:flex-start;gap:12px;padding:0.65rem 0 0}
+.task-row input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.task-row label{cursor:pointer;flex:1}
+.task-label{font-size:14px;line-height:1.4;color:#1a1a1a}
+.task-note{font-size:12px;color:#888;line-height:1.4;margin-top:2px}
+.section-checklist{background:#fff;border:2px solid #EF9F27;border-radius:10px;padding:1.25rem;margin-top:1.5rem}
+.cl-title{font-size:16px;font-weight:600;margin-bottom:0.3rem;display:flex;align-items:center;gap:8px}
+.cl-sub{font-size:13px;color:#888;margin-bottom:1rem}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0;border-bottom:1px solid #f0f0ec}
+.check-item:last-child{border-bottom:none}
+.check-item label{font-size:14px;line-height:1.5;cursor:pointer;color:#1a1a1a}
+.check-item input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#888;margin:1rem 0 5px}
+.prog-bg{height:5px;background:#f0f0ec;border-radius:4px;overflow:hidden}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.done-note{font-size:13px;color:#085041;background:#E1F5EE;padding:0.65rem 0.9rem;border-radius:8px;margin-top:0.85rem;display:none;align-items:center;gap:7px}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#EEEDFE;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.next-btn:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888}
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="logo-bar">
+  <img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" />
+  <span class="logo-sub">New joiner onboarding</span>
+</div>
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 2 &nbsp;/&nbsp; <span>Section 3: ICP & market</span></div>
+  <div class="nav-actions">
+    <a href="index.html" class="nav-btn"><i class="ti ti-home"></i> Home</a>
+    <a href="phase2-s2.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Section 2</a>
+    <a href="phase2-s4.html" class="nav-btn">Section 4 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+<div class="phase-tag"><i class="ti ti-target"></i> Phase 2 · Section 3 · Day 13–14</div>
+<div class="section-title">ICP & market</div>
+<div class="section-sub">Who Journify sells to, what the GCC market looks like, and what customer success actually looks like in practice. This section closes with your Day 14 manager check-in.</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-clock"></i> Day 13–14</span>
+  <span class="meta-pill"><i class="ti ti-flag"></i> Day 14 manager check-in</span>
+  <span class="meta-pill"><i class="ti ti-list-check"></i> 3 tasks</span>
+</div>
+<div class="exp-box">
+  <i class="ti ti-flag"></i>
+  <div>
+    <div class="exp-title">Day 14 manager check-in — Industry ready</div>
+    <div class="exp-body">Your manager sits with you for 20 minutes. They ask you to explain signal loss as if talking to a performance marketer who has never heard the term. Two or three follow-up questions. If it lands, you move to the product. If something is still fuzzy, you spend another day or two on it together. That is not a setback — that is how learning works at Journify.</div>
+  </div>
+</div>
+
+<div class="task-card tc-amber">
+  <div class="tc-top">
+    <div class="tc-icon amber"><i class="ti ti-users"></i></div>
+    <div><div class="tc-title">Read the ICP documentation</div><div class="tc-duration">~20 min</div></div>
+  </div>
+  <div class="tc-body">Understand exactly who Journify targets — the company profile, the persona, the trigger conditions, and the disqualifiers. Knowing the ICP precisely is what separates reps who book the right meetings from those who waste time on poor fits.</div>
+  <div class="icp-grid">
+    <div class="icp-card"><div class="icp-label">Geography</div><div class="icp-val">UAE and Saudi Arabia primary · GCC broader · International selectively</div></div>
+    <div class="icp-card"><div class="icp-label">Customer type</div><div class="icp-val">Performance marketing leaders, growth teams, and agencies managing meaningful ad spend</div></div>
+    <div class="icp-card"><div class="icp-label">Trigger signals</div><div class="icp-val">Running paid media on Meta, TikTok, Snap, or Google · Concerned about ROAS volatility or attribution gaps</div></div>
+    <div class="icp-card"><div class="icp-label">Disqualifiers</div><div class="icp-val">No active paid media spend · Brand-only budgets · No technical or marketing ops capability</div></div>
+  </div>
+  <div class="res-link"><i class="ti ti-external-link" style="font-size:14px;color:#888"></i><a href="https://www.notion.so/ICP-1c37aaf6d0e5801f8f5fda5e662ad84a" target="_blank">ICP documentation — Notion</a></div>
+  <div class="task-row"><input type="checkbox" id="p2t8" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p2t8"><div class="task-label">ICP documentation read — I know who we sell to and why</div></label></div>
+</div>
+
+<div class="task-card tc-teal">
+  <div class="tc-top">
+    <div class="tc-icon teal"><i class="ti ti-file-description"></i></div>
+    <div><div class="tc-title">Review 2–3 case studies</div><div class="tc-duration">~20–30 min</div></div>
+  </div>
+  <div class="tc-body">Real results from real customers in your market. Read 2–3 case studies from the Journify website — focus on the problem framing, the metric improvement, and how the customer's situation maps to what you've learned about signal loss. These become your proof points in discovery calls.</div>
+  <div class="insight-box"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>When a prospect says "prove it works," your answer lives here. Know at least one case study well enough to reference naturally in a conversation without sounding like you're reading from a sheet.</span></div>
+  <div class="res-link"><i class="ti ti-external-link" style="font-size:14px;color:#888"></i><a href="https://journify.io/customers" target="_blank">Customer stories — journify.io/customers</a></div>
+  <div class="task-row"><input type="checkbox" id="p2t9" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p2t9"><div class="task-label">2–3 case studies reviewed — at least one I can reference naturally</div></label></div>
+</div>
+
+<div class="task-card tc-coral">
+  <div class="tc-top">
+    <div class="tc-icon coral"><i class="ti ti-flag"></i></div>
+    <div><div class="tc-title">Day 14 manager check-in — industry ready</div><div class="tc-duration">~20 min · Verbal, conversational</div></div>
+  </div>
+  <div class="tc-body">Sit down with your manager. They ask you to explain signal loss to a performance marketer who's never heard the term. Then two or three follow-up questions — match rate, what iOS ATT changed, why the pixel isn't enough. This is a conversation, not a test. If something is still fuzzy, your manager will tell you and you'll work on it together.</div>
+  <div class="insight-box"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>You're ready when you can explain the problem in terms of what a customer has already experienced — not in terms of technology. "Your ROAS is volatile and you can't explain why" is the right framing. "iOS 14 deprecated IDFA tracking" is not.</span></div>
+  <div class="task-row"><input type="checkbox" id="p2t10" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p2t10"><div class="task-label">Day 14 manager check-in completed — manager signed off as industry ready</div></label></div>
+</div>
+
+<div class="section-checklist">
+  <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 3 — completion checklist</div>
+  <div class="cl-sub">All three required before moving to Section 4 — the product.</div>
+  <div class="check-item"><input type="checkbox" id="cl1" onchange="saveProgress(this.id,this.checked);syncMirror('p2t8','cl1');updateProg()"><label for="cl1">ICP documentation read — I know who we sell to and why</label></div>
+  <div class="check-item"><input type="checkbox" id="cl2" onchange="saveProgress(this.id,this.checked);syncMirror('p2t9','cl2');updateProg()"><label for="cl2">2–3 case studies reviewed — at least one referenceable naturally</label></div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="saveProgress(this.id,this.checked);syncMirror('p2t10','cl3');updateProg()"><label for="cl3">Day 14 manager check-in — manager signed off as industry ready</label></div>
+  <div class="prog-top"><span id="prog-label">0 of 3 complete</span><span id="prog-pct">0%</span></div>
+  <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
+  <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 4: The product.</div>
+</div>
+<div class="nav-bottom">
+  <a href="phase2-s2.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Section 2</a>
+  <span class="nav-hint">Phase 2 · Section 3 of 5</span>
+  <a href="phase2-s4.html" class="next-btn">Next: Section 4 <i class="ti ti-arrow-right"></i></a>
+</div>
+</div>
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+<script>
+const JF_BASE='journify_ob_';const PAGE_SCOPE='p2s3';const JF_CANONICAL=['p2t8','p2t9','p2t10'];let _jfUser='';
+function jfGetUser(){if(_jfUser)return _jfUser;_jfUser=sessionStorage.getItem('jf_user_key')||'';if(!_jfUser){const saved=localStorage.getItem('jf_last_user')||'';const name=prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:',saved);_jfUser=(name||'user').trim().toLowerCase().replace(/[^a-z0-9]/g,'_')||'user';sessionStorage.setItem('jf_user_key',_jfUser);localStorage.setItem('jf_last_user',name||'');}return _jfUser;}
+function jfKey(id){return JF_BASE+jfGetUser()+'_'+PAGE_SCOPE+'_'+id;}
+function saveProgress(id,checked){if(JF_CANONICAL.includes(id))try{localStorage.setItem(jfKey(id),checked?'1':'0');}catch(e){}}
+function syncMirror(canonId,clId){const src=document.getElementById(canonId);const cl=document.getElementById(clId);if(src&&cl)src.checked=cl.checked;saveProgress(canonId,cl&&cl.checked);}
+function updateProg(){const cl_ids=['cl1','cl2','cl3'];const done=cl_ids.filter(id=>document.getElementById(id)?.checked).length;const pct=Math.round(done/cl_ids.length*100);document.getElementById('prog').style.width=pct+'%';document.getElementById('prog-label').textContent=done+' of '+cl_ids.length+' complete';document.getElementById('prog-pct').textContent=pct+'%';document.getElementById('done-note').style.display=done===cl_ids.length?'flex':'none';}
+function jfSyncMirrors(){const map={cl1:'p2t8',cl2:'p2t9',cl3:'p2t10'};Object.entries(map).forEach(([cl,t])=>{const src=document.getElementById(t);const mir=document.getElementById(cl);if(src&&mir)mir.checked=src.checked;});}
+function jfLoadAndSync(){jfGetUser();JF_CANONICAL.forEach(id=>{const el=document.getElementById(id);if(!el)return;try{el.checked=localStorage.getItem(jfKey(id))==='1';}catch(e){}});jfSyncMirrors();setTimeout(updateProg,30);}
+function resetProgress(){if(!confirm('Reset your Section 3 progress?'))return;JF_CANONICAL.forEach(id=>{try{localStorage.removeItem(jfKey(id));}catch(e){}const el=document.getElementById(id);if(el)el.checked=false;});document.querySelectorAll('input[type=checkbox]').forEach(box=>{box.checked=false;});updateProg();}
+window.addEventListener('DOMContentLoaded',jfLoadAndSync);
+</script>
+</body>
+</html>

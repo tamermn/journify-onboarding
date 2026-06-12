@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 2 · Section 4 — The product | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.logo-bar{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.logo-bar img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+.logo-sub{font-size:12px;color:#888}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 10px;border-radius:7px;background:#EEEDFE;color:#3C3489;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:700;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.exp-box{background:#EEEDFE;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.75rem;display:flex;gap:12px;align-items:flex-start}
+.exp-box i{font-size:20px;color:#534AB7;flex-shrink:0;margin-top:1px}
+.exp-title{font-size:14px;font-weight:600;color:#3C3489;margin-bottom:3px}
+.exp-body{font-size:13px;color:#534AB7;line-height:1.55}
+.pillars-section{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.125rem;margin-bottom:0.875rem}
+.pillars-title{font-size:14px;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:7px;color:#1a1a1a}
+.pillar-flow{display:flex;align-items:stretch;border:1px solid #e8e8e4;border-radius:10px;overflow:hidden;margin-bottom:0.75rem}
+.pillar-node{flex:1;padding:0.85rem 0.5rem;text-align:center;border-right:1px solid #e8e8e4}
+.pillar-node:last-child{border-right:none}
+.pn-num{font-size:10px;font-weight:600;margin-bottom:3px}
+.pn-name{font-size:12px;font-weight:600;margin-bottom:3px;line-height:1.3}
+.pn-desc{font-size:10px;color:#888;line-height:1.4}
+.pn1{background:#E6F1FB}.pn1 .pn-num,.pn1 .pn-name{color:#0C447C}
+.pn2{background:#E1F5EE}.pn2 .pn-num,.pn2 .pn-name{color:#085041}
+.pn3{background:#EEEDFE}.pn3 .pn-num,.pn3 .pn-name{color:#3C3489}
+.pn4{background:#FAEEDA}.pn4 .pn-num,.pn4 .pn-name{color:#633806}
+.pn5{background:#FAECE7}.pn5 .pn-num,.pn5 .pn-name{color:#712B13}
+.pillar-table{width:100%;border-collapse:collapse;font-size:13px}
+.pillar-table th{text-align:left;padding:0.5rem 0.75rem;background:#f8f8f7;font-size:11px;font-weight:600;color:#888;border-bottom:1px solid #e8e8e4}
+.pillar-table td{padding:0.65rem 0.75rem;border-bottom:1px solid #f0f0ec;vertical-align:top}
+.pillar-table tr:last-child td{border-bottom:none}
+.pillar-table td:first-child{font-weight:600;color:#1a1a1a;white-space:nowrap}
+.task-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1rem 1.125rem;margin-bottom:0.875rem}
+.task-card.tc-purple{border-left:3px solid #534AB7;border-radius:0 10px 10px 0}
+.task-card.tc-teal{border-left:3px solid #0F6E56;border-radius:0 10px 10px 0}
+.task-card.tc-blue{border-left:3px solid #185FA5;border-radius:0 10px 10px 0}
+.task-card.tc-amber{border-left:3px solid #854F0B;border-radius:0 10px 10px 0}
+.tc-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:0.65rem}
+.tc-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:19px}
+.tc-icon.purple{background:#EEEDFE;color:#534AB7}
+.tc-icon.teal{background:#E1F5EE;color:#0F6E56}
+.tc-icon.blue{background:#E6F1FB;color:#185FA5}
+.tc-icon.amber{background:#FAEEDA;color:#854F0B}
+.tc-title{font-size:15px;font-weight:600;margin-bottom:2px}
+.tc-duration{font-size:11px;color:#888}
+.tc-body{font-size:13px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.insight-box{background:#EEEDFE;border-radius:8px;padding:0.6rem 0.875rem;font-size:12px;color:#3C3489;line-height:1.5;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:6px}
+.res-link{display:flex;align-items:center;gap:7px;padding:0.55rem 0.75rem;background:#f8f8f7;border-radius:8px;font-size:13px;margin-bottom:0.5rem}
+.res-link a{color:#185FA5;text-decoration:none;font-weight:500}
+.res-link a:hover{text-decoration:underline}
+.task-row{display:flex;align-items:flex-start;gap:12px;padding:0.65rem 0 0}
+.task-row input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.task-row label{cursor:pointer;flex:1}
+.task-label{font-size:14px;line-height:1.4;color:#1a1a1a}
+.task-note{font-size:12px;color:#888;line-height:1.4;margin-top:2px}
+.section-checklist{background:#fff;border:2px solid #AFA9EC;border-radius:10px;padding:1.25rem;margin-top:1.5rem}
+.cl-title{font-size:16px;font-weight:600;margin-bottom:0.3rem;display:flex;align-items:center;gap:8px}
+.cl-sub{font-size:13px;color:#888;margin-bottom:1rem}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0;border-bottom:1px solid #f0f0ec}
+.check-item:last-child{border-bottom:none}
+.check-item label{font-size:14px;line-height:1.5;cursor:pointer;color:#1a1a1a}
+.check-item input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#888;margin:1rem 0 5px}
+.prog-bg{height:5px;background:#f0f0ec;border-radius:4px;overflow:hidden}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.done-note{font-size:13px;color:#085041;background:#E1F5EE;padding:0.65rem 0.9rem;border-radius:8px;margin-top:0.85rem;display:none;align-items:center;gap:7px}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#EEEDFE;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.next-btn:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888}
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="logo-bar">
+  <img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" />
+  <span class="logo-sub">New joiner onboarding</span>
+</div>
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 2 &nbsp;/&nbsp; <span>Section 4: The product</span></div>
+  <div class="nav-actions">
+    <a href="index.html" class="nav-btn"><i class="ti ti-home"></i> Home</a>
+    <a href="phase2-s3.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Section 3</a>
+    <a href="phase2-s5.html" class="nav-btn">Section 5 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+<div class="phase-tag"><i class="ti ti-cube"></i> Phase 2 · Section 4 · Day 15–21</div>
+<div class="section-title">The product</div>
+<div class="section-sub">Now that you understand the problem, the product will make sense. By the end of this section you can walk through what Journify does, how it is structured, and why each layer matters — in plain language.</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-clock"></i> Day 15–21</span>
+  <span class="meta-pill"><i class="ti ti-flag"></i> Day 21 manager check-in</span>
+  <span class="meta-pill"><i class="ti ti-list-check"></i> 3 tasks</span>
+</div>
+<div class="exp-box">
+  <i class="ti ti-flag"></i>
+  <div>
+    <div class="exp-title">Day 21 manager check-in — Product ready</div>
+    <div class="exp-body">You can walk through the five pillars and explain what each one does in plain language. Your manager asks follow-up questions. If it lands, you move to Phase 3 — your track. This is a conversation, not a review. If something is off, your manager will tell you and you'll work on it together.</div>
+  </div>
+</div>
+
+<div class="pillars-section">
+  <div class="pillars-title"><i class="ti ti-layers" style="font-size:17px;color:#534AB7"></i> The five pillars — Capture to Visibility</div>
+  <div class="pillar-flow">
+    <div class="pillar-node pn1"><div class="pn-num">1</div><div class="pn-name">Capture</div><div class="pn-desc">Conversion events collected server-side before the browser loses them</div></div>
+    <div class="pillar-node pn2"><div class="pn-num">2</div><div class="pn-name">Match</div><div class="pn-desc">Every event enriched with identifiers to maximise match rates</div></div>
+    <div class="pillar-node pn3"><div class="pn-num">3</div><div class="pn-name">Validate</div><div class="pn-desc">Signals checked before delivery — most vendors transmit, Journify validates</div></div>
+    <div class="pillar-node pn4"><div class="pn-num">4</div><div class="pn-name">Deliver</div><div class="pn-desc">Official Conversion APIs, platform-native, real-time across Meta, TikTok, Snap, Google</div></div>
+    <div class="pillar-node pn5"><div class="pn-num">5</div><div class="pn-name">Visibility</div><div class="pn-desc">Unified view of what each ad platform is actually seeing and learning from</div></div>
+  </div>
+  <table class="pillar-table">
+    <tr><th>Pillar</th><th>What it does</th><th>Why it matters</th></tr>
+    <tr><td>Capture</td><td>Collects conversion events server-side before browser restrictions can block them</td><td>This is what replaces the failing pixel — the foundation everything else depends on</td></tr>
+    <tr><td>Match</td><td>Enriches every event with available identifiers (email hash, phone hash, click IDs) to maximise the platform's ability to connect the event to a user</td><td>Higher match rate = better AI learning = better campaign performance</td></tr>
+    <tr><td>Validate</td><td>Checks each event before sending — correct hashing, correct taxonomy, no duplicates, correct format for each platform</td><td>Most vendors send what they receive. Journify sends what the platform needs.</td></tr>
+    <tr><td>Deliver</td><td>Sends validated events via official Conversion APIs in real time to Meta, TikTok, Snap, Google, and Amazon</td><td>Platform-native delivery means the signal is trusted and acted on correctly</td></tr>
+    <tr><td>Visibility</td><td>A unified dashboard showing what each platform is actually seeing — match rates, event volume, anomalies, health scores</td><td>Without this, you're flying blind. Visibility turns signal quality into a managed metric.</td></tr>
+  </table>
+</div>
+
+<div class="task-card tc-purple">
+  <div class="tc-top">
+    <div class="tc-icon purple"><i class="ti ti-book-2"></i></div>
+    <div><div class="tc-title">Read the Product Overview</div><div class="tc-duration">~30 min</div></div>
+  </div>
+  <div class="tc-body">The Product Overview covers the five pillars in depth — Capture, Match, Validate, Deliver, Visibility. Focus on what each pillar does and why the sequence matters. Each stage affects the next. Understanding the dependency chain is what lets you explain the product logically rather than as a list of features.</div>
+  <div class="insight-box"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>Accuracy first. Confidence follows. Don't try to memorise everything — understand the logic of why the sequence is the way it is. That understanding is what makes you credible.</span></div>
+  <div class="task-row"><input type="checkbox" id="p2t11" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p2t11"><div class="task-label">Product Overview read — five pillars understood in sequence</div><div class="task-note">Ask your manager for the link if it hasn't been shared — it will be available in Notion</div></label></div>
+</div>
+
+<div class="task-card tc-teal">
+  <div class="tc-top">
+    <div class="tc-icon teal"><i class="ti ti-road"></i></div>
+    <div><div class="tc-title">Read the product roadmap overview</div><div class="tc-duration">~15 min</div></div>
+  </div>
+  <div class="tc-body">A clear picture of what is live today and what is coming next. This is important for two reasons — you need to know what you can and can't promise customers, and you need to understand the direction the product is heading so you can position it confidently in forward-looking conversations. Attribution is on the roadmap — that context matters.</div>
+  <div class="task-row"><input type="checkbox" id="p2t12" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p2t12"><div class="task-label">Product roadmap overview read — I know what's live and what's coming</div><div class="task-note">Amine owns the roadmap — ask your manager for the latest version</div></label></div>
+</div>
+
+<div class="task-card tc-amber">
+  <div class="tc-top">
+    <div class="tc-icon amber"><i class="ti ti-flag"></i></div>
+    <div><div class="tc-title">Day 21 manager check-in — product ready check-in</div><div class="tc-duration">~20 min · Conversational</div></div>
+  </div>
+  <div class="tc-body">Walk your manager through the five pillars as if explaining the product to someone outside the industry. Accuracy matters more than fluency at this stage. Your manager will ask follow-up questions — what does Validate mean in practice, why does the sequence matter, what's the difference between Journify and just using the pixel. This is the last check-in before Phase 3.</div>
+  <div class="insight-box"><i class="ti ti-bulb" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span>The bar is plain language, not technical depth. If you can explain each pillar in one clear sentence and connect it to the customer's problem, you're ready. Technical depth comes with Phase 3.</span></div>
+  <div class="task-row"><input type="checkbox" id="p2t13" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p2t13"><div class="task-label">Day 21 manager check-in completed — manager signed off as product ready</div></label></div>
+</div>
+
+<div class="section-checklist">
+  <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 4 — completion checklist</div>
+  <div class="cl-sub">All three required before moving to the Phase 2 completion checklist.</div>
+  <div class="check-item"><input type="checkbox" id="cl1" onchange="saveProgress(this.id,this.checked);syncMirror('p2t11','cl1');updateProg()"><label for="cl1">Product Overview read — five pillars understood in sequence</label></div>
+  <div class="check-item"><input type="checkbox" id="cl2" onchange="saveProgress(this.id,this.checked);syncMirror('p2t12','cl2');updateProg()"><label for="cl2">Product roadmap read — live today vs coming next understood</label></div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="saveProgress(this.id,this.checked);syncMirror('p2t13','cl3');updateProg()"><label for="cl3">Day 21 manager check-in completed — manager signed off as product ready</label></div>
+  <div class="prog-top"><span id="prog-label">0 of 3 complete</span><span id="prog-pct">0%</span></div>
+  <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
+  <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for the Phase 2 completion checklist.</div>
+</div>
+<div class="nav-bottom">
+  <a href="phase2-s3.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Section 3</a>
+  <span class="nav-hint">Phase 2 · Section 4 of 5</span>
+  <a href="phase2-s5.html" class="next-btn">Next: Section 5 <i class="ti ti-arrow-right"></i></a>
+</div>
+</div>
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+<script>
+const JF_BASE='journify_ob_';const PAGE_SCOPE='p2s4';const JF_CANONICAL=['p2t11','p2t12','p2t13'];let _jfUser='';
+function jfGetUser(){if(_jfUser)return _jfUser;_jfUser=sessionStorage.getItem('jf_user_key')||'';if(!_jfUser){const saved=localStorage.getItem('jf_last_user')||'';const name=prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:',saved);_jfUser=(name||'user').trim().toLowerCase().replace(/[^a-z0-9]/g,'_')||'user';sessionStorage.setItem('jf_user_key',_jfUser);localStorage.setItem('jf_last_user',name||'');}return _jfUser;}
+function jfKey(id){return JF_BASE+jfGetUser()+'_'+PAGE_SCOPE+'_'+id;}
+function saveProgress(id,checked){if(JF_CANONICAL.includes(id))try{localStorage.setItem(jfKey(id),checked?'1':'0');}catch(e){}}
+function syncMirror(canonId,clId){const src=document.getElementById(canonId);const cl=document.getElementById(clId);if(src&&cl)src.checked=cl.checked;saveProgress(canonId,cl&&cl.checked);}
+function updateProg(){const cl_ids=['cl1','cl2','cl3'];const done=cl_ids.filter(id=>document.getElementById(id)?.checked).length;const pct=Math.round(done/cl_ids.length*100);document.getElementById('prog').style.width=pct+'%';document.getElementById('prog-label').textContent=done+' of '+cl_ids.length+' complete';document.getElementById('prog-pct').textContent=pct+'%';document.getElementById('done-note').style.display=done===cl_ids.length?'flex':'none';}
+function jfSyncMirrors(){const map={cl1:'p2t11',cl2:'p2t12',cl3:'p2t13'};Object.entries(map).forEach(([cl,t])=>{const src=document.getElementById(t);const mir=document.getElementById(cl);if(src&&mir)mir.checked=src.checked;});}
+function jfLoadAndSync(){jfGetUser();JF_CANONICAL.forEach(id=>{const el=document.getElementById(id);if(!el)return;try{el.checked=localStorage.getItem(jfKey(id))==='1';}catch(e){}});jfSyncMirrors();setTimeout(updateProg,30);}
+function resetProgress(){if(!confirm('Reset your Section 4 progress?'))return;JF_CANONICAL.forEach(id=>{try{localStorage.removeItem(jfKey(id));}catch(e){}const el=document.getElementById(id);if(el)el.checked=false;});document.querySelectorAll('input[type=checkbox]').forEach(box=>{box.checked=false;});updateProg();}
+window.addEventListener('DOMContentLoaded',jfLoadAndSync);
+</script>
+</body>
+</html>

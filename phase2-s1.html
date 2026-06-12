@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 2 · Section 1 — Digital marketing foundations | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.logo-bar{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.logo-bar img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+.logo-sub{font-size:12px;color:#888}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 10px;border-radius:7px;background:#E6F1FB;color:#0C447C;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:700;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.exp-box{background:#E6F1FB;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.75rem}
+.exp-title{font-size:13px;font-weight:600;color:#0C447C;margin-bottom:0.3rem;display:flex;align-items:center;gap:6px}
+.exp-body{font-size:13px;color:#185FA5;line-height:1.6}
+.platform-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1rem 1.125rem;margin-bottom:0.875rem}
+.platform-card.p-google{border-left:3px solid #185FA5;border-radius:0 10px 10px 0}
+.platform-card.p-meta{border-left:3px solid #534AB7;border-radius:0 10px 10px 0}
+.platform-card.p-snap{border-left:3px solid #EFBF00;border-radius:0 10px 10px 0}
+.platform-card.p-tiktok{border-left:3px solid #1a1a1a;border-radius:0 10px 10px 0}
+.platform-card.p-optional{border-left:3px solid #d4d4d0;border-radius:0 10px 10px 0;opacity:0.85}
+.plat-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:0.65rem}
+.plat-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:19px}
+.plat-icon.google{background:#E6F1FB;color:#185FA5}
+.plat-icon.meta{background:#EEEDFE;color:#534AB7}
+.plat-icon.snap{background:#FFFBEB;color:#92700A}
+.plat-icon.tiktok{background:#f4f4f1;color:#1a1a1a}
+.plat-icon.optional{background:#f4f4f1;color:#888}
+.plat-name{font-size:15px;font-weight:600;margin-bottom:2px}
+.plat-duration{font-size:11px;color:#888}
+.plat-priority{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;margin-left:6px}
+.plat-priority.core{background:#E1F5EE;color:#085041}
+.plat-priority.optional{background:#f4f4f1;color:#888}
+.plat-body{font-size:13px;color:#555;line-height:1.55;margin-bottom:0.75rem}
+.plat-gcccall{background:#FAEEDA;border-radius:8px;padding:0.5rem 0.75rem;font-size:12px;color:#633806;margin-bottom:0.75rem;display:flex;align-items:flex-start;gap:6px;line-height:1.45}
+.course-list{margin-bottom:0.75rem}
+.course-item{display:flex;align-items:flex-start;gap:8px;padding:0.5rem 0.75rem;background:#f8f8f7;border-radius:8px;margin-bottom:4px;font-size:13px}
+.course-item a{color:#185FA5;text-decoration:none;font-weight:500;flex:1}
+.course-item a:hover{text-decoration:underline}
+.course-item .ci-label{font-size:11px;color:#888;white-space:nowrap}
+.task-row{display:flex;align-items:flex-start;gap:12px;padding:0.65rem 0 0;transition:background 0.15s}
+.task-row.done-row .task-label{color:#aaa;text-decoration:line-through}
+.task-row input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.task-row label{cursor:pointer;flex:1}
+.task-label{font-size:14px;line-height:1.4;color:#1a1a1a}
+.task-note{font-size:12px;color:#888;line-height:1.4;margin-top:2px}
+.section-checklist{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.25rem;margin-top:1.5rem}
+.cl-title{font-size:16px;font-weight:600;margin-bottom:0.3rem;display:flex;align-items:center;gap:8px}
+.cl-sub{font-size:13px;color:#888;margin-bottom:1rem}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:0.6rem 0;border-bottom:1px solid #f0f0ec}
+.check-item:last-child{border-bottom:none}
+.check-item label{font-size:14px;line-height:1.5;cursor:pointer;color:#1a1a1a}
+.check-item input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#888;margin:1rem 0 5px}
+.prog-bg{height:5px;background:#f0f0ec;border-radius:4px;overflow:hidden}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width 0.3s;width:0%}
+.done-note{font-size:13px;color:#085041;background:#E1F5EE;padding:0.65rem 0.9rem;border-radius:8px;margin-top:0.85rem;display:none;align-items:center;gap:7px}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#EEEDFE;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.next-btn:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888}
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="logo-bar">
+  <img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" />
+  <span class="logo-sub">New joiner onboarding</span>
+</div>
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 2 &nbsp;/&nbsp; <span>Section 1: Digital marketing foundations</span></div>
+  <div class="nav-actions">
+    <a href="index.html" class="nav-btn"><i class="ti ti-home"></i> Home</a>
+    <a href="phase2-index.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Phase 2</a>
+    <a href="phase2-s2.html" class="nav-btn">Section 2 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+<div class="phase-tag"><i class="ti ti-school"></i> Phase 2 · Section 1 · Day 8–10</div>
+<div class="section-title">Digital marketing foundations</div>
+<div class="section-sub">Before you can understand the customer's pain, you need to understand how they work. These platform certifications build the foundation — how ad platforms make decisions, what campaigns look like from the inside, and the language your customers use every day.</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-clock"></i> Day 8–10</span>
+  <span class="meta-pill"><i class="ti ti-certificate"></i> 4 core platforms</span>
+  <span class="meta-pill"><i class="ti ti-award"></i> Free certifications</span>
+</div>
+<div class="exp-box">
+  <div class="exp-title"><i class="ti ti-info-circle"></i> How to approach these</div>
+  <div class="exp-body">These are official platform certifications — free and self-paced. Answers can be found online, but go through them properly. The goal is to think the way your customers think when they're setting up campaigns — not to pass a test. That perspective is what makes you credible in discovery calls.</div>
+</div>
+
+<div class="platform-card p-google">
+  <div class="plat-top">
+    <div class="plat-icon google"><i class="ti ti-brand-google"></i></div>
+    <div>
+      <div class="plat-name">Google <span class="plat-priority core">Core</span></div>
+      <div class="plat-duration">Google Skillshop — first 3 courses recommended · ~3–4 hours</div>
+    </div>
+  </div>
+  <div class="plat-body">Google's Skillshop covers the fundamentals of digital marketing and Google Ads. Focus on the first 3 courses in the Fundamentals of Digital Marketing path — they give you the strongest baseline for understanding how search and display campaigns work, how budgets are set, and how conversion tracking fits in.</div>
+  <div class="course-list">
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://skillshop.exceedlms.com/student/collection/1384851-fundamentals-of-digital-marketing" target="_blank">Fundamentals of Digital Marketing — Google Skillshop</a><span class="ci-label">First 3 courses</span></div>
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://skillshop.docebosaas.com/learn/signin" target="_blank">Google Ads certification — Skillshop</a><span class="ci-label">Optional cert</span></div>
+  </div>
+  <div class="task-row"><input type="checkbox" id="p2t1" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p2t1"><div class="task-label">Google — first 3 Skillshop courses completed</div></label></div>
+</div>
+
+<div class="platform-card p-meta">
+  <div class="plat-top">
+    <div class="plat-icon meta"><i class="ti ti-brand-meta"></i></div>
+    <div>
+      <div class="plat-name">Meta <span class="plat-priority core">Core</span></div>
+      <div class="plat-duration">Meta Blueprint — 6 courses · ~3–4 hours</div>
+    </div>
+  </div>
+  <div class="plat-body">Meta Blueprint covers campaign objectives, ad buying, audience targeting, and campaign management. These are the courses that map most directly to what Journify's customers talk about — ROAS, conversion events, pixel setup, and optimisation. This is the platform where signal loss has the most visible impact.</div>
+  <div class="course-list">
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://www.facebookblueprint.com/student/path/211544-campaign-objectives-ads-manager" target="_blank">Campaign objectives in Ads Manager</a></div>
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://www.facebookblueprint.com/student/path/219699-ad-objectives-course" target="_blank">Ad objectives course</a></div>
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://www.facebookblueprint.com/student/collection/238354/path/206358" target="_blank">Conversion tracking and measurement</a></div>
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://www.facebookblueprint.com/student/path/219704-buying-ads-course" target="_blank">Buying ads on Meta</a></div>
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://www.facebookblueprint.com/student/collection/238354/path/206357" target="_blank">Audience targeting</a></div>
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://www.facebookblueprint.com/student/path/211546-manage-your-ad-campaigns" target="_blank">Managing your ad campaigns</a></div>
+  </div>
+  <div class="task-row"><input type="checkbox" id="p2t2" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p2t2"><div class="task-label">Meta — Blueprint courses completed</div></label></div>
+</div>
+
+<div class="platform-card p-snap">
+  <div class="plat-top">
+    <div class="plat-icon snap"><i class="ti ti-brand-snapchat"></i></div>
+    <div>
+      <div class="plat-name">Snapchat <span class="plat-priority core">Core — GCC priority</span></div>
+      <div class="plat-duration">Snapchat Focus — 2 collections · ~2–3 hours</div>
+    </div>
+  </div>
+  <div class="plat-body">Snapchat represents a major share of Journify clients' spend due to its popularity across the GCC market. This makes it unusually important compared to most other markets. Understanding how Snapchat campaigns are structured and activated helps you speak the same language as clients who are spending significant budget here.</div>
+  <div class="plat-gcccall"><i class="ti ti-map-pin" style="font-size:13px;flex-shrink:0;margin-top:1px"></i><span><strong>GCC context:</strong> Snapchat has outsized importance in Saudi Arabia and UAE compared to global norms. Your clients will reference it constantly — don't treat it as secondary.</span></div>
+  <div class="course-list">
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://focus.snapchat.com/student/collection/2554705-snapchat-essentials-public" target="_blank">Snapchat Essentials — Snapchat Focus</a></div>
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://focus.snapchat.com/student/collection/2555318-ads-manager-campaign-activation-public" target="_blank">Ads Manager Campaign Activation</a></div>
+  </div>
+  <div class="task-row"><input type="checkbox" id="p2t3" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p2t3"><div class="task-label">Snapchat — Essentials and Campaign Activation completed</div></label></div>
+</div>
+
+<div class="platform-card p-tiktok">
+  <div class="plat-top">
+    <div class="plat-icon tiktok"><i class="ti ti-brand-tiktok"></i></div>
+    <div>
+      <div class="plat-name">TikTok <span class="plat-priority core">Core</span></div>
+      <div class="plat-duration">TikTok Academy — Media Buying Expert path · ~2–3 hours</div>
+    </div>
+  </div>
+  <div class="plat-body">TikTok's learning path covers campaign setup, ad formats, performance marketing, and measurement on the platform. TikTok has a distinct campaign structure compared to Meta and Google — understanding it rounds out your platform knowledge and matters as TikTok spend grows across the region.</div>
+  <div class="course-list">
+    <div class="course-item"><i class="ti ti-external-link" style="font-size:14px;color:#888;flex-shrink:0;margin-top:1px"></i><a href="https://www.tiktokacademy.com/student/collection/2640708-become-a-media-buying-expert" target="_blank">Become a Media Buying Expert — TikTok Academy</a></div>
+  </div>
+  <div class="task-row"><input type="checkbox" id="p2t4" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p2t4"><div class="task-label">TikTok — Media Buying Expert path completed</div></label></div>
+</div>
+
+<div class="platform-card p-optional">
+  <div class="plat-top">
+    <div class="plat-icon optional"><i class="ti ti-dots-circle-horizontal"></i></div>
+    <div>
+      <div class="plat-name">Twitter/X & Pinterest <span class="plat-priority optional">Awareness only</span></div>
+      <div class="plat-duration">Browse when you have time — not required before Day 10</div>
+    </div>
+  </div>
+  <div class="plat-body">Twitter/X and Pinterest are in the platform mix but represent a smaller share of client spend in the GCC. Browse their ad documentation when you have time — no certification required at this stage.</div>
+</div>
+
+<div class="section-checklist">
+  <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 1 — completion checklist</div>
+  <div class="cl-sub">All 4 core platforms completed. You're ready for Section 2 when everything is checked.</div>
+  <div class="check-item"><input type="checkbox" id="cl1" onchange="saveProgress(this.id,this.checked);syncMirror('p2t1','cl1');updateProg()"><label for="cl1">Google — Skillshop Fundamentals of Digital Marketing (first 3 courses)</label></div>
+  <div class="check-item"><input type="checkbox" id="cl2" onchange="saveProgress(this.id,this.checked);syncMirror('p2t2','cl2');updateProg()"><label for="cl2">Meta — Blueprint courses covering objectives, buying, targeting, and measurement</label></div>
+  <div class="check-item"><input type="checkbox" id="cl3" onchange="saveProgress(this.id,this.checked);syncMirror('p2t3','cl3');updateProg()"><label for="cl3">Snapchat — Essentials and Campaign Activation (GCC priority platform)</label></div>
+  <div class="check-item"><input type="checkbox" id="cl4" onchange="saveProgress(this.id,this.checked);syncMirror('p2t4','cl4');updateProg()"><label for="cl4">TikTok — Media Buying Expert learning path</label></div>
+  <div class="prog-top"><span id="prog-label">0 of 4 complete</span><span id="prog-pct">0%</span></div>
+  <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
+  <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 2: The customer problem.</div>
+</div>
+<div class="nav-bottom">
+  <a href="phase2-index.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Phase 2</a>
+  <span class="nav-hint">Phase 2 · Section 1 of 5</span>
+  <a href="phase2-s2.html" class="next-btn">Next: Section 2 <i class="ti ti-arrow-right"></i></a>
+</div>
+</div>
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+<script>
+const JF_BASE='journify_ob_';const PAGE_SCOPE='p2s1';const JF_CANONICAL=['p2t1','p2t2','p2t3','p2t4'];let _jfUser='';
+function jfGetUser(){if(_jfUser)return _jfUser;_jfUser=sessionStorage.getItem('jf_user_key')||'';if(!_jfUser){const saved=localStorage.getItem('jf_last_user')||'';const name=prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:',saved);_jfUser=(name||'user').trim().toLowerCase().replace(/[^a-z0-9]/g,'_')||'user';sessionStorage.setItem('jf_user_key',_jfUser);localStorage.setItem('jf_last_user',name||'');}return _jfUser;}
+function jfKey(id){return JF_BASE+jfGetUser()+'_'+PAGE_SCOPE+'_'+id;}
+function saveProgress(id,checked){if(JF_CANONICAL.includes(id))try{localStorage.setItem(jfKey(id),checked?'1':'0');}catch(e){}}
+function syncMirror(canonId,clId){const src=document.getElementById(canonId);const cl=document.getElementById(clId);if(src&&cl)src.checked=cl.checked;saveProgress(canonId,cl&&cl.checked);}
+function updateProg(){const cl_ids=['cl1','cl2','cl3','cl4'];const done=cl_ids.filter(id=>document.getElementById(id)?.checked).length;const pct=Math.round(done/cl_ids.length*100);document.getElementById('prog').style.width=pct+'%';document.getElementById('prog-label').textContent=done+' of '+cl_ids.length+' complete';document.getElementById('prog-pct').textContent=pct+'%';document.getElementById('done-note').style.display=done===cl_ids.length?'flex':'none';}
+function jfSyncMirrors(){const map={cl1:'p2t1',cl2:'p2t2',cl3:'p2t3',cl4:'p2t4'};Object.entries(map).forEach(([cl,t])=>{const src=document.getElementById(t);const mir=document.getElementById(cl);if(src&&mir)mir.checked=src.checked;});}
+function jfLoadAndSync(){jfGetUser();JF_CANONICAL.forEach(id=>{const el=document.getElementById(id);if(!el)return;try{el.checked=localStorage.getItem(jfKey(id))==='1';}catch(e){}});jfSyncMirrors();setTimeout(updateProg,30);}
+function resetProgress(){if(!confirm('Reset your Section 1 progress?'))return;JF_CANONICAL.forEach(id=>{try{localStorage.removeItem(jfKey(id));}catch(e){}const el=document.getElementById(id);if(el)el.checked=false;});document.querySelectorAll('input[type=checkbox]').forEach(box=>{box.checked=false;});updateProg();}
+function saveProgress(id,checked){if(JF_CANONICAL.includes(id))try{localStorage.setItem(jfKey(id),checked?'1':'0');}catch(e){}}
+window.addEventListener('DOMContentLoaded',jfLoadAndSync);
+</script>
+</body>
+</html>
