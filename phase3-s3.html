@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 3 · Section 3 — Shadowing & role-play | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.logo-bar{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.logo-bar img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+.logo-sub{font-size:12px;color:#888}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:7px;background:#E1F5EE;color:#085041;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:700;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.milestone-banner{background:#EEEDFE;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.75rem;display:flex;gap:12px;align-items:flex-start}
+.milestone-banner i{font-size:20px;color:#534AB7;flex-shrink:0;margin-top:1px}
+.milestone-title{font-size:14px;font-weight:600;color:#3C3489;margin-bottom:3px}
+.milestone-body{font-size:13px;color:#534AB7;line-height:1.55}
+.block-label{font-size:13px;font-weight:600;color:#888;display:flex;align-items:center;gap:8px;margin:1.75rem 0 1rem}
+.block-label::after{content:'';flex:1;height:1px;background:#e8e8e4}
+.card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1rem 1.125rem;margin-bottom:.875rem}
+.card.c-teal{border-left:3px solid #0F6E56;border-radius:0 10px 10px 0}
+.card.c-purple{border-left:3px solid #534AB7;border-radius:0 10px 10px 0}
+.card.c-amber{border-left:3px solid #854F0B;border-radius:0 10px 10px 0}
+.card-top{display:flex;align-items:flex-start;gap:10px;margin-bottom:.65rem}
+.card-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.card-title{font-size:15px;font-weight:600;margin-bottom:2px}
+.card-sub{font-size:11px;color:#888}
+.card-body{font-size:13px;color:#555;line-height:1.6;margin-bottom:.75rem}
+.observe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:.75rem}
+.obs-card{background:#f8f8f7;border-radius:8px;padding:.75rem}
+.obs-icon{font-size:17px;margin-bottom:.4rem}
+.obs-title{font-size:12px;font-weight:600;margin-bottom:3px}
+.obs-body{font-size:11px;color:#888;line-height:1.4}
+.debrief-items{display:flex;flex-direction:column;gap:4px;margin-bottom:.75rem}
+.db-item{display:flex;align-items:flex-start;gap:8px;padding:.5rem .75rem;background:#f8f8f7;border-radius:8px;font-size:13px;color:#1a1a1a;line-height:1.5}
+.db-item i{font-size:14px;flex-shrink:0;margin-top:1px}
+.pitch-box{background:#EEEDFE;border-radius:10px;padding:1rem 1.25rem;margin-bottom:.75rem}
+.pitch-label{font-size:11px;font-weight:600;color:#3C3489;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+.pitch-text{font-size:14px;color:#26215C;line-height:1.65;font-style:italic}
+.roleplay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-bottom:.75rem}
+.rp-card{background:#f8f8f7;border-radius:8px;padding:.875rem}
+.rp-num{font-size:11px;font-weight:600;margin-bottom:4px}
+.rp-title{font-size:13px;font-weight:600;margin-bottom:4px}
+.rp-desc{font-size:12px;color:#888;line-height:1.45;margin-bottom:.5rem}
+.rp-goal{font-size:11px;padding:3px 7px;border-radius:20px;display:inline-block;font-weight:500}
+.checkin-box{background:#f8f8f7;border-radius:10px;padding:1rem 1.125rem;margin-bottom:.875rem}
+.checkin-title{font-size:13px;font-weight:600;margin-bottom:.3rem;display:flex;align-items:center;gap:6px}
+.checkin-body{font-size:13px;color:#555;line-height:1.6;margin-bottom:.65rem}
+.checkin-qs{display:flex;flex-direction:column;gap:4px}
+.checkin-q{font-size:12px;color:#888;padding:.4rem .65rem;background:#fff;border-radius:8px;border-left:2px solid #534AB7;line-height:1.4}
+.section-checklist{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.25rem;margin-top:1.5rem}
+.cl-title{font-size:16px;font-weight:600;margin-bottom:.3rem;display:flex;align-items:center;gap:8px}
+.cl-sub{font-size:13px;color:#888;margin-bottom:1rem}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:.6rem 0;border-bottom:1px solid #f0f0ec}
+.check-item:last-child{border-bottom:none}
+.check-item label{font-size:14px;line-height:1.5;cursor:pointer;color:#1a1a1a}
+.check-item input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#888;margin:1rem 0 5px}
+.prog-bg{height:5px;background:#f0f0ec;border-radius:4px;overflow:hidden}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width .3s;width:0%}
+.done-note{font-size:13px;color:#085041;background:#E1F5EE;padding:.65rem .9rem;border-radius:8px;margin-top:.85rem;display:none;align-items:center;gap:7px}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#EEEDFE;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.next-btn:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888}
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="logo-bar">
+  <img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" />
+  <span class="logo-sub">New joiner onboarding</span>
+</div>
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 3 &nbsp;/&nbsp; <span>Section 3: Shadowing & role-play</span></div>
+  <div class="nav-actions">
+    <a href="index.html" class="nav-btn"><i class="ti ti-home"></i> Home</a>
+    <a href="phase3-s2.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Section 2</a>
+    <a href="phase3-s4.html" class="nav-btn">Section 4 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+<div class="phase-tag"><i class="ti ti-users"></i> Phase 3 · Section 3 · Day 29–30</div>
+<div class="section-title">Shadowing & role-play</div>
+<div class="section-sub">You know the framework. Now you watch it live, reflect on it, and practise it. By Day 30 you can run a discovery call independently. Your manager certifies you — and Phase 3 is complete.</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-clock"></i> Day 29–30</span>
+  <span class="meta-pill"><i class="ti ti-briefcase"></i> AE track</span>
+  <span class="meta-pill"><i class="ti ti-list-check"></i> 4 tasks</span>
+</div>
+<div class="milestone-banner">
+  <i class="ti ti-flag"></i>
+  <div>
+    <div class="milestone-title">Day 30 manager check-in — Discovery ready</div>
+    <div class="milestone-body">You run a mock discovery call with your manager playing a prospect. They assess whether you can open well, ask the right questions, apply BANT naturally, and close with a clear next step. If it lands — you're discovery ready and Phase 3 is complete.</div>
+  </div>
+</div>
+
+<div class="block-label">Step 1 — Shadow 2–3 discovery calls</div>
+<div class="card c-teal">
+  <div class="card-top"><div class="card-icon" style="background:#E1F5EE;color:#0F6E56"><i class="ti ti-eye"></i></div><div><div class="card-title">What to watch for — not just what they say</div><div class="card-sub">Ask your manager to add you to 2–3 live discovery calls before Day 30</div></div></div>
+  <div class="card-body">Shadowing is only useful if you're watching with intent. Don't just listen — observe the structure, the silences, and the moments where the conversation shifts.</div>
+  <div class="observe-grid">
+    <div class="obs-card"><div class="obs-icon" style="color:#0F6E56"><i class="ti ti-player-play"></i></div><div class="obs-title">The open</div><div class="obs-body">How is rapport built without wasting time? When does the agenda get set?</div></div>
+    <div class="obs-card"><div class="obs-icon" style="color:#534AB7"><i class="ti ti-ear"></i></div><div class="obs-title">The listening</div><div class="obs-body">How long is the silence after a question? How is the prospect guided without being led?</div></div>
+    <div class="obs-card"><div class="obs-icon" style="color:#854F0B"><i class="ti ti-flame"></i></div><div class="obs-title">The pain moment</div><div class="obs-body">When does the prospect reveal real pain? How is that moment caught and deepened?</div></div>
+    <div class="obs-card"><div class="obs-icon" style="color:#993C1D"><i class="ti ti-shield-off"></i></div><div class="obs-title">Objections</div><div class="obs-body">What objections come up? How are they acknowledged first, then addressed?</div></div>
+    <div class="obs-card"><div class="obs-icon" style="color:#085041"><i class="ti ti-flag-check"></i></div><div class="obs-title">The close</div><div class="obs-body">How does the call end? Is there always a clear next step agreed before hanging up?</div></div>
+  </div>
+  <div style="font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:.5rem">After each shadow session — write your debrief</div>
+  <div class="debrief-items">
+    <div class="db-item"><i class="ti ti-arrow-right" style="color:#0F6E56"></i> What was the prospect's main pain — and at what point in the call did it surface?</div>
+    <div class="db-item"><i class="ti ti-arrow-right" style="color:#0F6E56"></i> What question or phrase opened the prospect up the most?</div>
+    <div class="db-item"><i class="ti ti-arrow-right" style="color:#0F6E56"></i> What would you do differently if you were running that call?</div>
+  </div>
+  <div style="font-size:12px;color:#085041;background:#E1F5EE;padding:.5rem .75rem;border-radius:8px"><i class="ti ti-bulb"></i> Send the debrief to your manager after each call — it signals that you're building a mental model of how good discovery works.</div>
+</div>
+
+<div class="block-label">Step 2 — Elevator pitch</div>
+<div class="card c-purple">
+  <div class="card-top"><div class="card-icon" style="background:#EEEDFE;color:#534AB7"><i class="ti ti-speakerphone"></i></div><div><div class="card-title">Deliver your elevator pitch — under 60 seconds</div><div class="card-sub">Practise until it flows without notes — you'll use this to open every call</div></div></div>
+  <div class="card-body">The elevator pitch is not a product demo. It's a door-opener — a clear, confident statement of what Journify does and why the person on the other end should care. Under 60 seconds. Leave the prospect curious, not informed.</div>
+  <div class="pitch-box">
+    <div class="pitch-label">Journify elevator pitch — learn this</div>
+    <div class="pitch-text">"Ad platforms like Meta and TikTok have become AI-driven systems — they optimise based on the conversion signals brands send them. The problem is that most brands are sending 30 to 40% fewer signals than they actually have, because of iOS restrictions and browser tracking limitations. That means the AI is learning from incomplete data — which is why ROAS becomes volatile and CAC keeps rising. Journify fixes that. We capture, validate, and deliver clean conversion signals directly to the platforms — so the AI works from complete data, and performance reflects what's actually happening in the business."</div>
+  </div>
+  <div style="font-size:12px;color:#3C3489;background:#EEEDFE;padding:.5rem .75rem;border-radius:8px"><i class="ti ti-bulb"></i> Say it out loud. Alone. Then to your manager. Then to someone outside Journify who knows nothing about AdTech. If they understand it — you've got it.</div>
+</div>
+
+<div class="block-label">Step 3 — Role-play scenarios</div>
+<div class="card c-amber">
+  <div class="card-top"><div class="card-icon" style="background:#FAEEDA;color:#854F0B"><i class="ti ti-users"></i></div><div><div class="card-title">3 role-play scenarios with your manager</div><div class="card-sub">Do these before your Day 30 check-in — they are your preparation for it</div></div></div>
+  <div class="roleplay-grid">
+    <div class="rp-card"><div class="rp-num" style="color:#534AB7">Scenario 1</div><div class="rp-title">Cold open — prospect doesn't know signal loss</div><div class="rp-desc">Manager plays a Head of Performance Marketing who has never heard of signal loss. Open well, ask the right questions, surface the pain, explain Journify without jargon.</div><span class="rp-goal" style="background:#EEEDFE;color:#3C3489">Goal: surface the pain naturally</span></div>
+    <div class="rp-card"><div class="rp-num" style="color:#854F0B">Scenario 2</div><div class="rp-title">Objection — "we already have an MMP"</div><div class="rp-desc">Manager plays a prospect who says "we already use AppsFlyer — why do we need Journify?" Acknowledge, reframe, and explain the difference without dismissing their current setup.</div><span class="rp-goal" style="background:#FAEEDA;color:#633806">Goal: handle without dismissing</span></div>
+    <div class="rp-card"><div class="rp-num" style="color:#0F6E56">Scenario 3</div><div class="rp-title">Full mock discovery call — end to end</div><div class="rp-desc">Manager plays a qualified prospect (eCommerce brand, $60K/month ad spend, running Meta and Snap). Run the full call — open, questions, pain identification, BANT, and close with a clear next step.</div><span class="rp-goal" style="background:#E1F5EE;color:#085041">Goal: run the full structure</span></div>
+  </div>
+</div>
+
+<div class="block-label">Day 30 — manager check-in</div>
+<div class="checkin-box">
+  <div class="checkin-title"><i class="ti ti-flag" style="color:#534AB7"></i> What your manager will assess</div>
+  <div class="checkin-body">Your manager runs Scenario 3 again — but this time it counts. They play a prospect and you run the full discovery call. Afterwards they ask you to self-assess, then give feedback on four areas:</div>
+  <div class="checkin-qs">
+    <div class="checkin-q">Did you open with rapport and set a clear agenda?</div>
+    <div class="checkin-q">Did you ask open questions and listen — or lead the prospect to answers?</div>
+    <div class="checkin-q">Did BANT feel natural in the conversation — or like a checklist being read?</div>
+    <div class="checkin-q">Did the call end with a clear, agreed next step?</div>
+  </div>
+</div>
+<div style="font-size:12px;color:#888;margin-bottom:1rem;padding:.65rem .875rem;background:#f8f8f7;border-radius:8px"><i class="ti ti-info-circle"></i> Discovery readiness is a standard — not a date. Most people get there by Day 30. Some need a few more days. Both are fine — your manager will tell you if something needs more work.</div>
+
+<div class="section-checklist">
+  <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 3 — completion checklist</div>
+  <div class="cl-sub">You're ready for the completion gate when all four are done.</div>
+  <div class="check-item"><input type="checkbox" id="p3t10" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p3t10">2–3 discovery calls shadowed — debrief sent to manager after each</label></div>
+  <div class="check-item"><input type="checkbox" id="p3t11" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p3t11">Elevator pitch delivered under 60 seconds — practised and signed off by manager</label></div>
+  <div class="check-item"><input type="checkbox" id="p3t12" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p3t12">All 3 role-play scenarios completed with manager</label></div>
+  <div class="check-item"><input type="checkbox" id="p3t13" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p3t13">Day 30 manager check-in completed — certified as discovery ready</label></div>
+  <div class="prog-top"><span id="prog-label">0 of 4 complete</span><span id="prog-pct">0%</span></div>
+  <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
+  <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 4: Phase 3 completion.</div>
+</div>
+<div class="nav-bottom">
+  <a href="phase3-s2.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Section 2</a>
+  <span class="nav-hint">Phase 3 · Section 3 of 4</span>
+  <a href="phase3-s4.html" class="next-btn">Next: Section 4 <i class="ti ti-arrow-right"></i></a>
+</div>
+</div>
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+<script>
+const JF_BASE='journify_ob_';const PAGE_SCOPE='p3s3';const JF_CANONICAL=['p3t10','p3t11','p3t12','p3t13'];let _jfUser='';
+function jfGetUser(){if(_jfUser)return _jfUser;_jfUser=sessionStorage.getItem('jf_user_key')||'';if(!_jfUser){const saved=localStorage.getItem('jf_last_user')||'';const name=prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:',saved);_jfUser=(name||'user').trim().toLowerCase().replace(/[^a-z0-9]/g,'_')||'user';sessionStorage.setItem('jf_user_key',_jfUser);localStorage.setItem('jf_last_user',name||'');}return _jfUser;}
+function jfKey(id){return JF_BASE+jfGetUser()+'_'+PAGE_SCOPE+'_'+id;}
+function saveProgress(id,checked){if(JF_CANONICAL.includes(id))try{localStorage.setItem(jfKey(id),checked?'1':'0');}catch(e){}}
+function updateProg(){const done=JF_CANONICAL.filter(id=>document.getElementById(id)?.checked).length;const pct=Math.round(done/JF_CANONICAL.length*100);document.getElementById('prog').style.width=pct+'%';document.getElementById('prog-label').textContent=done+' of '+JF_CANONICAL.length+' complete';document.getElementById('prog-pct').textContent=pct+'%';document.getElementById('done-note').style.display=done===JF_CANONICAL.length?'flex':'none';}
+function jfSyncMirrors(){}
+function jfLoadAndSync(){jfGetUser();JF_CANONICAL.forEach(id=>{const el=document.getElementById(id);if(!el)return;try{el.checked=localStorage.getItem(jfKey(id))==='1';}catch(e){}});setTimeout(updateProg,30);}
+function resetProgress(){if(!confirm('Reset your Section 3 progress?'))return;JF_CANONICAL.forEach(id=>{try{localStorage.removeItem(jfKey(id));}catch(e){}const el=document.getElementById(id);if(el)el.checked=false;});updateProg();}
+window.addEventListener('DOMContentLoaded',jfLoadAndSync);
+</script>
+</body>
+</html>

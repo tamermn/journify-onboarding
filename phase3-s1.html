@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 3 · Section 1 — The sales process | Journify Onboarding</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f8f7;color:#1a1a1a;font-size:15px;line-height:1.6}
+.page{max-width:860px;margin:0 auto;padding:2rem 1.5rem}
+.logo-bar{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:1px solid #e8e8e4}
+.logo-bar img{height:28px;width:auto;max-width:140px;object-fit:contain;display:block}
+.logo-sub{font-size:12px;color:#888}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1rem;background:#fff;border:1px solid #e8e8e4;border-radius:10px;margin-bottom:1.75rem}
+.nav-crumb{font-size:13px;color:#888}.nav-crumb span{color:#1a1a1a;font-weight:500}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{display:flex;align-items:center;gap:5px;font-size:13px;padding:6px 12px;border:1px solid #d4d4d0;border-radius:7px;background:#fff;color:#1a1a1a;text-decoration:none}
+.nav-btn:hover{background:#f4f4f1}
+.phase-tag{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:7px;background:#FAEEDA;color:#633806;margin-bottom:0.75rem}
+.section-title{font-size:26px;font-weight:700;margin-bottom:0.4rem}
+.section-sub{font-size:15px;color:#555;line-height:1.6;margin-bottom:0.75rem}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#666;border:1px solid #e4e4e0;padding:4px 10px;border-radius:20px;background:#fff}
+.exp-box{background:#E6F1FB;border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.75rem}
+.exp-title{font-size:13px;font-weight:600;color:#0C447C;margin-bottom:.3rem;display:flex;align-items:center;gap:6px}
+.exp-body{font-size:13px;color:#185FA5;line-height:1.6}
+.block-label{font-size:13px;font-weight:600;color:#888;display:flex;align-items:center;gap:8px;margin:1.75rem 0 1rem}
+.block-label::after{content:'';flex:1;height:1px;background:#e8e8e4}
+.funnel-wrap{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.25rem;margin-bottom:1rem}
+.funnel-hint{font-size:12px;color:#888;margin-bottom:1rem;display:flex;align-items:center;gap:5px}
+.funnel-stages{display:flex;flex-direction:column;gap:5px}
+.f-stage{border-radius:8px;padding:.65rem 1rem;display:flex;align-items:center;gap:10px;cursor:pointer;transition:opacity .15s;user-select:none}
+.f-stage:hover{opacity:.85}
+.f-num{font-size:11px;font-weight:600;width:18px;text-align:center;flex-shrink:0}
+.f-name{font-size:13px;font-weight:600;flex:1}
+.f-role{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px;white-space:nowrap}
+.f-pct{font-size:11px;font-weight:600;min-width:38px;text-align:right;flex-shrink:0}
+.f-icon{font-size:15px;flex-shrink:0}
+.stage-detail{border-radius:8px;padding:.875rem 1rem;margin-top:4px;font-size:13px;line-height:1.6;display:none;border-left:3px solid}
+.stage-detail.open{display:block}
+.funnel-note{font-size:12px;color:#888;margin-top:.75rem;display:flex;align-items:center;gap:5px}
+.roles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:1rem}
+.role-card{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:.875rem}
+.role-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:.5rem}
+.role-title{font-size:13px;font-weight:600;margin-bottom:3px}
+.role-owns{font-size:11px;color:#888;line-height:1.4}
+.bant-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:1rem}
+.bant-card{border-radius:8px;padding:.75rem}
+.bant-letter{font-size:22px;font-weight:700;margin-bottom:3px}
+.bant-name{font-size:12px;font-weight:600;margin-bottom:4px}
+.bant-q{font-size:12px;line-height:1.5}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:1rem}
+.kpi-card{background:#f8f8f7;border-radius:8px;padding:.75rem;text-align:center}
+.kpi-val{font-size:18px;font-weight:700;color:#534AB7;margin-bottom:2px}
+.kpi-label{font-size:11px;color:#888;line-height:1.3}
+.attio-wrap{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.25rem;margin-bottom:1rem}
+.attio-header{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.attio-icon{width:36px;height:36px;border-radius:8px;background:#EEEDFE;color:#534AB7;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.attio-title{font-size:14px;font-weight:600;margin-bottom:2px}
+.attio-sub{font-size:11px;color:#888}
+.attio-stages{display:flex;flex-direction:column;gap:4px;margin-bottom:1rem}
+.attio-stage{display:flex;align-items:stretch;border-radius:8px;overflow:hidden;border:1px solid #e8e8e4}
+.as-num{width:32px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
+.as-body{flex:1;padding:.55rem .75rem;border-left:1px solid #e8e8e4}
+.as-attio{font-size:10px;font-weight:600;padding:1px 6px;border-radius:20px;display:inline-flex;align-items:center;gap:4px;margin-bottom:3px}
+.as-exit{font-size:11px;color:#888;line-height:1.4}
+.as-pct{display:flex;align-items:center;justify-content:center;padding:0 .75rem;font-size:12px;font-weight:600;flex-shrink:0;border-left:1px solid #e8e8e4;min-width:52px}
+.hygiene-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin-bottom:1rem}
+.hygiene-card{background:#f8f8f7;border-radius:8px;padding:.75rem}
+.hygiene-label{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.35rem;display:flex;align-items:center;gap:5px}
+.hygiene-val{font-size:13px;color:#1a1a1a;line-height:1.5}
+.ownership-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:.75rem;table-layout:fixed}
+.ownership-table th{text-align:left;padding:.5rem .75rem;background:#f8f8f7;font-size:11px;font-weight:600;color:#888;border-bottom:1px solid #e8e8e4}
+.ownership-table td{padding:.55rem .75rem;border-bottom:1px solid #f0f0ec;color:#1a1a1a;vertical-align:middle}
+.ownership-table tr:last-child td{border-bottom:none}
+.badge{font-size:10px;padding:2px 7px;border-radius:20px;font-weight:600;white-space:nowrap}
+.badge-sales{background:#E1F5EE;color:#085041}
+.badge-partner{background:#E6F1FB;color:#0C447C}
+.badge-yes{background:#E1F5EE;color:#085041}
+.badge-no{background:#f4f4f1;color:#888}
+.section-checklist{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:1.25rem;margin-top:1.5rem}
+.cl-title{font-size:16px;font-weight:600;margin-bottom:.3rem;display:flex;align-items:center;gap:8px}
+.cl-sub{font-size:13px;color:#888;margin-bottom:1rem}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:.6rem 0;border-bottom:1px solid #f0f0ec}
+.check-item:last-child{border-bottom:none}
+.check-item label{font-size:14px;line-height:1.5;cursor:pointer;color:#1a1a1a}
+.check-item input[type=checkbox]{margin-top:2px;width:15px;height:15px;flex-shrink:0;accent-color:#534AB7;cursor:pointer}
+.prog-top{display:flex;justify-content:space-between;font-size:12px;color:#888;margin:1rem 0 5px}
+.prog-bg{height:5px;background:#f0f0ec;border-radius:4px;overflow:hidden}
+.prog-bar{height:5px;background:#534AB7;border-radius:4px;transition:width .3s;width:0%}
+.done-note{font-size:13px;color:#085041;background:#E1F5EE;padding:.65rem .9rem;border-radius:8px;margin-top:.85rem;display:none;align-items:center;gap:7px}
+.nav-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid #e8e8e4}
+.back-btn{display:flex;align-items:center;gap:7px;padding:8px 16px;background:#fff;color:#1a1a1a;border:1px solid #d4d4d0;border-radius:8px;font-size:14px;text-decoration:none}
+.back-btn:hover{background:#f4f4f1}
+.next-btn{display:flex;align-items:center;gap:7px;padding:8px 18px;background:#534AB7;color:#EEEDFE;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.next-btn:hover{background:#3C3489}
+.nav-hint{font-size:12px;color:#888}
+.reset-btn{position:fixed;bottom:1.25rem;right:1.25rem;font-size:12px;padding:6px 12px;background:#fff;border:1px solid #d4d4d0;border-radius:20px;color:#888;cursor:pointer;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.08);display:flex;align-items:center;gap:5px}
+.reset-btn:hover{background:#f4f4f1;color:#555}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="logo-bar">
+  <img src="https://content.partnerpage.io/eyJidWNrZXQiOiJwYXJ0bmVycGFnZS5wcm9kIiwia2V5IjoibWVkaWEvY29udGFjdF9pbWFnZXMvMDQ3ZDFmYWItMDQwZC00YzFlLTlmZWMtMjc0OGUxNjdhOGZlL2Q5MzE1NTMxLWE3NGEtNDg3MS1hN2VkLWZmMDYwNWM1YWI2Yi5wbmciLCJlZGl0cyI6eyJ0b0Zvcm1hdCI6IndlYnAiLCJyZXNpemUiOnsiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjB9fX19" alt="Journify" />
+  <span class="logo-sub">New joiner onboarding</span>
+</div>
+<div class="nav-bar">
+  <div class="nav-crumb">Phase 3 &nbsp;/&nbsp; <span>Section 1: The sales process</span></div>
+  <div class="nav-actions">
+    <a href="index.html" class="nav-btn"><i class="ti ti-home"></i> Home</a>
+    <a href="phase3-index.html" class="nav-btn"><i class="ti ti-arrow-left"></i> Phase 3</a>
+    <a href="phase3-s2.html" class="nav-btn">Section 2 <i class="ti ti-arrow-right"></i></a>
+  </div>
+</div>
+<div class="phase-tag"><i class="ti ti-briefcase"></i> Phase 3 · Section 1 · Day 22–25</div>
+<div class="section-title">The sales process</div>
+<div class="section-sub">How Journify sells — the full funnel, your role at each stage, how deals move through Attio, and the hygiene rules that keep the pipeline clean and forecasting accurate.</div>
+<div class="meta-row">
+  <span class="meta-pill"><i class="ti ti-clock"></i> Day 22–25</span>
+  <span class="meta-pill"><i class="ti ti-briefcase"></i> AE track</span>
+  <span class="meta-pill"><i class="ti ti-list-check"></i> 4 tasks</span>
+</div>
+
+<div class="exp-box">
+  <div class="exp-title"><i class="ti ti-info-circle"></i> Where you are now</div>
+  <div class="exp-body">The foundation is done. You understand the industry, the problem, and the product. Everything from here is specific to how you sell at Journify. Your manager owns this track and will guide you through days 22 to 60. Start by messaging them today — let them know you're ready to begin.</div>
+</div>
+
+<div class="block-label">The Journify sales funnel — 7 stages</div>
+<div class="funnel-wrap">
+  <div class="funnel-hint"><i class="ti ti-hand-click"></i> Tap any stage to see key activities and exit criteria</div>
+  <div class="funnel-stages">
+
+    <div class="f-stage" style="background:#E6F1FB" onclick="tog('d1')">
+      <span class="f-num" style="color:#0C447C">1</span>
+      <i class="ti ti-search f-icon" style="color:#185FA5"></i>
+      <span class="f-name" style="color:#0C447C">Prospecting</span>
+      <span class="f-role" style="background:#B5D4F4;color:#0C447C">SDR</span>
+      <span class="f-pct" style="color:#0C447C">0%</span>
+    </div>
+    <div class="stage-detail" id="d1" style="background:#E6F1FB;border-color:#185FA5;color:#0C447C">
+      <strong>Key activities:</strong> Assign accounts to SDRs by territory or vertical. Research to confirm ICP fit — industry, size, GCC geography. Identify decision-makers: Heads of Marketing, Growth, Founders. Enrich contacts via LinkedIn, Clay, or Keyplay.<br><br>
+      <strong>Exit criteria:</strong> Accounts enriched and decision-makers identified.
+    </div>
+
+    <div class="f-stage" style="background:#F1EFE8" onclick="tog('d2')">
+      <span class="f-num" style="color:#444441">2</span>
+      <i class="ti ti-send f-icon" style="color:#5F5E5A"></i>
+      <span class="f-name" style="color:#444441">Outreach</span>
+      <span class="f-role" style="background:#D3D1C7;color:#444441">SDR</span>
+      <span class="f-pct" style="color:#444441">15%</span>
+    </div>
+    <div class="stage-detail" id="d2" style="background:#F1EFE8;border-color:#888780;color:#444441">
+      <strong>Key activities:</strong> Contact leads via email, LinkedIn, phone, and WhatsApp. Value-driven messaging anchored on the prospect's specific pain. Nurture sequences using case studies and content.<br><br>
+      <strong>Exit criteria:</strong> Discovery call booked with a relevant decision-maker.
+    </div>
+
+    <div class="f-stage" style="background:#EEEDFE" onclick="tog('d3')">
+      <span class="f-num" style="color:#3C3489">3</span>
+      <i class="ti ti-help-circle f-icon" style="color:#534AB7"></i>
+      <span class="f-name" style="color:#3C3489">Qualification</span>
+      <span class="f-role" style="background:#CECBF6;color:#3C3489">AE</span>
+      <span class="f-pct" style="color:#3C3489">30%</span>
+    </div>
+    <div class="stage-detail" id="d3" style="background:#EEEDFE;border-color:#534AB7;color:#3C3489">
+      <strong>Key activities:</strong> Run discovery call, confirm pain points, apply BANT, verify ICP fit. Ask about ad spend, platforms, current tracking, attribution pain. Present Journify framed around match rate and ROAS improvement.<br><br>
+      <strong>Exit criteria:</strong> Qualified opportunity — mutual interest confirmed, pain validated, next step agreed.
+    </div>
+
+    <div class="f-stage" style="background:#FAEEDA" onclick="tog('d4')">
+      <span class="f-num" style="color:#633806">4</span>
+      <i class="ti ti-presentation f-icon" style="color:#854F0B"></i>
+      <span class="f-name" style="color:#633806">Demo</span>
+      <span class="f-role" style="background:#FAC775;color:#633806">AE</span>
+      <span class="f-pct" style="color:#633806">50%</span>
+    </div>
+    <div class="stage-detail" id="d4" style="background:#FAEEDA;border-color:#854F0B;color:#633806">
+      <strong>Key activities:</strong> Deliver a tailored demo scoped to their platforms and use case. Address early objections, align on value, confirm budget range and key stakeholders.<br><br>
+      <strong>Exit criteria:</strong> Prospect agrees to proceed to proposal.<br><br>
+      <em>Leadership may join for senior stakeholder conversations — but you own demo preparation and delivery.</em>
+    </div>
+
+    <div class="f-stage" style="background:#FAECE7" onclick="tog('d5')">
+      <span class="f-num" style="color:#712B13">5</span>
+      <i class="ti ti-file-invoice f-icon" style="color:#993C1D"></i>
+      <span class="f-name" style="color:#712B13">Proposal</span>
+      <span class="f-role" style="background:#F5C4B3;color:#712B13">AE</span>
+      <span class="f-pct" style="color:#712B13">65%</span>
+    </div>
+    <div class="stage-detail" id="d5" style="background:#FAECE7;border-color:#993C1D;color:#712B13">
+      <strong>Key activities:</strong> Send proposal with pricing and success plan via Qwilr. Confirm receipt and book follow-up within 48 hours. Track engagement on the proposal link.<br><br>
+      <strong>Exit criteria:</strong> Prospect acknowledges receipt of proposal.<br><br>
+      <em>Leadership reviews and approves commercial terms before sending — coordinate with them on pricing.</em>
+    </div>
+
+    <div class="f-stage" style="background:#FBEAF0" onclick="tog('d6')">
+      <span class="f-num" style="color:#72243E">6</span>
+      <i class="ti ti-handshake f-icon" style="color:#993556"></i>
+      <span class="f-name" style="color:#72243E">Negotiation</span>
+      <span class="f-role" style="background:#ED93B1;color:#72243E">AE</span>
+      <span class="f-pct" style="color:#72243E">80%</span>
+    </div>
+    <div class="stage-detail" id="d6" style="background:#FBEAF0;border-color:#993556;color:#72243E">
+      <strong>Key activities:</strong> Handle objections on pricing, competition, and timing. Finalise terms and navigate legal and procurement. You lead this stage. Leadership supports on commercial terms, pricing approvals, and senior stakeholder conversations as needed.<br><br>
+      <strong>Exit criteria:</strong> Verbal or written commitment received.
+    </div>
+
+    <div class="f-stage" style="background:#E1F5EE" onclick="tog('d7')">
+      <span class="f-num" style="color:#085041">7</span>
+      <i class="ti ti-flag-check f-icon" style="color:#0F6E56"></i>
+      <span class="f-name" style="color:#085041">Closed</span>
+      <span class="f-role" style="background:#9FE1CB;color:#085041">AE + SM</span>
+      <span class="f-pct" style="color:#085041">Won / Lost</span>
+    </div>
+    <div class="stage-detail" id="d7" style="background:#E1F5EE;border-color:#0F6E56;color:#085041">
+      <strong>Won:</strong> Contract signed. Hand off to Success Manager. Document deal size, time to close, and key learnings in Attio. Pipeline review with CRO within 48 hours.<br><br>
+      <strong>Lost:</strong> Log the reason — budget, no pain, no response 60+ days, competitor (who + why), champion left, project on hold. Every closed lost is a learning — document it properly.
+    </div>
+  </div>
+  <div class="funnel-note"><i class="ti ti-info-circle"></i> Stage probabilities drive pipeline coverage calculations in Attio — they inform how the team weighs your pipeline against quota.</div>
+</div>
+
+<div class="block-label">Your role in the funnel</div>
+<div class="roles-grid">
+  <div class="role-card">
+    <div class="role-icon" style="background:#E6F1FB;color:#185FA5"><i class="ti ti-user-search"></i></div>
+    <div class="role-title">SDR</div>
+    <div class="role-owns">Prospecting → Outreach → Booked meeting. Hands to AE at Qualification.</div>
+  </div>
+  <div class="role-card" style="border:2px solid #AFA9EC">
+    <div class="role-icon" style="background:#EEEDFE;color:#534AB7"><i class="ti ti-briefcase"></i></div>
+    <div class="role-title" style="color:#534AB7">AE — you</div>
+    <div class="role-owns">Qualification → Demo → Proposal → Negotiation → Closed. You own every stage from first meeting to close.</div>
+  </div>
+  <div class="role-card">
+    <div class="role-icon" style="background:#FAEEDA;color:#854F0B"><i class="ti ti-chart-line"></i></div>
+    <div class="role-title">Leadership</div>
+    <div class="role-owns">Supports on commercial terms, pricing approvals, and senior stakeholder conversations. Does not own any stage — you do.</div>
+  </div>
+  <div class="role-card">
+    <div class="role-icon" style="background:#E1F5EE;color:#0F6E56"><i class="ti ti-headset"></i></div>
+    <div class="role-title">Success Manager</div>
+    <div class="role-owns">Post Closed Won. Onboarding, implementation, and relationship management.</div>
+  </div>
+</div>
+
+<div class="block-label">BANT qualification framework</div>
+<div class="bant-grid">
+  <div class="bant-card" style="background:#E6F1FB">
+    <div class="bant-letter" style="color:#0C447C">B</div>
+    <div class="bant-name" style="color:#0C447C">Budget</div>
+    <div class="bant-q" style="color:#185FA5">Monthly ad spend $40K+? Do they have budget for a new martech investment?</div>
+  </div>
+  <div class="bant-card" style="background:#EEEDFE">
+    <div class="bant-letter" style="color:#3C3489">A</div>
+    <div class="bant-name" style="color:#3C3489">Authority</div>
+    <div class="bant-q" style="color:#534AB7">Are we speaking with a decision-maker? Who approves new tools — CMO, Head of Growth, Founder?</div>
+  </div>
+  <div class="bant-card" style="background:#FAEEDA">
+    <div class="bant-letter" style="color:#633806">N</div>
+    <div class="bant-name" style="color:#633806">Need</div>
+    <div class="bant-q" style="color:#854F0B">ROAS volatility? Attribution gaps? Rising CAC? Do they feel the signal loss pain?</div>
+  </div>
+  <div class="bant-card" style="background:#E1F5EE">
+    <div class="bant-letter" style="color:#085041">T</div>
+    <div class="bant-name" style="color:#085041">Timeline</div>
+    <div class="bant-q" style="color:#0F6E56">Actively looking now? Urgency to implement in the next 30–90 days?</div>
+  </div>
+</div>
+
+<div class="block-label">How deals live in Attio</div>
+<div class="attio-wrap">
+  <div class="attio-header">
+    <div class="attio-icon"><i class="ti ti-database"></i></div>
+    <div>
+      <div class="attio-title">Attio is where your pipeline lives — not in your head</div>
+      <div class="attio-sub">Every deal, every stage, every activity must be logged. Your forecast is only as good as your CRM hygiene.</div>
+    </div>
+  </div>
+  <div style="font-size:13px;color:#555;margin-bottom:.75rem">These are the exact stage names in Attio. Move a deal only when the exit criteria is genuinely met — not when you feel hopeful.</div>
+
+  <div class="attio-stages">
+    <div class="attio-stage">
+      <span class="as-num" style="background:#E6F1FB;color:#0C447C">1</span>
+      <div class="as-body"><span class="as-attio" style="background:#E6F1FB;color:#0C447C"><i class="ti ti-database" style="font-size:10px"></i> Prospecting</span><div class="as-exit">Account enriched, ICP confirmed, decision-maker identified</div></div>
+      <span class="as-pct" style="color:#0C447C">0%</span>
+    </div>
+    <div class="attio-stage">
+      <span class="as-num" style="background:#F1EFE8;color:#5F5E5A">2</span>
+      <div class="as-body"><span class="as-attio" style="background:#F1EFE8;color:#5F5E5A"><i class="ti ti-database" style="font-size:10px"></i> Outreach</span><div class="as-exit">Active sequence running, engagement tracked, meeting booked</div></div>
+      <span class="as-pct" style="color:#5F5E5A">15%</span>
+    </div>
+    <div class="attio-stage">
+      <span class="as-num" style="background:#EEEDFE;color:#3C3489">3</span>
+      <div class="as-body"><span class="as-attio" style="background:#EEEDFE;color:#3C3489"><i class="ti ti-database" style="font-size:10px"></i> Qualification</span><div class="as-exit">BANT completed, pain confirmed, mutual interest — log call notes immediately</div></div>
+      <span class="as-pct" style="color:#3C3489">30%</span>
+    </div>
+    <div class="attio-stage">
+      <span class="as-num" style="background:#FAEEDA;color:#633806">4</span>
+      <div class="as-body"><span class="as-attio" style="background:#FAEEDA;color:#633806"><i class="ti ti-database" style="font-size:10px"></i> Demo</span><div class="as-exit">Demo delivered, early objections addressed, prospect agrees to receive proposal</div></div>
+      <span class="as-pct" style="color:#633806">50%</span>
+    </div>
+    <div class="attio-stage">
+      <span class="as-num" style="background:#FAECE7;color:#712B13">5</span>
+      <div class="as-body"><span class="as-attio" style="background:#FAECE7;color:#712B13"><i class="ti ti-database" style="font-size:10px"></i> Proposal</span><div class="as-exit">Qwilr proposal sent, receipt confirmed, follow-up within 48 hours</div></div>
+      <span class="as-pct" style="color:#712B13">65%</span>
+    </div>
+    <div class="attio-stage">
+      <span class="as-num" style="background:#FBEAF0;color:#72243E">6</span>
+      <div class="as-body"><span class="as-attio" style="background:#FBEAF0;color:#72243E"><i class="ti ti-database" style="font-size:10px"></i> Negotiation</span><div class="as-exit">Objections handled, terms finalised, verbal or written commitment received</div></div>
+      <span class="as-pct" style="color:#72243E">80%</span>
+    </div>
+    <div class="attio-stage">
+      <span class="as-num" style="background:#E1F5EE;color:#085041">7</span>
+      <div class="as-body"><span class="as-attio" style="background:#E1F5EE;color:#085041"><i class="ti ti-database" style="font-size:10px"></i> Closed</span><div class="as-exit">Won: contract signed, SM notified, deal details logged · Lost: reason documented</div></div>
+      <span class="as-pct" style="color:#085041">Won / Lost</span>
+    </div>
+  </div>
+
+  <div style="font-size:13px;font-weight:600;color:#1a1a1a;margin:1rem 0 .75rem">Pipeline hygiene rules — non-negotiable</div>
+  <div class="hygiene-grid">
+    <div class="hygiene-card"><div class="hygiene-label"><i class="ti ti-clock"></i> Log within 24h</div><div class="hygiene-val">Every call, email, and meeting logged in Attio within 24 hours. No exceptions.</div></div>
+    <div class="hygiene-card"><div class="hygiene-label"><i class="ti ti-calendar-check"></i> Always a next step</div><div class="hygiene-val">Every open deal must have a next activity scheduled. No hanging deals.</div></div>
+    <div class="hygiene-card"><div class="hygiene-label"><i class="ti ti-clock-off"></i> 60-day rule</div><div class="hygiene-val">Prospect silent 60+ days = Closed Lost. Log the reason. No zombie pipeline.</div></div>
+    <div class="hygiene-card"><div class="hygiene-label"><i class="ti ti-pencil"></i> Stage accuracy</div><div class="hygiene-val">Move deals forward only when exit criteria are genuinely met.</div></div>
+  </div>
+
+  <div style="font-size:13px;font-weight:600;color:#1a1a1a;margin:.75rem 0 .5rem">Deal ownership — who owns what</div>
+  <table class="ownership-table">
+    <tr><th style="width:42%">Lead source</th><th style="width:22%">Owner</th><th style="width:18%">Sales bonus</th><th style="width:18%">Partner bonus</th></tr>
+    <tr><td>Direct inbound / outbound</td><td><span class="badge badge-sales">Sales</span></td><td><span class="badge badge-yes">✓ 100%</span></td><td><span class="badge badge-no">No</span></td></tr>
+    <tr><td>Partner referral (not in pipeline)</td><td><span class="badge badge-partner">Partnerships</span></td><td><span class="badge badge-no">No</span></td><td><span class="badge badge-yes">✓ 100%</span></td></tr>
+    <tr><td>Partner-influenced (already in leads)</td><td><span class="badge badge-sales">Sales</span></td><td><span class="badge badge-yes">✓ 100%</span></td><td><span class="badge badge-no">No</span></td></tr>
+    <tr><td>Agency referral — Prospecting, 30d no reply</td><td><span class="badge badge-partner">Partnerships</span></td><td><span class="badge badge-no">No</span></td><td><span class="badge badge-yes">✓ 100%</span></td></tr>
+    <tr><td>AdTech referral — KSA client</td><td><span class="badge badge-sales">Sales</span></td><td><span class="badge badge-yes">✓ 100%</span></td><td><span class="badge badge-no">No</span></td></tr>
+    <tr><td>AdTech referral — UAE client</td><td><span class="badge badge-partner">Partnerships</span></td><td><span class="badge badge-no">No</span></td><td><span class="badge badge-yes">✓ 100%</span></td></tr>
+  </table>
+  <div style="font-size:12px;color:#888"><i class="ti ti-info-circle"></i> Unsure who owns a deal? Check with your manager before reaching out — overlap creates friction and affects attribution.</div>
+</div>
+
+<div class="block-label">Your AE KPIs</div>
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="kpi-val">6x</div><div class="kpi-label">Pipeline coverage vs quota</div></div>
+  <div class="kpi-card"><div class="kpi-val">5–10</div><div class="kpi-label">Discovery calls / week at ramp</div></div>
+  <div class="kpi-card"><div class="kpi-val">2+</div><div class="kpi-label">Demos / week at ramp</div></div>
+  <div class="kpi-card"><div class="kpi-val">20–30</div><div class="kpi-label">Prospects in pipeline at ramp</div></div>
+</div>
+
+<div class="section-checklist">
+  <div class="cl-title"><i class="ti ti-circle-check" style="font-size:20px;color:#534AB7"></i> Section 1 — completion checklist</div>
+  <div class="cl-sub">You're ready for Section 2 when all four are done.</div>
+  <div class="check-item"><input type="checkbox" id="p3t1" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p3t1">Sales funnel — all 7 stages understood with key activities and exit criteria</label></div>
+  <div class="check-item"><input type="checkbox" id="p3t2" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p3t2">BANT framework understood — I can apply it in a Qualification call</label></div>
+  <div class="check-item"><input type="checkbox" id="p3t3" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p3t3">Attio stages reviewed — I know the 7 stage names, exit criteria, and hygiene rules</label></div>
+  <div class="check-item"><input type="checkbox" id="p3t4" onchange="saveProgress(this.id,this.checked);updateProg()"><label for="p3t4">Sales process documentation reviewed in Notion with manager</label></div>
+  <div class="prog-top"><span id="prog-label">0 of 4 complete</span><span id="prog-pct">0%</span></div>
+  <div class="prog-bg"><div class="prog-bar" id="prog"></div></div>
+  <div class="done-note" id="done-note"><i class="ti ti-circle-check"></i> All done — ready for Section 2: Discovery.</div>
+</div>
+
+<div class="nav-bottom">
+  <a href="phase3-index.html" class="back-btn"><i class="ti ti-arrow-left"></i> Back: Phase 3</a>
+  <span class="nav-hint">Phase 3 · Section 1 of 4</span>
+  <a href="phase3-s2.html" class="next-btn">Next: Section 2 <i class="ti ti-arrow-right"></i></a>
+</div>
+</div>
+<button class="reset-btn" onclick="resetProgress()"><i class="ti ti-refresh" style="font-size:13px"></i> Reset my progress</button>
+<script>
+const JF_BASE='journify_ob_';const PAGE_SCOPE='p3s1';const JF_CANONICAL=['p3t1','p3t2','p3t3','p3t4'];let _jfUser='';
+function jfGetUser(){if(_jfUser)return _jfUser;_jfUser=sessionStorage.getItem('jf_user_key')||'';if(!_jfUser){const saved=localStorage.getItem('jf_last_user')||'';const name=prompt('Welcome to Journify onboarding!\nEnter your name to save your progress:',saved);_jfUser=(name||'user').trim().toLowerCase().replace(/[^a-z0-9]/g,'_')||'user';sessionStorage.setItem('jf_user_key',_jfUser);localStorage.setItem('jf_last_user',name||'');}return _jfUser;}
+function jfKey(id){return JF_BASE+jfGetUser()+'_'+PAGE_SCOPE+'_'+id;}
+function saveProgress(id,checked){if(JF_CANONICAL.includes(id))try{localStorage.setItem(jfKey(id),checked?'1':'0');}catch(e){}}
+function updateProg(){const done=JF_CANONICAL.filter(id=>document.getElementById(id)?.checked).length;const pct=Math.round(done/JF_CANONICAL.length*100);document.getElementById('prog').style.width=pct+'%';document.getElementById('prog-label').textContent=done+' of '+JF_CANONICAL.length+' complete';document.getElementById('prog-pct').textContent=pct+'%';document.getElementById('done-note').style.display=done===JF_CANONICAL.length?'flex':'none';}
+function jfSyncMirrors(){}
+function jfLoadAndSync(){jfGetUser();JF_CANONICAL.forEach(id=>{const el=document.getElementById(id);if(!el)return;try{el.checked=localStorage.getItem(jfKey(id))==='1';}catch(e){}});setTimeout(updateProg,30);}
+function tog(id){document.getElementById(id).classList.toggle('open');}
+function resetProgress(){if(!confirm('Reset your Section 1 progress?'))return;JF_CANONICAL.forEach(id=>{try{localStorage.removeItem(jfKey(id));}catch(e){}const el=document.getElementById(id);if(el)el.checked=false;});updateProg();}
+window.addEventListener('DOMContentLoaded',jfLoadAndSync);
+</script>
+</body>
+</html>
